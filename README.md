@@ -20,7 +20,7 @@ install the correct version. Installation instructions can be found in the rbenv
 README.
 
 Once rbenv is installed, you'll want to install the correct ruby version with
-something like `rbenv install 2.7.1`.
+something like `rbenv install 3.0.1`.
 
 ### Bundler
 
@@ -42,5 +42,3 @@ always required, but will ensure you use the correct version of dependencies in
 case there are multiple versions installed.
 
 Once the server is running, you can open it in a browser at <http://127.0.0.1:3000>.
-
-
