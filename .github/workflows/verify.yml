@@ -24,6 +24,13 @@ jobs:
         run: |
           bin/rails db:setup
 
+      - name: Compile assets
+        env:
+          RAILS_ENV: test
+        run: |
+          yarn install
+          bin/rails assets:precompile
+
       - name: Run tests
         run: |
           bin/rails test
