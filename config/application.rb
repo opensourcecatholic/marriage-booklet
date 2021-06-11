@@ -34,5 +34,10 @@ module MarriageBooklet
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    
+    # Permitted locales available for the application: start with English and Italian
+    config.i18n.available_locales = [:en, :it]
+    # Set a default locale as fallback in any case
+    config.i18n.default_locale = :en
   end
 end
