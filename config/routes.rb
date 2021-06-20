@@ -4,13 +4,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   
   scope "/:locale" do
-    resources :projects
-  end
-  
-  resources :pages do 
-    collection do
-      get :new_project
+    resources :pages do
+      collection do
+        get :new_project
+      end
     end
-  end
-  
+  end  
 end
