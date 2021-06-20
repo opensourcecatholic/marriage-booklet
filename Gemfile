@@ -15,6 +15,7 @@ gem 'sass-rails', '>= 6'
 gem 'webpacker', github: 'rails/webpacker', ref: 'b6c2180'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'inline_svg', '1.7.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
