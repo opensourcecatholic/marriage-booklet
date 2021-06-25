@@ -1,37 +1,32 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
+---
 it:
-  hello: "Buongiorno mondo"
-  welcome-greeting-1: "Crea il libretto della cerimonia per il tuo Matrimonio Cattolico"
-  welcome-greeting-2: "Scegli dai testi del rito del matrimonio, insieme al Sacerdote (o diacono) officiante"
-  get-started-link: "Iniziamo!"
-  page-title: "Nostro Libretto Matrimonio"
+  action-login: Action-login
+  bride: Bride
+  celebrant: Celebrant
+  create_project_button: Create project button
+  get-started-link: Iniziamo!
+  groom: Groom
+  hello: Buongiorno mondo
+  page-title: Nostro Libretto Matrimonio
+  pages-new_project-email_address-description: Pages-new project-email address-description
+  pages-new_project-email_address-label: Pages-new project-email address-label
+  pages-new_project-marriage_date-label: Pages-new project-marriage date-label
+  pages-new_project-marriage_location_church-label: Pages-new project-marriage location church-label
+  pages-new_project-marriage_location_city-label: Pages-new project-marriage location city-label
+  pages-new_project-person_category-label: Pages-new project-person category-label
+  pages-new_project-request_info-description: Pages-new project-request info-description
+  pages-new_project-request_info-optional-login: Pages-new project-request info-optional-login
+  pages-new_project-request_info-title: Pages-new project-request info-title
+  pages-new_project-title: Pages-new project-title
+  pages-new_project-wedding_party-bestman_firstname-label: Pages-new project-wedding party-bestman firstname-label
+  pages-new_project-wedding_party-bestman_lastname-label: Pages-new project-wedding party-bestman lastname-label
+  pages-new_project-wedding_party-bride_firstname-label: Pages-new project-wedding party-bride firstname-label
+  pages-new_project-wedding_party-bride_lastname-label: Pages-new project-wedding party-bride lastname-label
+  pages-new_project-wedding_party-description: Pages-new project-wedding party-description
+  pages-new_project-wedding_party-groom_firstname-label: Pages-new project-wedding party-groom firstname-label
+  pages-new_project-wedding_party-groom_lastname-label: Pages-new project-wedding party-groom lastname-label
+  pages-new_project-wedding_party-maidofhonor_firstname-label: Pages-new project-wedding party-maidofhonor firstname-label
+  pages-new_project-wedding_party-maidofhonor_lastname-label: Pages-new project-wedding party-maidofhonor lastname-label
+  pages-new_project-wedding_party-title: Pages-new project-wedding party-title
+  welcome-greeting-1: Crea il libretto della cerimonia per il tuo Matrimonio Cattolico
+  welcome-greeting-2: Scegli dai testi del rito del matrimonio, insieme al Sacerdote (o diacono) officiante
