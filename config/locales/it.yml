@@ -31,6 +31,7 @@
 
 it:
   hello: "Buongiorno mondo"
-  welcome-greeting-1: "Crea il libretto per la celebrazione del tuo matrimonio cattolico"
-  welcome-greeting-2: "Scegli dai testi del rito del matrimonio, insieme al sacerdote o diacono officiante"
-  get-started-link: "Inizia da qui!"
+  welcome-greeting-1: "Crea il libretto della cerimonia per il tuo Matrimonio Cattolico"
+  welcome-greeting-2: "Scegli dai testi del rito del matrimonio, insieme al Sacerdote (o diacono) officiante"
+  get-started-link: "Iniziamo!"
+  page-title: "Nostro Libretto Matrimonio"
