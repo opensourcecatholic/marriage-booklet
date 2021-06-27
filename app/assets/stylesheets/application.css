@@ -16,3 +16,8 @@
 .tangerine {
     font-family: 'Tangerine', cursive;
 }
+
+label.required::before, legend.required::before {
+    content: "*";
+    padding-right: 3px;
+}
