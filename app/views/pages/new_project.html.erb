@@ -14,21 +14,21 @@
   }
   ```
 -->
-<h1><%= t('pages-new_project-title') %></h1> <!-- New wedding booklet project -->
+<h1 class="py-6 my-6 text-center"><%= t('pages-new_project-title') %></h1> <!-- New wedding booklet project -->
 
 <form action="#" method="POST">
-  <div class="md:grid md:grid-cols-3 md:gap-6"><!-- Inner wrapper for title + card start -->
+  <div class="md:grid md:grid-cols-3 md:gap-6 bg-gray-200 p-9 mx-4"><!-- Inner wrapper for title + card start -->
     <div class="md:col-span-1"><!-- Title before card start -->
       <div class="px-4 sm:px-0">
         <h3 class="text-lg font-medium leading-6 text-gray-900"><%= t('pages-new_project-request_info-title') %></h3> <!-- User info -->
         <p class="mt-1 text-sm text-gray-600">
           <%= t('pages-new_project-request_info-description') %> <!-- Please fill in some information needed for composing the booklet. -->
         </p>
-        <hr>
-        <p class="mt-1 text-sm text-gray-600">
+        <hr class="m-4 border-gray-400">
+        <p class="mt-1 text-sm text-gray-600 italic">
           <%= t('pages-new_project-request_info-optional-login') %> <!-- If you already created an account, you may login instead. In that case any previously entered information will be retrieved. -->
         </p>
-        <div><button><%= t('action-login') %></button></div>
+        <div class="text-center p-4"><button class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"><%= t('action-login') %></button></div>
       </div>
     </div><!-- Title before card end -->
     <div class="mt-5 md:mt-0 md:col-span-2"><!-- Card outer wrapper start -->
@@ -104,7 +104,7 @@
     </div>
   </div>
 
-  <div class="mt-10 sm:mt-0 md:grid md:grid-cols-3 md:gap-6">
+  <div class="mt-10 sm:mt-0 md:grid md:grid-cols-3 md:gap-6 bg-gray-200 p-9 mx-4">
     <div class="md:col-span-1">
       <div class="px-4 sm:px-0">
         <h3 class="text-lg font-medium leading-6 text-gray-900"><%= t('pages-new_project-wedding_party-title') %></h3><!-- Wedding party -->
