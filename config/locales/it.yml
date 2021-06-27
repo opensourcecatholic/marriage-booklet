@@ -1,6 +1,7 @@
 ---
 it:
   action-login: Action-login
+  action-register: Action-register
   bride: Bride
   celebrant: Celebrant
   create_project_button: Create project button

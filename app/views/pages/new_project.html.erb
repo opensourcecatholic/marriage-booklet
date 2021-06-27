@@ -26,9 +26,12 @@
         </p>
         <hr class="m-4 border-gray-400">
         <p class="mt-1 text-sm text-gray-600 italic">
-          <%= t('pages-new_project-request_info-optional-login') %> <!-- If you already created an account, you may login instead. In that case any previously entered information will be retrieved. -->
+          <%= t('pages-new_project-request_info-optional-login') %> <!-- If you already created an account, you may login instead. In that case any previously entered information will be retrieved. Or you can go ahead and register an account right away if you would like your project to be associated with your account. -->
         </p>
-        <div class="text-center p-4"><button class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"><%= t('action-login') %></button></div>
+        <div class="text-center p-4 md:grid md:grid-cols-2 md:gap-3">
+          <button class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"><%= t('action-login') %></button>
+          <button class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"><%= t('action-register') %></button>
+        </div>
       </div>
     </div><!-- Title before card end -->
     <div class="mt-5 md:mt-0 md:col-span-2"><!-- Card outer wrapper start -->
@@ -63,7 +66,7 @@
                   <%= t('pages-new_project-email_address-label') %> * <!-- Your email address is -->
                 </label>
                 <input type="text" name="email_address" id="email_address" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight" placeholder="you@example.com">
-                <p class="mt-2 text-sm text-gray-500">
+                <p class="mt-2 text-sm text-gray-500 italic">
                   <%= t('pages-new_project-email_address-description') %> <!-- Your email address will never be shared without your permission. Wedding booklet projects you create will be associated with your email address.  -->
                 </p>
               </div>

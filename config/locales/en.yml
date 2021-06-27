@@ -1,9 +1,10 @@
 ---
 en:
   action-login: Login
+  action-register: Register
   bride: Bride
   celebrant: Celebrant
-  create_project_button: Get started!
+  create_project_button: Start composing the booklet!
   get-started-link: Get started!
   groom: Groom
   hello: Hello world
@@ -15,7 +16,7 @@ en:
   pages-new_project-marriage_location_city-label: The wedding ceremony will take place in (city)
   pages-new_project-person_category-label: You are
   pages-new_project-request_info-description: Please fill in some information needed for composing the booklet.
-  pages-new_project-request_info-optional-login: If you already created an account, you may login instead. In that case any previously entered information will be retrieved.
+  pages-new_project-request_info-optional-login: If you already created an account, you may login instead. In that case any previously entered information will be retrieved.  Or you can go ahead and register an account right away if you would like your project to be associated with your account.
   pages-new_project-request_info-title: User info
   pages-new_project-title: New wedding booklet project
   pages-new_project-wedding_party-bestman_firstname-label: Best man first name
