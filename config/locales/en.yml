@@ -2,32 +2,43 @@
 en:
   action-login: Login
   action-register: Register
-  bride: Bride
-  celebrant: Celebrant
-  create_project_button: Start composing the booklet!
   get-started-link: Get started!
-  groom: Groom
-  hello: Hello world
   page-title: Our Marriage Booklet
-  pages-new_project-email_address-description: Your email address will never be shared without your permission. Wedding booklet projects you create will be associated with your email address.
-  pages-new_project-email_address-label: My email address is
-  pages-new_project-marriage_date-label: The wedding will take place on (date and time)
-  pages-new_project-marriage_location_church-label: The wedding ceremony will take place at (church)
-  pages-new_project-marriage_location_city-label: The wedding ceremony will take place in (city)
-  pages-new_project-person_category-label: I am
-  pages-new_project-request_info-description: Please fill in some information needed for composing the booklet.
-  pages-new_project-request_info-optional-login: If you already created an account, you may login instead. In that case any previously entered information will be retrieved.  Or you can go ahead and register an account right away if you would like your project to be associated with your account.
-  pages-new_project-request_info-title: User info
-  pages-new_project-title: New wedding booklet project
-  pages-new_project-wedding_party-bestman_firstname-label: Best man first name
-  pages-new_project-wedding_party-bestman_lastname-label: Best man last name
-  pages-new_project-wedding_party-bride_firstname-label: Bride first name
-  pages-new_project-wedding_party-bride_lastname-label: Bride last name
-  pages-new_project-wedding_party-description: Describe the composition of your wedding party
-  pages-new_project-wedding_party-groom_firstname-label: Groom first name
-  pages-new_project-wedding_party-groom_lastname-label: Groom last name
-  pages-new_project-wedding_party-maidofhonor_firstname-label: Maid of honor first name
-  pages-new_project-wedding_party-maidofhonor_lastname-label: Maid of honor last name
-  pages-new_project-wedding_party-title: Wedding party
+  pages:
+    new_project:
+      create_project_button: Start composing the booklet!
+      email_address:
+        description: Your email address will never be shared without your permission. Wedding booklet projects you create will be associated with your email address.
+        label: My email address is
+      marriage_date:
+        label: The wedding will take place on (date and time)
+      marriage_location:
+        church_label: The wedding ceremony will take place at (church)
+        city_label: The wedding ceremony will take place in (city)
+      person_category:
+        bride: Bride
+        celebrant: Celebrant
+        groom: Groom
+        label: I am
+      request_info:
+        description: Please fill in some information needed for composing the booklet.
+        optional_login: If you already created an account, you may login instead. In that case any previously entered information will be retrieved.  Or you can go ahead and register an account right away if you would like your project to be associated with your account.
+        title: User info
+      title: New wedding booklet project
+      wedding_party:
+        bestman:
+          firstname_label: Best man first name
+          lastname_label: Best man last name
+        bride:
+          firstname_label: Bride first name
+          lastname_label: Bride last name
+        description: Describe the composition of your wedding party
+        groom:
+          firstname_label: Groom first name
+          lastname_label: Groom last name
+        maidofhonor:
+          firstname_label: Maid of honor first name
+          lastname_label: Maid of honor last name
+        title: Wedding party
   welcome-greeting-1: Create the booklet for your Catholic Wedding ceremony
   welcome-greeting-2: Choose the texts from the official Rite of Marriage, together with the celebrant
