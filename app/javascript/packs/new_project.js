@@ -1,0 +1,1 @@
+console.log("Hello only from new_project");
