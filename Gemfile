@@ -19,6 +19,7 @@ gem 'webpacker', github: 'rails/webpacker', ref: 'b6c2180'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'i18n-tasks', '~> 0.9.34'
 end
 
 group :development do
