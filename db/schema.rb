@@ -10,6 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_06_29_212352) do
+
+  create_table "projects", force: :cascade do |t|
+    t.integer "liturgy"
+    t.string "brideFirstName"
+    t.string "brideLastName"
+    t.string "groomFirstName"
+    t.string "groomLastName"
+    t.string "celebrantNamePrefix"
+    t.string "celebrantFirstName"
+    t.string "celebrantLastName"
+    t.string "church"
+    t.string "city"
+    t.datetime "weddingdate"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end
