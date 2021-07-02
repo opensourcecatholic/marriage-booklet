@@ -33,7 +33,7 @@
         <div class="px-4 py-5 bg-white space-y-6 sm:p-6"><!-- Card content start -->
           <fieldset><!-- Category person block start -->
           <legend class="text-base font-medium text-gray-900 required"><%= t('pages.new_project.person_category.label') %> <!-- You are: --></legend>
-            <div class="mt-4 space-y-4">
+            <div class="space-y-4">
               <div class="inline-flex items-center">
                 <input id="person_category_bride" name="person_category" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
                 <label for="person_category_bride" class="ml-3 mr-6 block text-sm font-medium text-gray-700">
@@ -66,20 +66,31 @@
             </div>
           </div><!-- Email address block end -->
 
-          <div class="grid grid-cols-3 gap-6"><!-- Marriage ceremony type block start -->
-            <div class="col-span-3 sm:col-span-2 field">
-              <%= form.label :liturgy %>
-              <%= form.select :liturgy, [["Marriage ceremony with Mass","withMass"],["Marriage ceremony without Mass","withoutMass"],["Marriage ceremony between a Catholic and a Catechumen or a Non-Christian","catholicNonCatholic"]] %>
+          <fieldset><!-- Category person block start -->
+          <legend class="text-base font-medium text-gray-900 required"><%= t('pages.new_project.typeOfMarriageCeremony') %> <!-- Type of marriage ceremony: --></legend>
+            <div class="space-y-4">
+              <div class="inline-flex items-center">
+                <%= form.radio_button :liturgy, "withMass", class: "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" %>
+                <%= form.label :liturgy_withmass, t('pages.new_project.ceremony_type.withMass'), class: "ml-3 mr-6 block text-sm font-medium text-gray-700" %>
+              </div>
+              <div class="inline-flex items-center">
+                <%= form.radio_button :liturgy, "withoutMass", class: "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" %>
+                <%= form.label :liturgy_withoutmass, t('pages.new_project.ceremony_type.withoutMass'), class: "ml-3 mr-6 block text-sm font-medium text-gray-700" %>
+              </div>
+              <div class="inline-flex items-center">
+                <%= form.radio_button :liturgy, "catholicNonCatholic", class: "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" %>
+                <%= form.label :liturgy_catholicnoncatholic, t('pages.new_project.ceremony_type.betweenACatholicAndACatechumenOrNonCatholic'), class: "ml-3 mr-6 block text-sm font-medium text-gray-700" %>
+              </div>
             </div>
-          </div><!-- Marriage ceremony type block end -->
+          </fieldset><!-- Person category block end -->
 
           <div class="grid grid-cols-3 gap-6"><!-- Marriage date block start -->
             <div class="col-span-3 sm:col-span-2 field">
               <%= form.label :weddingdate, t('pages.new_project.marriage_date.label'), class: "block text-sm font-medium text-gray-700 required" %>
               <% if I18n.locale == :en then %>
-              <%= form.datetime_select :weddingdate, ampm: true %>
+              <%= form.datetime_select :weddingdate, ampm: true, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
               <% else %>
-              <%= form.datetime_select :weddingdate, ampm: false %>
+              <%= form.datetime_select :weddingdate, ampm: false, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
               <% end %>
             </div>
           </div><!--Marriage date block end -->
@@ -98,7 +109,7 @@
           <div class="grid grid-cols-6 gap-6">
             <div class="col-span-6 sm:col-span-2 field">
               <%= form.label :celebrantNamePrefix, t('pages.new_project.celebrant.name_prefix_label'), class: "block text-sm font-medium text-gray-700 required" %>
-              <%= form.select :celebrantNamePrefix, [["Deacon","Deac."],["Father", "Fr."],["Reverend", "Rev."],["Monsignor", "Msgr."],["Bishop","His Excellence Bishop"],["Cardinal","His Eminence Cardinal"]], value: "His Eminence Cardinal", class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
+              <%= form.select :celebrantNamePrefix, [["Deacon","Deac."],["Father", "Fr."],["Reverend", "Rev."],["Monsignor", "Msgr."],["Bishop","His Excellence Bishop"],["Cardinal","His Eminence Cardinal"]], { selected: "His Eminence Cardinal" }, { class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" } %>
             </div>
             <div class="col-span-6 sm:col-span-2 field">
               <%= form.label :celebrantFirstName, t('pages.new_project.celebrant.firstname_label'), class: "block text-sm font-medium text-gray-700 required", autocomplete: 'off' %>
@@ -142,13 +153,16 @@
               <%= form.label :brideLastName, t('pages.new_project.wedding_party.bride.lastname_label'), class: "block text-sm font-medium text-gray-700 required", autocomplete: 'off' %>
               <%= form.text_field :brideLastName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
             </div>
-            <div class="col-span-6 sm:col-span-3 field">
+            <div class="col-span-6 sm:col-span-3">
               <%= form.label :groomFirstName, t('pages.new_project.wedding_party.groom.firstname_label'), class: "block text-sm font-medium text-gray-700 required", autocomplete: 'off' %>
               <%= form.text_field :groomFirstName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
             </div>
-            <div class="col-span-6 sm:col-span-3 field">
+            <div class="col-span-6 sm:col-span-3">
               <%= form.label :groomLastName, t('pages.new_project.wedding_party.groom.lastname_label'), class: "block text-sm font-medium text-gray-700 required", autocomplete: 'off' %>
               <%= form.text_field :groomLastName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
+            </div>
+            <div class="text-center col-span-6 sm:col-span-6 border-t-2 border-dotted">
+              <button class="p-3 m-3 text-md text-blue-500 bg-blue-100 hover:bg-blue-200 hover:text-blue-800 font-bold uppercase rounded-md outline-blue-200 inline-block">+ Add wedding party member</button>
             </div>
           </div>
         </div>
