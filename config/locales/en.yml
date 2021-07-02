@@ -1,33 +1,44 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
+---
 en:
-  hello: "Hello world"
+  action-login: Login
+  action-register: Register
+  get-started-link: Get started!
+  page-title: Our Marriage Booklet
+  pages:
+    new_project:
+      create_project_button: Start composing the booklet!
+      email_address:
+        description: Your email address will never be shared without your permission. Wedding booklet projects you create will be associated with your email address.
+        label: My email address is
+      marriage_date:
+        label: The wedding will take place on (date and time)
+      marriage_location:
+        church_label: The wedding ceremony will take place at (church)
+        city_label: The wedding ceremony will take place in (city)
+      person_category:
+        bride: Bride
+        celebrant: Celebrant
+        groom: Groom
+        label: I am
+      request_info:
+        description: Please fill in some information needed for composing the booklet.
+        optional_login: If you already created an account, you may login instead. In that case any previously entered information will be retrieved.  Or you can go ahead and register an account right away if you would like your project to be associated with your account.
+        title: User info
+      title: New wedding booklet project
+      wedding_party:
+        bestman:
+          firstname_label: Best man first name
+          lastname_label: Best man last name
+        bride:
+          firstname_label: Bride first name
+          lastname_label: Bride last name
+        description: Describe the composition of your wedding party
+        groom:
+          firstname_label: Groom first name
+          lastname_label: Groom last name
+        maidofhonor:
+          firstname_label: Maid of honor first name
+          lastname_label: Maid of honor last name
+        title: Wedding party
+  welcome-greeting-1: Create the booklet for your Catholic Wedding ceremony
+  welcome-greeting-2: Choose the texts from the official Rite of Marriage, together with the celebrant

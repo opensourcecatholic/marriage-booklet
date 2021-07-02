@@ -1,33 +1,44 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
+---
 it:
-  hello: "Buongiorno mondo"
+  action-login: Action-login
+  action-register: Action-register
+  get-started-link: Iniziamo!
+  page-title: Nostro Libretto Matrimonio
+  pages:
+    new_project:
+      create_project_button: Create project button
+      email_address:
+        description: Description
+        label: Label
+      marriage_date:
+        label: Label
+      marriage_location:
+        church_label: Church label
+        city_label: City label
+      person_category:
+        bride: Bride
+        celebrant: Celebrant
+        groom: Groom
+        label: Label
+      request_info:
+        description: Description
+        optional_login: Optional login
+        title: Title
+      title: Title
+      wedding_party:
+        bestman:
+          firstname_label: Firstname label
+          lastname_label: Lastname label
+        bride:
+          firstname_label: Firstname label
+          lastname_label: Lastname label
+        description: Description
+        groom:
+          firstname_label: Firstname label
+          lastname_label: Lastname label
+        maidofhonor:
+          firstname_label: Firstname label
+          lastname_label: Lastname label
+        title: Title
+  welcome-greeting-1: Crea il libretto della cerimonia per il tuo Matrimonio Cattolico
+  welcome-greeting-2: Scegli dai testi del rito del matrimonio, insieme al Sacerdote (o diacono) officiante
