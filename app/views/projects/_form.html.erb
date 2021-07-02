@@ -88,9 +88,9 @@
             <div class="col-span-3 sm:col-span-2 field">
               <%= form.label :weddingdate, t('pages.new_project.marriage_date.label'), class: "block text-sm font-medium text-gray-700 required" %>
               <% if I18n.locale == :en then %>
-              <%= form.datetime_select :weddingdate, ampm: true, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
+              <%= form.datetime_select :weddingdate, { ampm: true }, { class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 shadow-sm sm:text-sm border-gray-300 rounded-md" } %>
               <% else %>
-              <%= form.datetime_select :weddingdate, ampm: false, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
+              <%= form.datetime_select :weddingdate, { ampm: false }, { class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 shadow-sm sm:text-sm border-gray-300 rounded-md" } %>
               <% end %>
             </div>
           </div><!--Marriage date block end -->
