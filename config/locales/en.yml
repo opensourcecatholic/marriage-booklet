@@ -1,5 +1,7 @@
 ---
 en:
+  date:
+    order: ["month", "day", "year"]
   action-login: Login
   action-register: Register
   get-started-link: Get started!
