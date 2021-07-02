@@ -2,6 +2,9 @@
 en:
   date:
     order: ["month", "day", "year"]
+  time:
+    formats:
+      default: '%I:%M %p'
   action-login: Login
   action-register: Register
   get-started-link: Get started!

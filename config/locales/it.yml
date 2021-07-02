@@ -4,6 +4,9 @@ it:
     order: ["day", "month", "year"]
     month_names: [~, Gennaio, Febbraio, Marzo, Aprile, Maggio, Giugno, Luglio, Agosto, Settembre, Ottobre, Novembre, Dicembre]
     abbr_month_names: [~, Genn, Febbr, Mar, Apr, Magg, Giu, Lug, Ag, Sett, Ott, Nov, Dic]
+  time:
+    formats:
+      default: '%H:%M'
   action-login: Action-login
   action-register: Action-register
   get-started-link: Iniziamo!
