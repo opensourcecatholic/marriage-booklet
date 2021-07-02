@@ -1,19 +1,56 @@
 ---
 en:
-  date:
-    order: ["month", "day", "year"]
-  time:
-    formats:
-      default: '%I:%M %p'
   action-login: Login
   action-register: Register
+  date:
+    abbr_month_names:
+    - 
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sept
+    - Oct
+    - Nov
+    - Dec
+    month_names:
+    - 
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+    order:
+    - month
+    - day
+    - year
   get-started-link: Get started!
   page-title: Our Marriage Booklet
   pages:
     new_project:
+      celebrant:
+        firstname_label: Celebrant First Name
+        lastname_label: Celebrant Last Name
+        name_prefix_label: Celebrant Title
+      ceremony_type:
+        betweenACatholicAndACatechumenOrNonCatholic: Between a Catholic and a Catechumen or Non-Christian
+        withMass: With Mass
+        withoutMass: Without Mass
       create_project_button: Start composing the booklet!
       email_address:
-        description: Your email address will never be shared without your permission. Wedding booklet projects you create will be associated with your email address.
+        description: Your email address will never be shared without your permission.
+          Wedding booklet projects you create will be associated with your email address.
         label: My email address is
       marriage_date:
         label: The wedding will take place on (date and time)
@@ -27,9 +64,13 @@ en:
         label: I am
       request_info:
         description: Please fill in some information needed for composing the booklet.
-        optional_login: If you already created an account, you may login instead. In that case any previously entered information will be retrieved.  Or you can go ahead and register an account right away if you would like your project to be associated with your account.
+        optional_login: If you already created an account, you may login instead.
+          In that case any previously entered information will be retrieved.  Or you
+          can go ahead and register an account right away if you would like your project
+          to be associated with your account.
         title: User info
       title: New wedding booklet project
+      typeOfMarriageCeremony: Type of Marriage Ceremony
       wedding_party:
         bestman:
           firstname_label: Best man first name
@@ -45,5 +86,9 @@ en:
           firstname_label: Maid of honor first name
           lastname_label: Maid of honor last name
         title: Wedding party
+  time:
+    formats:
+      default: "%I:%M %p"
   welcome-greeting-1: Create the booklet for your Catholic Wedding ceremony
-  welcome-greeting-2: Choose the texts from the official Rite of Marriage, together with the celebrant
+  welcome-greeting-2: Choose the texts from the official Rite of Marriage, together
+    with the celebrant
