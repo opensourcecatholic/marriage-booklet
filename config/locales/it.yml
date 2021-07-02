@@ -1,18 +1,52 @@
 ---
 it:
-  date:
-    order: ["day", "month", "year"]
-    month_names: [~, Gennaio, Febbraio, Marzo, Aprile, Maggio, Giugno, Luglio, Agosto, Settembre, Ottobre, Novembre, Dicembre]
-    abbr_month_names: [~, Genn, Febbr, Mar, Apr, Magg, Giu, Lug, Ag, Sett, Ott, Nov, Dic]
-  time:
-    formats:
-      default: '%H:%M'
   action-login: Action-login
   action-register: Action-register
+  date:
+    abbr_month_names:
+    - 
+    - Genn
+    - Febbr
+    - Mar
+    - Apr
+    - Magg
+    - Giu
+    - Lug
+    - Ag
+    - Sett
+    - Ott
+    - Nov
+    - Dic
+    month_names:
+    - 
+    - Gennaio
+    - Febbraio
+    - Marzo
+    - Aprile
+    - Maggio
+    - Giugno
+    - Luglio
+    - Agosto
+    - Settembre
+    - Ottobre
+    - Novembre
+    - Dicembre
+    order:
+    - day
+    - month
+    - year
   get-started-link: Iniziamo!
   page-title: Nostro Libretto Matrimonio
   pages:
     new_project:
+      celebrant:
+        firstname_label: Firstname label
+        lastname_label: Lastname label
+        name_prefix_label: Name prefix label
+      ceremony_type:
+        betweenACatholicAndACatechumenOrNonCatholic: Betweenacatholicandacatechumenornoncatholic
+        withMass: Withmass
+        withoutMass: Withoutmass
       create_project_button: Create project button
       email_address:
         description: Description
@@ -32,6 +66,7 @@ it:
         optional_login: Optional login
         title: Title
       title: Title
+      typeOfMarriageCeremony: Typeofmarriageceremony
       wedding_party:
         bestman:
           firstname_label: Firstname label
@@ -47,5 +82,9 @@ it:
           firstname_label: Firstname label
           lastname_label: Lastname label
         title: Title
+  time:
+    formats:
+      default: "%H:%M"
   welcome-greeting-1: Crea il libretto della cerimonia per il tuo Matrimonio Cattolico
-  welcome-greeting-2: Scegli dai testi del rito del matrimonio, insieme al Sacerdote (o diacono) officiante
+  welcome-greeting-2: Scegli dai testi del rito del matrimonio, insieme al Sacerdote
+    (o diacono) officiante
