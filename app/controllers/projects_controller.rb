@@ -12,6 +12,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/new
   def new
+    @projects = Project.all
     @project = Project.new
   end
 
