@@ -1,47 +1,71 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Projects</h1>
+<h1 class="text-center text-xl"><%= t('projects.index.myWeddingBookletProjects') %></h1>
+<div class="bg-gray-400">
+  <div class="container border rounded m-6 pb-6 tab-component bg-white w-full">
 
-<table>
-  <thead>
-    <tr>
-      <th>Liturgy</th>
-      <th>Bridefirstname</th>
-      <th>Bridelastname</th>
-      <th>Groomfirstname</th>
-      <th>Groomlastname</th>
-      <th>Celebrantnameprefix</th>
-      <th>Celebrantfirstname</th>
-      <th>Celebrantlastname</th>
-      <th>Church</th>
-      <th>City</th>
-      <th>Weddingdate</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <ul class="flex border-b tab-buttons">
+        <% @projects.each_with_index do |project, index| %>
+          <li class="mr-1">
+          <% if index == 0 then %>
+          <button data-tab-index="<%= (index).to_s %>" class="tab-item bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold active">
+          <% else %>
+          <button data-tab-index="<%= (index).to_s %>" class="tab-item bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold">
+          <% end %>
+              <%= t('bookletProject') + ' ' + (index+1).to_s %>
+          </li>
+        <% end %>
+    </ul>
+    <ul class="flex tab-contents pb-6 pl-6 pr-6 py-6">
+        <% @projects.each_with_index do |project, index| %>
+          <% if index == 0 then %>
+          <li class="hidden" data-tab-content-index="<%= (index).to_s %>">
+          <% else %>
+          <li data-tab-content-index="<%= (index).to_s %>">
+          <% end %>
+              <table>
+              <thead>
+                <tr>
+                  <th><%= t('pages.new_project.typeOfMarriageCeremony') %></th>
+                  <th><%= t('pages.new_project.marriage_date.label') %></th>
+                  <th><%= t('pages.new_project.marriage_location.church_label') %></th>
+                  <th><%= t('pages.new_project.marriage_location.city_label') %></th>
+                  <th><%= t('pages.new_project.celebrant.name_prefix_label') %></th>
+                  <th><%= t('pages.new_project.celebrant.firstname_label') %></th>
+                  <th><%= t('pages.new_project.celebrant.lastname_label') %></th>
+                  <th><%= t('pages.new_project.wedding_party.bride.firstname_label') %></th>
+                  <th><%= t('pages.new_project.wedding_party.bride.lastname_label') %></th>
+                  <th><%= t('pages.new_project.wedding_party.groom.firstname_label') %></th>
+                  <th><%= t('pages.new_project.wedding_party.groom.lastname_label') %></th>
+                  <th colspan="3"></th>
+                </tr>
+              </thead>
+        
+              <tbody>
+                <tr>
+                  <td><%= project.liturgy %></td>
+                  <td><%= project.weddingdate %></td>
+                  <td><%= project.church %></td>
+                  <td><%= project.city %></td>
+                  <td><%= project.celebrantNamePrefix %></td>
+                  <td><%= project.celebrantFirstName %></td>
+                  <td><%= project.celebrantLastName %></td>
+                  <td><%= project.brideFirstName %></td>
+                  <td><%= project.brideLastName %></td>
+                  <td><%= project.groomFirstName %></td>
+                  <td><%= project.groomLastName %></td>
+                  <td><%= link_to t('openBookletProject'), project %></td>
+                  <td><%= link_to t('continueEditingBooklet'), edit_project_path(project) %></td>
+                  <td><%= link_to t('deleteBookletProject'), project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        <% end %>
+    </ul>
 
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.liturgy %></td>
-        <td><%= project.brideFirstName %></td>
-        <td><%= project.brideLastName %></td>
-        <td><%= project.groomFirstName %></td>
-        <td><%= project.groomLastName %></td>
-        <td><%= project.celebrantNamePrefix %></td>
-        <td><%= project.celebrantFirstName %></td>
-        <td><%= project.celebrantLastName %></td>
-        <td><%= project.church %></td>
-        <td><%= project.city %></td>
-        <td><%= project.weddingdate %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Project', new_project_path %>
+    <br>
+    <%= link_to 'New Project', new_project_path %>
+  </div>
+</div>
+<%= javascript_pack_tag 'projectsIndex' %>
