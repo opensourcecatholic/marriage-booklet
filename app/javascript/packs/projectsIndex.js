@@ -2,7 +2,7 @@ const activeTabClasses = [
   'border-l','border-t','border-r','rounded-t','text-blue-700','font-semibold','active'
 ];
 const inactiveTabClasses = [
- 'text-blue-500','hover:text-blue-800','font-semibold'
+ 'text-gray-500','hover:text-blue-800','font-semibold'
 ];
 
 function toggleTabs(activeIndex) {
@@ -24,7 +24,7 @@ function toggleTabs(activeIndex) {
 
 $('.tab-item').on('click', function (e) {
  let sender = e.currentTarget;
- if (sender && !sender.classList.contains('disabled')) {
+ if (sender && !sender.classList.contains('disabled') && !sender.classList.contains('active')) {
   let index = sender.attributes['data-tab-index'].value; 
   if (index !== undefined) {
     toggleTabs(index);
