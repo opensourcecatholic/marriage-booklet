@@ -1,14 +1,15 @@
 // Place all the styles related to the Projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.tab-component {
-    height: 400px;
-    max-height: 400px;
+.tab-component.container {
+    min-height: 75vh;
     overflow: hide;
+    max-width: 90%;
+    margin: 0 auto;
 }
 
 .tab-contents {
-    height: 358px;
+    min-height: 50vh;
     overflow: auto;
 }
 
@@ -16,4 +17,5 @@ th, td {
     border: 1px solid lightgray;
     padding-left: 4px;
     padding-right: 4px;
+    height: 3em;
 }
