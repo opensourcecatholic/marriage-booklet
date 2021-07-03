@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="text-center text-xl"><%= t('projects.index.myWeddingBookletProjects') %></h1>
-<div class="bg-gray-400">
-  <div class="container border rounded m-6 pb-6 tab-component bg-white w-full">
+<h1 class="text-center text-xl p-4"><%= t('projects.index.myWeddingBookletProjects') %></h1>
+<div class="bg-gray-400 py-3">
+  <div class="container border rounded m-6 pb-6 tab-component bg-white">
 
     <ul class="flex border-b tab-buttons bg-gray-100">
         <% @projects.each_with_index do |project, index| %>
@@ -18,7 +18,7 @@
           </li>
         <% end %>
         <li class="ml-3">
-          <%= link_to '+', new_project_path, { title: t('Create New Booklet Project'), class: "tab-item bg-white inline-block py-2 px-3 border-r text-gray-500 hover:bg-white hover:text-blue-800 focus:outline-none font-semibold rounded-3xl" } %>
+          <%= link_to '+', new_project_path, { title: t('Create New Booklet Project'), class: "tab-item bg-white inline-block py-2 px-3 border text-gray-500 hover:bg-white hover:text-blue-800 focus:outline-none font-semibold rounded-3xl" } %>
         </li>
     </ul>
     <ul class="flex tab-contents pb-6 pl-6 pr-6 py-6">
@@ -28,16 +28,13 @@
           <% else %>
           <li class="hidden" data-tab-content-index="<%= (index).to_s %>">
           <% end %>
-              <table>
+            <table class="table-fixed">
               <thead>
                 <tr>
-                  <th><%= t('pages.new_project.typeOfMarriageCeremony') %></th>
-                  <th><%= t('pages.new_project.marriage_date.label') %></th>
-                  <th><%= t('pages.new_project.marriage_location.church_label') %></th>
-                  <th><%= t('pages.new_project.marriage_location.city_label') %></th>
-                  <th><%= t('pages.new_project.celebrant.name_prefix_label') %></th>
-                  <th><%= t('pages.new_project.celebrant.firstname_label') %></th>
-                  <th><%= t('pages.new_project.celebrant.lastname_label') %></th>
+                  <th class="w-1/4"><%= t('pages.new_project.typeOfMarriageCeremony') %></th>
+                  <th class="w-1/4"><%= t('pages.new_project.marriage_date.label') %></th>
+                  <th class="w-1/4"><%= t('pages.new_project.marriage_location.church_label') %></th>
+                  <th class="w-1/4"><%= t('pages.new_project.marriage_location.city_label') %></th>
                 </tr>
               </thead>
               <tbody>
@@ -46,6 +43,20 @@
                   <td><%= project.weddingdate %></td>
                   <td><%= project.church %></td>
                   <td><%= project.city %></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table class="mt-6 table-fixed">
+              <thead>
+                <tr>
+                  <th class="w-1/3"><%= t('pages.new_project.celebrant.name_prefix_label') %></th>
+                  <th class="w-1/3"><%= t('pages.new_project.celebrant.firstname_label') %></th>
+                  <th class="w-1/3"><%= t('pages.new_project.celebrant.lastname_label') %></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
                   <td><%= project.celebrantNamePrefix %></td>
                   <td><%= project.celebrantFirstName %></td>
                   <td><%= project.celebrantLastName %></td>
@@ -53,29 +64,42 @@
               </tbody>
             </table>
 
-            <table class="mt-6">
-            <thead>
-              <tr>
-                <th><%= t('pages.new_project.wedding_party.bride.firstname_label') %></th>
-                <th><%= t('pages.new_project.wedding_party.bride.lastname_label') %></th>
-                <th><%= t('pages.new_project.wedding_party.groom.firstname_label') %></th>
-                <th><%= t('pages.new_project.wedding_party.groom.lastname_label') %></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><%= project.brideFirstName %></td>
-                <td><%= project.brideLastName %></td>
-                <td><%= project.groomFirstName %></td>
-                <td><%= project.groomLastName %></td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="grid grid-cols-3 gap-6 m-9 text-center">
-            <div class="col-span-1"><%= link_to t('viewProject'), project %></div>
-            <div class="col-span-1"><%= link_to t('editProject'), edit_project_path(project) %></div>
-            <div class="col-span-1"><%= link_to t('deleteProject'), project, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-          </div>
+            <h3 class="mt-6 text-lg font-medium leading-6 text-gray-900"><%= t('pages.new_project.wedding_party.title') %></h3>
+            <table class="mt-3 table-fixed">
+              <thead>
+                <tr>
+                  <th><%= t('pages.new_project.wedding_party.bride.firstname_label') %></th>
+                  <th><%= t('pages.new_project.wedding_party.bride.lastname_label') %></th>
+                  <th><%= t('pages.new_project.wedding_party.groom.firstname_label') %></th>
+                  <th><%= t('pages.new_project.wedding_party.groom.lastname_label') %></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><%= project.brideFirstName %></td>
+                  <td><%= project.brideLastName %></td>
+                  <td><%= project.groomFirstName %></td>
+                  <td><%= project.groomLastName %></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="grid grid-cols-3 gap-6 m-9 text-center text-xl">
+              <div class="col-span-1">
+                <%= link_to project, class: "py-3 px-4 hover:bg-blue-200 hover:text-blue-800 rounded border bg-blue-100" do %>
+                  <i class="fas fa-search mr-3"></i><%= t('viewProject') %>
+                <% end %>
+              </div>
+              <div class="col-span-1">
+                <%= link_to edit_project_path(project), class: "py-3 px-4 hover:bg-green-200 hover:text-green-800 rounded border bg-green-100" do %>
+                  <i class="fas fa-pencil-alt mr-3"></i><%= t('editProject') %>
+                <% end %>
+              </div>
+              <div class="col-span-1">
+                <%= link_to project, method: :delete, data: { confirm: 'Are you sure?' }, class: "py-3 px-4 hover:bg-red-200 hover:text-red-800 rounded border bg-red-100" do %>
+                  <i class="fas fa-trash-alt mr-3"></i><%= t('deleteProject') %>
+                <% end %>
+              </div>
+            </div>
           </li>
         <% end %>
     </ul>
