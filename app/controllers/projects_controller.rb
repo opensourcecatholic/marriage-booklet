@@ -8,6 +8,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1
   def show
+    @projects = Project.all
   end
 
   # GET /projects/new
@@ -18,6 +19,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
+    @projects = Project.all
   end
 
   # POST /projects

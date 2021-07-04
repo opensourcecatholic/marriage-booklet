@@ -87,17 +87,17 @@
             <div class="grid grid-cols-3 gap-6 m-9 text-center text-xl">
               <div class="col-span-1">
                 <%= link_to project, class: "py-3 px-4 hover:bg-blue-200 hover:text-blue-800 rounded border bg-blue-100" do %>
-                  <i class="fas fa-search mr-3"></i><%= t('viewProject') %>
+                  <i class="far fa-eye mr-3"></i><%= t('viewThisProject') %>
                 <% end %>
               </div>
               <div class="col-span-1">
                 <%= link_to edit_project_path(project), class: "py-3 px-4 hover:bg-green-200 hover:text-green-800 rounded border bg-green-100" do %>
-                  <i class="fas fa-pencil-alt mr-3"></i><%= t('editProject') %>
+                  <i class="fas fa-pencil-alt mr-3"></i><%= t('editThisProject') %>
                 <% end %>
               </div>
               <div class="col-span-1">
                 <%= link_to project, method: :delete, data: { confirm: 'Are you sure?' }, class: "py-3 px-4 hover:bg-red-200 hover:text-red-800 rounded border bg-red-100" do %>
-                  <i class="fas fa-trash-alt mr-3"></i><%= t('deleteProject') %>
+                  <i class="fas fa-trash-alt mr-3"></i><%= t('deleteThisProject') %>
                 <% end %>
               </div>
             </div>
