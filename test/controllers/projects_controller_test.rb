@@ -24,13 +24,13 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show project" do
-    get project_url(@project)
-    assert_response :success, locale: 'en'
+    get project_url(@project), locale: 'en'
+    assert_response :success
   end
 
   test "should get edit" do
-    get edit_project_url(@project)
-    assert_response :success, locale: 'en'
+    get edit_project_url(@project), locale: 'en'
+    assert_response :success
   end
 
   test "should update project" do
