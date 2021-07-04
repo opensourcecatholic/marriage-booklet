@@ -87,7 +87,7 @@
             <div class="grid grid-cols-3 gap-6 m-9 text-center text-xl">
               <div class="col-span-1">
                 <%= link_to project, class: "py-3 px-4 hover:bg-blue-200 hover:text-blue-800 rounded border bg-blue-100" do %>
-                  <i class="far fa-eye mr-3"></i><%= t('viewThisProject') %>
+                  <i class="far fa-eye mr-3"></i><%= t('previewThisProject') %>
                 <% end %>
               </div>
               <div class="col-span-1">
@@ -98,6 +98,23 @@
               <div class="col-span-1">
                 <%= link_to project, method: :delete, data: { confirm: 'Are you sure?' }, class: "py-3 px-4 hover:bg-red-200 hover:text-red-800 rounded border bg-red-100" do %>
                   <i class="fas fa-trash-alt mr-3"></i><%= t('deleteThisProject') %>
+                <% end %>
+              </div>
+            </div>
+            <div class="grid grid-cols-6 gap-0 m-9 text-center text-lg">
+              <div class="col-span-1">
+                <%= link_to '#', class: "py-3 px-4 hover:bg-blue-700 text-blue-200 hover:text-blue-100 rounded border bg-blue-900" do %>
+                  <i class="fas fa-file-word mr-3"></i><%= t('generateDOCX') %>
+                <% end %>
+              </div>
+              <div class="col-span-1">
+                <%= link_to '#', class: "py-3 px-4 hover:bg-blue-700 text-blue-200 hover:text-blue-100 rounded border bg-blue-900" do %>
+                  <i class="fas fa-file-pdf mr-3"></i><%= t('generatePDF') %>
+                <% end %>
+              </div>
+              <div class="col-span-1">
+                <%= link_to '#', class: "py-3 px-4 hover:bg-blue-700 text-blue-200 hover:text-blue-100 rounded border bg-blue-900" do %>
+                  <i class="fas fa-file-code mr-3"></i><%= t('generateLatex') %>
                 <% end %>
               </div>
             </div>
