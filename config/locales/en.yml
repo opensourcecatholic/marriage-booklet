@@ -1,8 +1,7 @@
----
 en:
   action-login: Login
   action-register: Register
-  bookletProject: Bookletproject
+  bookletProject: Booklet Project
   date:
     abbr_month_names:
     - 
@@ -36,17 +35,17 @@ en:
     - month
     - day
     - year
-  deleteThisProject: Deletethisproject
-  editThisProject: Editthisproject
-  generateDOCX: Generatedocx
-  generateLatex: Generatelatex
-  generatePDF: Generatepdf
+  deleteThisProject: Delete This Project
+  editThisProject: Edit This Project
+  generateDOCX: Generate DOCX
+  generateLatex: Generate LaTeX
+  generatePDF: Generate PDF
   get-started-link: Get started!
   hello: Hello
   page-title: Our Marriage Booklet
   pages:
     new_project:
-      addWeddingPartyMember: Addweddingpartymember
+      addWeddingPartyMember: Add wedding party member
       celebrant:
         firstname_label: Celebrant First Name
         lastname_label: Celebrant Last Name
@@ -95,20 +94,20 @@ en:
           firstname_label: Maid of honor first name
           lastname_label: Maid of honor last name
         title: Wedding party
-  previewThisProject: Previewthisproject
+  previewThisProject: Preview This Project
   project:
     edit:
       title:
-        editBookletProject: Editbookletproject
+        editBookletProject: Edit Booklet Project
   projects:
     index:
-      myWeddingBookletProjects: Myweddingbookletprojects
-      projectSummary: Projectsummary
+      myWeddingBookletProjects: My Wedding Booklet Projects
+      projectSummary: Project Summary
     new:
-      previewThisProject: Previewthisproject
-      viewYourProjects: Viewyourprojects
+      previewThisProject: Preview This Project
+      viewYourProjects: View Your Projects
     show:
-      editThisProject: Editthisproject
+      editThisProject: Edit This Project
   time:
     formats:
       default: "%I:%M %p"
