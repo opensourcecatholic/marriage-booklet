@@ -4,8 +4,8 @@ const erb = require('./loaders/erb')
 const webpack = require('webpack')
 environment.plugins.prepend('Provide',
     new webpack.ProvidePlugin({
-        $: 'jquery/dist/jquery',
-        jQuery: 'jquery/dist/jquery',
+        $: 'jquery/src/jquery',
+        jQuery: 'jquery/src/jquery',
         I18n: 'i18n-js/app/assets/javascripts/i18n'
     })
 )
