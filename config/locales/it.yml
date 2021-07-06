@@ -1,7 +1,6 @@
----
 it:
-  action-login: Action-login
-  action-register: Action-register
+  action-login: Effettua l'accesso
+  action-register: Reg ìstrati
   date:
     abbr_month_names:
     - 
@@ -32,59 +31,66 @@ it:
     - Novembre
     - Dicembre
     order:
-    - day
-    - month
-    - year
+    - mese
+    - giorno
+    - anno
   get-started-link: Iniziamo!
   page-title: Nostro Libretto Matrimonio
   pages:
     new_project:
       celebrant:
-        firstname_label: Firstname label
-        lastname_label: Lastname label
-        name_prefix_label: Name prefix label
+        firstname_label: Celebrante nome
+        lastname_label: Celebrante cognome
+        name_prefix_label: Celebrante titolo
       ceremony_type:
-        betweenACatholicAndACatechumenOrNonCatholic: Betweenacatholicandacatechumenornoncatholic
-        withMass: Withmass
-        withoutMass: Withoutmass
-      create_project_button: Create project button
+        betweenACatholicAndACatechumenOrNonCatholic: Tra una parte Cattolica e una
+          parte Catecumena o non Cristiana
+        withMass: Con la Messa
+        withoutMass: Senza la Messa
+      create_project_button: Inizia a comporre il libretto!
       email_address:
-        description: Description
-        label: Label
+        description: Il tuo indirizzo di posta elettronica non verrà mai condiviso
+          senza il tuo consenso. I progetti di libretto matrimonio da te creati verranno
+          associati al tuo indirizzo di posta elettronica.
+        label: Mio indirizzo di posta elettronica è
       marriage_date:
-        label: Label
+        label: Il matrimonio avrà luogo il giorno (e alle ore)
       marriage_location:
-        church_label: Church label
-        city_label: City label
+        church_label: La cerimonia verrà celebrata nella chiesa
+        city_label: Il matrimonio avrà luogo a (città)
       person_category:
-        bride: Bride
-        celebrant: Celebrant
-        groom: Groom
-        label: Label
+        bride: Sposa
+        celebrant: Celebrante
+        groom: Sposp
+        label: Io sono
       request_info:
-        description: Description
-        optional_login: Optional login
-        title: Title
-      title: Title
-      typeOfMarriageCeremony: Typeofmarriageceremony
+        description: Compila le informazioni base per avviare la composizione del
+          libretto.
+        optional_login: Se hai già un account, puoi effettuare l'accesso. In questo
+          caso le informazioni immesse in precedenza saranno recuperate. Oppure puoi
+          registrare da subito un account in modo da garantire la privacy del libretto,
+          che verrà associato al tuo account.
+        title: Informazioni dell'utente
+      title: Nuovo progetto di libretto matrimonio
+      typeOfMarriageCeremony: Tipologia della cerimonia
       wedding_party:
         bestman:
-          firstname_label: Firstname label
-          lastname_label: Lastname label
+          firstname_label: Testimone dello sposo nome
+          lastname_label: Testimone dello sposo cognome
         bride:
-          firstname_label: Firstname label
-          lastname_label: Lastname label
-        description: Description
+          firstname_label: Sposa nome
+          lastname_label: Sposa cognome
+        description: Descrivi la composizione del corteo nuziale
         groom:
-          firstname_label: Firstname label
-          lastname_label: Lastname label
+          firstname_label: Sposo nome
+          lastname_label: Sposo cognome
         maidofhonor:
-          firstname_label: Firstname label
-          lastname_label: Lastname label
-        title: Title
+          firstname_label: Testimone della sposa nome
+          lastname_label: Testimone della sposa cognome
+        title: Corteo nuziale
   time:
     formats:
       default: "%H:%M"
-  welcome-greeting-1: Crea il libretto della cerimonia per il tuo Matrimonio Cattolico
-  welcome-greeting-2: Scegli dai testi del rito del matrimonio, insieme al Sacerdote
-    (o diacono) officiante
+  welcome-greeting-1: Crea il libretto di cerimonia per il tuo Matrimonio
+  welcome-greeting-2: Scegli dai testi del rito ufficiale del matrimonio, insieme
+    al Sacerdote (o diacono) officiante
