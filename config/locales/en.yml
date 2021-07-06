@@ -2,6 +2,7 @@
 en:
   action-login: Login
   action-register: Register
+  bookletProject: Bookletproject
   date:
     abbr_month_names:
     - 
@@ -35,16 +36,24 @@ en:
     - month
     - day
     - year
+  deleteThisProject: Deletethisproject
+  editThisProject: Editthisproject
+  generateDOCX: Generatedocx
+  generateLatex: Generatelatex
+  generatePDF: Generatepdf
   get-started-link: Get started!
+  hello: Hello
   page-title: Our Marriage Booklet
   pages:
     new_project:
+      addWeddingPartyMember: Addweddingpartymember
       celebrant:
         firstname_label: Celebrant First Name
         lastname_label: Celebrant Last Name
         name_prefix_label: Celebrant Title
       ceremony_type:
-        betweenACatholicAndACatechumenOrNonCatholic: Between a Catholic and a Catechumen or Non-Christian
+        betweenACatholicAndACatechumenOrNonCatholic: Between a Catholic and a Catechumen
+          or Non-Christian
         withMass: With Mass
         withoutMass: Without Mass
       create_project_button: Start composing the booklet!
@@ -86,6 +95,20 @@ en:
           firstname_label: Maid of honor first name
           lastname_label: Maid of honor last name
         title: Wedding party
+  previewThisProject: Previewthisproject
+  project:
+    edit:
+      title:
+        editBookletProject: Editbookletproject
+  projects:
+    index:
+      myWeddingBookletProjects: Myweddingbookletprojects
+      projectSummary: Projectsummary
+    new:
+      previewThisProject: Previewthisproject
+      viewYourProjects: Viewyourprojects
+    show:
+      editThisProject: Editthisproject
   time:
     formats:
       default: "%I:%M %p"
