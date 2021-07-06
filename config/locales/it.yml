@@ -1,8 +1,7 @@
----
 it:
   action-login: Effettua l'accesso
   action-register: Reg ìstrati
-  bookletProject: Bookletproject
+  bookletProject: Progetto di Libretto
   date:
     abbr_month_names:
     - 
@@ -36,17 +35,17 @@ it:
     - mese
     - giorno
     - anno
-  deleteThisProject: Deletethisproject
-  editThisProject: Editthisproject
-  generateDOCX: Generatedocx
-  generateLatex: Generatelatex
-  generatePDF: Generatepdf
+  deleteThisProject: Elimina questo progetto
+  editThisProject: Modifica questo progetto
+  generateDOCX: Genera DOCX
+  generateLatex: Genera LaTeX
+  generatePDF: Genera PDF
   get-started-link: Iniziamo!
-  hello: Hello
+  hello: Ciao
   page-title: Nostro Libretto Matrimonio
   pages:
     new_project:
-      addWeddingPartyMember: Addweddingpartymember
+      addWeddingPartyMember: Aggiungi altro membro del corteo
       celebrant:
         firstname_label: Celebrante nome
         lastname_label: Celebrante cognome
@@ -97,20 +96,20 @@ it:
           firstname_label: Testimone della sposa nome
           lastname_label: Testimone della sposa cognome
         title: Corteo nuziale
-  previewThisProject: Previewthisproject
+  previewThisProject: Anteprima del progetto
   project:
     edit:
       title:
-        editBookletProject: Editbookletproject
+        editBookletProject: Modifica il progetto
   projects:
     index:
-      myWeddingBookletProjects: Myweddingbookletprojects
-      projectSummary: Projectsummary
+      myWeddingBookletProjects: Miei progetti di libretto matrimoniale
+      projectSummary: Riassunto del progetto
     new:
-      previewThisProject: Previewthisproject
-      viewYourProjects: Viewyourprojects
+      previewThisProject: Anteprima del progetto
+      viewYourProjects: Indice dei progetti
     show:
-      editThisProject: Editthisproject
+      editThisProject: Modifica il progetto
   time:
     formats:
       default: "%H:%M"
