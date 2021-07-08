@@ -32,9 +32,9 @@ it:
     - Novembre
     - Dicembre
     order:
-    - mese
-    - giorno
-    - anno
+    - day
+    - month
+    - year
   deleteThisProject: Elimina questo progetto
   editThisProject: Modifica questo progetto
   generateDOCX: Genera DOCX
