@@ -13,11 +13,4 @@
  *= require_tree .
  *= require_self
  */
-.tangerine {
-    font-family: 'Tangerine', cursive;
-}
 
-label.required::before, legend.required::before {
-    content: "*";
-    padding-right: 3px;
-}
