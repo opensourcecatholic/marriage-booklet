@@ -21,7 +21,7 @@
           <%= link_to '+', new_project_path, { title: t('Create New Booklet Project'), class: "tab-item bg-white inline-block py-2 px-3 border text-gray-500 hover:bg-white hover:text-blue-800 focus:outline-none font-semibold rounded-3xl" } %>
         </li>
     </ul>
-    <ul class="flex tab-contents pb-6 pl-6 pr-6 py-6">
+    <ul class="tab-contents pb-6 pl-6 pr-6 py-6">
         <% @projects.each_with_index do |project, index| %>
           <% if index == 0 then %>
           <li data-tab-content-index="<%= (index).to_s %>">
