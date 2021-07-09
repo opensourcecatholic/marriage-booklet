@@ -1,4 +1,5 @@
 import weddingRingsPath from '../images/wedding-rings.svg';
+import '../src/titleCaps'
 
 $(document).ready(() => {
     const brideFirstName = $('#brideFirstName').val();
