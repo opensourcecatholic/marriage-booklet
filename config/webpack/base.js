@@ -8,4 +8,4 @@ const customConfig = {
     }
 }
 
-module.exports = merge(webpackConfig, customConfig)
+module.exports = merge(webpackConfig, customConfig, erbLoader)
