@@ -39,5 +39,6 @@ module MarriageBooklet
     config.i18n.available_locales = [:en, :it]
     # Set a default locale as fallback in any case
     config.i18n.default_locale = :en
+    config.middleware.use I18n::JS::Middleware
   end
 end
