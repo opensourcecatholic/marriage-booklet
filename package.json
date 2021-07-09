@@ -5,6 +5,7 @@
     "@rails/webpacker": "5.4.0",
     "@tailwindcss/aspect-ratio": "^0.2.1",
     "@tailwindcss/forms": "^0.3.3",
+    "@tailwindcss/line-clamp": "^0.2.1",
     "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^10.2.6",
     "i18n-js": "^3.8.0",
