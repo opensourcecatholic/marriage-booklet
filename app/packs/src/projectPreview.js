@@ -1,3 +1,5 @@
+import weddingRingsPath from '../images/wedding-rings.svg';
+
 $(document).ready(() => {
     const brideFirstName = $('#brideFirstName').val();
     const brideLastName = $('#brideLastName').val();
@@ -25,7 +27,7 @@ $(document).ready(() => {
     console.log(I18n.translations);
 
     let weddingRings = new Image();
-    weddingRings.src = "/assets/wedding-rings.svg";
+    weddingRings.src = weddingRingsPath;
 
     const c = document.getElementById("booklet");
     resizeCanvasToDisplaySize(c);
