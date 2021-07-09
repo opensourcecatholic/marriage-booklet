@@ -24,7 +24,7 @@ environment.plugins.prepend('Provide',
     new webpack.ProvidePlugin({
         $: 'jquery/src/jquery',
         jQuery: 'jquery/src/jquery',
-        I18n: 'i18n-js/app/assets/javascripts/i18n'
+        I18n: '/app/packs/src/i18n-js'
     })
 )
 
