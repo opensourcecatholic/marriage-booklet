@@ -14,11 +14,12 @@ default: &default
 
   # Reload manifest.json on all requests so we reload latest compiled packs
   cache_manifest: false
-
+  #extract_css: true
 
 development:
   <<: *default
   compile: true
+  #extract_css: false
 
   # Reference: https://webpack.js.org/configuration/dev-server/
   dev_server:
@@ -29,7 +30,7 @@ development:
     # Inject browserside javascript that required by both HMR and Live(full) reload
     inject_client: true
     # Hot Module Replacement updates modules while the application is running without a full reload
-    hmr: false
+    hmr: true
     # Inline should be set to true if using HMR; it inserts a script to take care of live reloading
     inline: true
     # Should we show a full-screen overlay in the browser when there are compiler errors or warnings?
