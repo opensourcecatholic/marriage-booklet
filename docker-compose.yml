@@ -1,0 +1,14 @@
+version: '3.3'
+
+services:
+
+  db:
+    image: postgres:12
+    restart: always
+    volumes:
+      - /var/run/postgresql:/var/run/postgresql
+    environment:
+      POSTGRES_DB: marriage_booklet_development
+      POSTGRES_USER: ${MARRIAGE_BOOKLET_DATABASE_USER}
+      POSTGRES_PASSWORD: ${MARRIAGE_BOOKLET_DATABASE_PASSWORD}
+
