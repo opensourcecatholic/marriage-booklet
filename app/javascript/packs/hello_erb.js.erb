@@ -3,4 +3,9 @@
 
 <% name = 'Erb' %>
 
-console.log('Hello world from <%= name %>')
+jQuery(document).ready(() => {
+    $(document).on('click', '#click-me', () => {
+        console.log('Hello world from <%= name %>');
+        alert('Hello world from <%= name %>!');
+    });
+});
