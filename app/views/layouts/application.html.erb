@@ -7,6 +7,12 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_packs_with_chunks_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script>
+      (function(I18n) {
+        I18n.defaultLocale = "<%= I18n.default_locale %>";
+        I18n.locale = "<%= I18n.locale.to_s %>";
+      }(this.I18n = {}))
+    </script>
     <%= javascript_packs_with_chunks_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 

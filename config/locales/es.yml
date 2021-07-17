@@ -5,3 +5,4 @@ es:
     home:
       clickMe: Haz click en mi
       helloWorld: Hola Mundo
+      helloWorldFrom: Hola Mundo desde %{name}!

@@ -12,6 +12,7 @@
     "@tailwindcss/line-clamp": "^0.2.1",
     "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^9",
+    "i18n-js": "^3.8.0",
     "jquery": "^3.6.0",
     "postcss": "^7",
     "rails-erb-loader": "^5.5.2",

@@ -2,10 +2,10 @@
 // like app/views/layouts/application.html.erb. Don't forget to uncomment erb tag after adding it to your layout file.
 
 <% name = 'Erb' %>
-
+I18n = window.I18n;
 jQuery(document).ready(() => {
     $(document).on('click', '#click-me', () => {
-        console.log('Hello world from <%= name %>');
-        alert('Hello world from <%= name %>!');
+        console.log(I18n.t('pages.home.helloWorldFrom', { name: '<%= name %>' }));
+        alert(I18n.t('pages.home.helloWorldFrom', { name: '<%= name %>' }));
     });
 });

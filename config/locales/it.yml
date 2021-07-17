@@ -5,3 +5,4 @@ it:
     home:
       clickMe: Cliccami
       helloWorld: Ciao Mondo
+      helloWorldFrom: Ciao Mondo da %{name}!
