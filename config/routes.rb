@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :users
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get '/:locale' => 'pages#home'
   root to: redirect("/#{I18n.default_locale}"), as: :redirected_root
@@ -7,5 +7,10 @@ Rails.application.routes.draw do
   scope "/:locale" do
     root to: 'pages#home'
     resources :projects
+    resources :users
+    get '/login', to: 'sessions#login'
+    post '/login', to: 'sessions#create'
+    post '/logout', to: 'sessions#destroy'
+    get '/logout', to: 'sessions#destroy'
   end
 end

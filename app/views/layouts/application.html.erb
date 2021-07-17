@@ -17,6 +17,23 @@
   </head>
 
   <body class="bg-black text-blue-400 text-center text-2xl font-sans">
+    <nav class="bg-green-100">
+      <% if logged_in? %>
+        <% case current_user.role.to_sym %>
+        <% when :bride %>
+        <%   icon = "fas fa-female text-red-400" %>
+        <% when :groom %>
+        <%   icon = "fas fa-user-tie text-blue-400" %>
+        <% when :celebrant %>
+        <%   icon = "fas fa-cross text-purple-400" %>
+        <% when :guest %>
+        <%   icon = "fas fa-user-circle text-green-400" %>
+        <% end %>
+        <div><i class="<%= icon %> mr-3"></i><span><%= t('application.welcome') %></span>, <%= current_user.username %></div>
+      <% else %>
+        <div><i class="fas fa-user-alt-slash text-gray-400 mr-3"></i><span><%= t('application.hello') %></span>, <%= t('application.guest') %></div>
+      <% end %>
+    </nav>
     <%= yield %>
   </body>
 </html>

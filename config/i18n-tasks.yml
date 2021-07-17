@@ -131,3 +131,5 @@ search:
 #
 # <%# I18n::Tasks.add_scanner 'I18n::Tasks::Scanners::PatternMapper',
 #       patterns: [['\bSpree\.t[( ]\s*%{key}', 'spree.%{key}']] %>
+<% require './lib/tasks/scan_resource_form_labels.rb' %>
+<% require './lib/tasks/scan_model_enums.rb' %>

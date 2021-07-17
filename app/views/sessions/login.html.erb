@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+<div>
+    <h2>Log In</h2>
+    <%= form_with do |form| %>
+        <div class="field">
+            <%= form.label :username %>
+            <%= form.text_field :username %>
+        </div>
+        <div class="field">
+            <%= form.label :password %>
+            <%= form.password_field :password %>
+        </div>
+        <div class="actions">
+            <%= form.submit %>
+        </div>
+    <% end %>
+</div>
+<%= link_to 'Register', new_user_path %>
+<%= link_to 'Home', root_path %>
