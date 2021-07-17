@@ -1,0 +1,77 @@
+<%= form_with(model: project) do |form| %>
+  <% if project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+        <% project.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :liturgy %>
+    <%= form.select :liturgy, Project.liturgies.keys.map{ |key, value| [ t("activerecord.attributes.project.liturgy_#{key}"), key] } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :weddingdate %>
+    <%= form.datetime_select :weddingdate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :church %>
+    <%= form.text_field :church %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :celebrantNamePrefix %>
+    <%= form.text_field :celebrantNamePrefix %>
+  </div>
+
+  <div class="field">
+    <%= form.label :celebrantFirstName %>
+    <%= form.text_field :celebrantFirstName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :celebrantLastName %>
+    <%= form.text_field :celebrantLastName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :brideFirstName %>
+    <%= form.text_field :brideFirstName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :brideLastName %>
+    <%= form.text_field :brideLastName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :groomFirstName %>
+    <%= form.text_field :groomFirstName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :groomLastName %>
+    <%= form.text_field :groomLastName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :isSecured %>
+    <%= form.check_box :isSecured %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

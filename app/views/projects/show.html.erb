@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Liturgy:</strong>
+  <%= @project.liturgy %>
+</p>
+
+<p>
+  <strong>Weddingdate:</strong>
+  <%= @project.weddingdate %>
+</p>
+
+<p>
+  <strong>Church:</strong>
+  <%= @project.church %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @project.city %>
+</p>
+
+<p>
+  <strong>Celebrantnameprefix:</strong>
+  <%= @project.celebrantNamePrefix %>
+</p>
+
+<p>
+  <strong>Celebrantfirstname:</strong>
+  <%= @project.celebrantFirstName %>
+</p>
+
+<p>
+  <strong>Celebrantlastname:</strong>
+  <%= @project.celebrantLastName %>
+</p>
+
+<p>
+  <strong>Bridefirstname:</strong>
+  <%= @project.brideFirstName %>
+</p>
+
+<p>
+  <strong>Bridelastname:</strong>
+  <%= @project.brideLastName %>
+</p>
+
+<p>
+  <strong>Groomfirstname:</strong>
+  <%= @project.groomFirstName %>
+</p>
+
+<p>
+  <strong>Groomlastname:</strong>
+  <%= @project.groomLastName %>
+</p>
+
+<p>
+  <strong>Issecured:</strong>
+  <%= @project.isSecured %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
