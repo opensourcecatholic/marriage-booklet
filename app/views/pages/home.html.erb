@@ -1,7 +1,7 @@
-<h1>Hello World!</h1>
+<h1><%= t('pages.home.helloWorld') %>!</h1>
 <div class="text-center">
         <button id="click-me" class="p-5 m-4 text-xl text-green-800 bg-green-200 hover:text-green-900 hover:bg-green-100 font-bold uppercase rounded-md inline-block">
-            <i class="fas fa-hand-point-right  mr-3"></i>Click me!
+        <i class="fas fa-hand-point-right  mr-3"></i><%= t('pages.home.clickMe') %>
         </button>
 </div>
 <%= javascript_packs_with_chunks_tag 'hello_erb' %>

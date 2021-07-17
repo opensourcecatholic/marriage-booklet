@@ -31,5 +31,9 @@ module MarriageBooklet
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    # Permitted locales available for the application: start with English, Italian and Spanish
+    config.i18n.available_locales = [:en, :it, :es]
+    # Set a default locale as fallback in any case
+    config.i18n.default_locale = :en
   end
 end

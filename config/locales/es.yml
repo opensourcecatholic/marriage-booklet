@@ -1,0 +1,7 @@
+---
+es:
+  hello: Hello world
+  pages:
+    home:
+      clickMe: Haz click en mi
+      helloWorld: Hola Mundo
