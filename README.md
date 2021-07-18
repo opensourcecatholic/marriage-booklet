@@ -15,6 +15,7 @@ In order to set up the development environment, the following steps will be take
     - [Test for the correct version of ruby](#test-for-the-correct-version-of-ruby)
 - [Install Bundler](#install-bundler)
 - [Install ruby gem dependencies](#install-ruby-gem-dependencies)
+    - [Optionally patch webpacker/dev-server-runner.rb](#optionally-patch-webpackerdev-server-runnerrb)
 - [Check your environment](#check-your-environment)
 - [Load the database schema](#load-the-database-schema)
 - [NodeJS dependencies](#nodejs-dependencies)
@@ -223,12 +224,38 @@ Could not find rack-proxy-0.7.0 in any of the sources
 Run `bundle install` to install missing gems.
 ```
 
-Since we are using the latest stable version of the `webpacker` gem, you can optionally patch `lib/webpacker/dev_server_runner.rb` so as to allow you to use the `webpack-serve` yarn package instead of the `webpack-dev-server` yarn package when running the `bin/webpack-dev-server` binstub:
+##### Optionally patch webpacker/dev-server-runner.rb
+
+Since we are conservatively using the latest **stable** version of the `webpacker` gem, and not the latest **beta** version, you can optionally patch `lib/webpacker/dev_server_runner.rb` so as to allow you to use the `webpack-serve` yarn package instead of the `webpack-dev-server` yarn package when running the `bin/webpack-dev-server` binstub. This patch will already be applied in the **beta** version but it wasn't applied yet for the last **stable** version, so we can apply it manually:
 
 ```bash
 cd $(rbenv prefix)/lib/ruby/gems/3.0.0/gems/webpacker-5.4.0
 curl https://github.com/rails/webpacker/commit/31b7a6f31e38d0d45b0e2ab162f28db1afc5ffac.patch | patch -p1
 ```
+
+> _This patch might fail on the second file that it patches, since the `test/dev_server_runner_test.rb` file has slightly changed since the patch was produced._
+> _You can simply change the relevant lines manually following this diff:_
+> ```diff
+> --- a/test/dev_server_runner_test.rb    2021-07-17 11:55:35.930000000 +0200
+> +++ b/test/dev_server_runner_test.rb    2021-07-17 12:00:16.190000000 +0200
+> @@ -13,13 +13,13 @@
+>    end
+> 
+>    def test_run_cmd_via_node_modules
+> -    cmd = ["#{test_app_path}/node_modules/.bin/webpack-dev-server", "--config", "#{test_app_path}/config/webpack/development.js"]
+> +    cmd = ["#{test_app_path}/node_modules/.bin/webpack", "serve", "--config", "#{test_app_path}/config/webpack/development.js"]
+> 
+>      verify_command(cmd, use_node_modules: true)
+>    end
+> 
+>    def test_run_cmd_via_yarn
+> -    cmd = ["yarn", "webpack-dev-server", "--config", "#{test_app_path}/config/webpack/development.js"]
+> +    cmd = ["yarn", "webpack", "serve", "--config", "#{test_app_path}/config/webpack/development.js"]
+> 
+>      verify_command(cmd, use_node_modules: false)
+>    end
+> ```
+
 
 ### Check your environment
 
