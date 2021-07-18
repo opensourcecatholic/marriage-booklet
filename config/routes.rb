@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     root to: 'pages#home'
     resources :projects
     resources :users
+    resources :wedding_party_members
     get '/login', to: 'sessions#login'
     post '/login', to: 'sessions#create'
     post '/logout', to: 'sessions#destroy'

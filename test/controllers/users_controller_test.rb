@@ -20,7 +20,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
       post users_url, params: { user: { avatar: @user.avatar, email: @user.email, password_digest: @user.password_digest, role: @user.role, username: @user.username } }
     end
 
-    assert_redirected_to user_url(User.last)
+    assert_redirected_to projects_url
   end
 
   test "should show user" do
@@ -35,7 +35,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should update user" do
     patch user_url(@user), params: { user: { avatar: @user.avatar, email: @user.email, password_digest: @user.password_digest, role: @user.role, username: @user.username } }
-    assert_redirected_to user_url(@user)
+    assert_redirected_to projects_url
   end
 
   test "should destroy user" do

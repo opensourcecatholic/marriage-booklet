@@ -1,0 +1,47 @@
+<%= form_with(model: wedding_party_member) do |form| %>
+  <% if wedding_party_member.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(wedding_party_member.errors.count, "error") %> prohibited this wedding_party_member from being saved:</h2>
+
+      <ul>
+        <% wedding_party_member.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :firstName %>
+    <%= form.text_field :firstName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastName %>
+    <%= form.text_field :lastName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :role %>
+    <%= form.select :role, WeddingPartyMember.roles.keys.map{ |key, value| [ t("activerecord.attributes.wedding_party_member.role_#{key}"), key ] } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :relationship %>
+    <%= form.select :relationship, WeddingPartyMember.relationships.keys.map{ |key, value| [ t("activerecord.attributes.wedding_party_member.relationship_#{key}"), key ] } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :relationshipTo %>
+    <%= form.text_field :relationshipTo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :project_id %>
+    <%= form.text_field :project_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
