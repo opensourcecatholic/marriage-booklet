@@ -1,0 +1,50 @@
+name: Verify
+on: [pull_request]
+
+jobs:
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
+    container: node:12.22.3-buster
+
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_PASSWORD: postgres
+        # Set health checks to wait until postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Ruby and install gems
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+        env:
+          ImageOS: ubuntu20 # To satisfy ::error::The environment variable ImageOS must be set
+
+      - name: Setup test database
+        env:
+          RAILS_ENV: test
+          MARRIAGE_BOOKLET_DATABASE_USER: postgres
+          MARRIAGE_BOOKLET_DATABASE_PASSWORD: postgres
+        run: |
+          bin/rails db:setup
+
+      - name: Compile assets
+        env:
+          RAILS_ENV: test
+        run: |
+          yarn install
+          bin/rails webpacker:compile
+
+      - name: Run tests
+        run: |
+          bin/rails test
