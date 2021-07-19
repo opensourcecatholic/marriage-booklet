@@ -64,7 +64,7 @@ jobs:
 
       - name: Setup test database
         run: |
-          bundle exec rails db:setup
+          bundle exec rails db:reset
 
       - name: Compile assets
         run: |
