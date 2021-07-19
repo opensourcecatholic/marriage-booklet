@@ -20,7 +20,7 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
       post projects_url, params: { project: { brideFirstName: @project.brideFirstName, brideLastName: @project.brideLastName, celebrantFirstName: @project.celebrantFirstName, celebrantLastName: @project.celebrantLastName, celebrantNamePrefix: @project.celebrantNamePrefix, church: @project.church, city: @project.city, groomFirstName: @project.groomFirstName, groomLastName: @project.groomLastName, isSecured: @project.isSecured, liturgy: @project.liturgy, weddingdate: @project.weddingdate } }
     end
 
-    assert_redirected_to project_url(Project.last)
+    assert_redirected_to project_url(@project)
   end
 
   test "should show project" do

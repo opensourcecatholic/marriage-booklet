@@ -13,7 +13,7 @@ one:
   groomFirstName: Joseph
   groomLastName: Bethlehem
   isSecured: false
-  users: one, two
+  users: mary, joseph, zechariah
 
 two:
   liturgy: :withoutMass
@@ -28,4 +28,4 @@ two:
   groomFirstName: Joseph
   groomLastName: Bethlehem
   isSecured: false
-  users: one, two
+  users: mary, joseph, zechariah
