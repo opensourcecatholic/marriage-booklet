@@ -1,6 +1,12 @@
 name: Verify
 on: [pull_request]
 
+env:
+  POSTGRES_HOST: localhost
+  RAILS_ENV: test
+  MARRIAGE_BOOKLET_DATABASE_USER: postgres
+  MARRIAGE_BOOKLET_DATABASE_PASSWORD: postgres
+
 jobs:
   tests:
     name: Tests
@@ -10,6 +16,7 @@ jobs:
       postgres:
         image: postgres:12
         env:
+          POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: marriage_booklet_test
         volumes:
@@ -62,16 +69,10 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
 
       - name: Setup test database
-        env:
-          RAILS_ENV: test
-          MARRIAGE_BOOKLET_DATABASE_USER: postgres
-          MARRIAGE_BOOKLET_DATABASE_PASSWORD: postgres
         run: |
           bundle exec rails db:setup
 
       - name: Compile assets
-        env:
-          RAILS_ENV: test
         run: |
           yarn install
           bundle exec rails webpacker:compile
