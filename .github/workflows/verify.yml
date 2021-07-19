@@ -21,6 +21,8 @@ jobs:
           POSTGRES_DB: marriage_booklet_test
         ports:
           - 5432:5432
+        volumes:
+          - /var/run/postgresql:/var/run/postgresql
         # Set health checks to wait until postgres has started
         options: >-
           --health-cmd pg_isready
