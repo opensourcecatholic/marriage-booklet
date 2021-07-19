@@ -95,13 +95,30 @@ cd marriage-booklet
 The project will now be cloned in a **marriage-booklet** subfolder of the **development** folder.
 
 ##### PostgreSQL in a docker container
-A `docker-compose.yml` file has been included in the repo, if you prefer to use a docker container as your **PostgreSQL** instance. First, create (in the project's main directory, alongside docker-compose.yml) an `.env` file with the following two environment variables:
+A `docker-compose.yml` file has been included in the repo, if you prefer to use a docker container as your **PostgreSQL** instance. First, create (in the project's main directory, alongside docker-compose.yml) an `.env` file with the following environment variables:
 ```diff
 MARRIAGE_BOOKLET_DATABASE_USER="marriage_booklet"
 MARRIAGE_BOOKLET_DATABASE_PASSWORD="[password-here]"
+ADMINER_PORT=8080
 ```
 
-Run `docker-compose up` in one terminal window to spin up the **PostgreSQL** instance, which should now be available on the unix socket.
+An instance of [Adminer](https://www.adminer.org/) has been included in the **docker compose** file, so as to offer a tool that can help inspect the database and the tables.
+You may change the port in the `.env` file to your liking.
+
+Running `docker-compose up` should spin up the **PostgreSQL** instance, which will now be available on the unix socket.
+
+And you should get the **Adminer** interface at `http://localhost:[ADMINER_PORT]` (for example, `http://localhost:8080`).
+You can log into the adminer interface with:
+
+|          |          |
+|:---------|:---------|
+|System    |PostgreSQL|
+|Server    |db        |
+|Username  |[MARRIAGE_BOOKLET_DATABASE_USER]    |
+|Password  |[MARRIAGE_BOOKLET_DATABASE_PASSWORD]|
+|Database  |marriage_booklet_development        |
+
+(Switch out Username and Password with whatever you put in the `.env` file.)
 
 ### Install Ruby
 
