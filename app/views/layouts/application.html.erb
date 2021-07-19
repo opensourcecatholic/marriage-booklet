@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MarriageBooklet</title>
+    <title><%= t('page-title') %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -14,9 +14,16 @@
       }(this.I18n = {}))
     </script>
     <%= javascript_packs_with_chunks_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+
   </head>
 
   <body class="bg-black text-blue-400 text-center text-2xl font-sans">
+    <% unless current_page?(root_path) %>
     <nav class="bg-green-100">
       <% if logged_in? %>
         <% case current_user.role.to_sym %>
@@ -34,6 +41,7 @@
         <div><i class="fas fa-user-alt-slash text-gray-400 mr-3"></i><span><%= t('application.hello') %></span>, <%= t('application.guest') %></div>
       <% end %>
     </nav>
+    <% end %>
     <%= yield %>
   </body>
 </html>

@@ -29,6 +29,11 @@ en:
         role_guest: Role guest
         username: Username
       wedding_party_member:
+        firstName: Firstname
+        lastName: Lastname
+        project_id: Project
+        relationship: Relationship
+        relationshipTo: Relationshipto
         relationship_aunt: Relationship aunt
         relationship_brother: Relationship brother
         relationship_cousin: Relationship cousin
@@ -51,6 +56,7 @@ en:
         relationship_stepsister: Relationship stepsister
         relationship_uncle: Relationship uncle
         relationship_undefined: Relationship undefined
+        role: Role
         role_bestman: Role bestman
         role_bridesmaid: Role bridesmaid
         role_fatherbride: Role fatherbride
@@ -66,9 +72,13 @@ en:
     guest: Guest
     hello: Hello
     welcome: Welcome
+  get-started-link: Get-started-link
   hello: Hello world
+  page-title: Page-title
   pages:
     home:
       clickMe: Click me
       helloWorld: Hello World
       helloWorldFrom: Hello World from %{name}!
+  welcome-greeting-1: Welcome-greeting-1
+  welcome-greeting-2: Welcome-greeting-2
