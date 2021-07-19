@@ -62,6 +62,10 @@ jobs:
           path: ${{ steps.yarn-cache.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
 
+      - name: Enable pgcrypto extension
+        run: |
+          PGPASSWORD=postgres psql -U postgres -tc "CREATE EXTENSION 'pgcrypto';"
+
       - name: Setup test database
         run: |
           bundle exec rails db:reset
