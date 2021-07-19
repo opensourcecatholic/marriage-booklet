@@ -1,84 +1,85 @@
----
 it:
   activerecord:
     attributes:
       project:
-        brideFirstName: Bridefirstname
-        brideLastName: Bridelastname
-        celebrantFirstName: Celebrantfirstname
-        celebrantLastName: Celebrantlastname
-        celebrantNamePrefix: Celebrantnameprefix
-        church: Church
-        city: City
-        groomFirstName: Groomfirstname
-        groomLastName: Groomlastname
-        isSecured: Issecured
-        liturgy: Liturgy
-        liturgy_catholicNonCatholic: Liturgy catholicnoncatholic
-        liturgy_withMass: Liturgy withmass
-        liturgy_withoutMass: Liturgy withoutmass
-        weddingdate: Weddingdate
+        brideFirstName: Nome sposa
+        brideLastName: Cognome sposa
+        celebrantFirstName: Nome celebrante
+        celebrantLastName: Cognome celebrante
+        celebrantNamePrefix: Titolo celebrante
+        church: Chiesa
+        city: Città
+        groomFirstName: Nome sposo
+        groomLastName: Cognome sposo
+        isSecured: Privato
+        liturgy: Liturgia
+        liturgy_catholicNonCatholic: Tra una parte cattolica e una parte catecumena
+          o non cristiana
+        liturgy_withMass: Nella celebrazione eucaristica
+        liturgy_withoutMass: Nella celebrazione della Parola
+        weddingdate: Data del matrimonio
       user:
         avatar: Avatar
-        email: Email
+        email: Posta elettronica
         password: Password
-        role: Role
-        role_bride: Role bride
-        role_celebrant: Role celebrant
-        role_groom: Role groom
-        role_guest: Role guest
-        username: Username
+        role: Ruolo
+        role_bride: Sposa
+        role_celebrant: Celebrante
+        role_groom: Sposo
+        role_guest: Ospite
+        username: Nome utente
       wedding_party_member:
-        firstName: Firstname
-        lastName: Lastname
-        project_id: Project
-        relationship: Relationship
-        relationshipTo: Relationshipto
-        relationship_aunt: Relationship aunt
-        relationship_brother: Relationship brother
-        relationship_cousin: Relationship cousin
-        relationship_father: Relationship father
-        relationship_friend: Relationship friend
-        relationship_grandfather: Relationship grandfather
-        relationship_grandmother: Relationship grandmother
-        relationship_greataunt: Relationship greataunt
-        relationship_greatgrandfather: Relationship greatgrandfather
-        relationship_greatgrandmother: Relationship greatgrandmother
-        relationship_greatuncle: Relationship greatuncle
-        relationship_mother: Relationship mother
-        relationship_nephew: Relationship nephew
-        relationship_niece: Relationship niece
-        relationship_relative: Relationship relative
-        relationship_sister: Relationship sister
-        relationship_stepbrother: Relationship stepbrother
-        relationship_stepfather: Relationship stepfather
-        relationship_stepmother: Relationship stepmother
-        relationship_stepsister: Relationship stepsister
-        relationship_uncle: Relationship uncle
-        relationship_undefined: Relationship undefined
-        role: Role
-        role_bestman: Role bestman
-        role_bridesmaid: Role bridesmaid
-        role_fatherbride: Role fatherbride
-        role_fathergroom: Role fathergroom
-        role_flowergirl: Role flowergirl
-        role_groomsman: Role groomsman
-        role_maidofhonor: Role maidofhonor
-        role_matronofhonor: Role matronofhonor
-        role_motherbride: Role motherbride
-        role_mothergroom: Role mothergroom
-        role_ringbearer: Role ringbearer
+        firstName: Nome
+        lastName: Cognome
+        project_id: Progetto
+        relationship: Tipo di relazione
+        relationshipTo: Con
+        relationship_aunt: Zia
+        relationship_brother: Fratello
+        relationship_cousin: Cugino/a
+        relationship_father: Padre
+        relationship_friend: Amico/a
+        relationship_grandfather: Nonno
+        relationship_grandmother: Nonna
+        relationship_greataunt: Pro-zia
+        relationship_greatgrandfather: Bisnonno
+        relationship_greatgrandmother: Bisnonna
+        relationship_greatuncle: Pro-zio
+        relationship_mother: Madre
+        relationship_nephew: Nipote
+        relationship_niece: Nipote
+        relationship_relative: Parente
+        relationship_sister: Sorella
+        relationship_stepbrother: Fratellastro
+        relationship_stepfather: Patrigno
+        relationship_stepmother: Matrigna
+        relationship_stepsister: Sorellastra
+        relationship_uncle: Zio
+        relationship_undefined: '---'
+        role: Ruolo
+        role_bestman: '---'
+        role_bridesmaid: Testimone della sposa
+        role_fatherbride: Padre della sposa
+        role_fathergroom: Padre dello sposo
+        role_flowergirl: '---'
+        role_groomsman: Testimone dello sposo
+        role_maidofhonor: '---'
+        role_matronofhonor: '---'
+        role_motherbride: Madre della sposa
+        role_mothergroom: Madre dello sposo
+        role_ringbearer: Portatore di anelli
   application:
-    guest: Guest
-    hello: Hello
-    welcome: Welcome
-  get-started-link: Get-started-link
-  hello: Hello world
-  page-title: Page-title
+    guest: Ospite
+    hello: Ciao
+    welcome: Benvenuto/a
+  get-started-link: Iniziamo!
+  hello: Ciao mondo
+  page-title: Nostro Libretto Matrimonio
   pages:
     home:
       clickMe: Cliccami
       helloWorld: Ciao Mondo
       helloWorldFrom: Ciao Mondo da %{name}!
-  welcome-greeting-1: Welcome-greeting-1
-  welcome-greeting-2: Welcome-greeting-2
+  welcome-greeting-1: Crea il libretto di cerimonia per il tuo Matrimonio
+  welcome-greeting-2: Scegli dai testi del rito ufficiale del matrimonio, insieme
+    al Sacerdote (o diacono) officiante

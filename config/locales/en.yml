@@ -13,7 +13,7 @@ en:
         groomLastName: Groom last name
         isSecured: is Private
         liturgy: Liturgy
-        liturgy_catholicNonCatholic: "Between a Catholic and a\nCatechumen or a Non-Christian"
+        liturgy_catholicNonCatholic: "Between a Catholic and a Catechumen or a Non-Christian"
         liturgy_withMass: Within Mass
         liturgy_withoutMass: Without Mass
         weddingdate: Wedding date
@@ -73,7 +73,7 @@ en:
     welcome: Welcome
   get-started-link: Get started!
   hello: Hello world
-  page-title: Marriage Booklet Assistant
+  page-title: Our Wedding Booklet
   pages:
     home:
       clickMe: Click me
