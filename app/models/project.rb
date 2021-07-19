@@ -6,4 +6,5 @@ class Project < ApplicationRecord
     left_outer_joins(:users)
     .where(projects_users: { project_id: nil })
   }
+  accepts_nested_attributes_for :users, :wedding_party_members, allow_destroy: true
 end
