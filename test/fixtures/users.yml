@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-mary:
+one:
   username: mary_nazareth
   email: mary@virgins.net
   role: :bride
   avatar: MyString
   password_digest: MyString
 
-joseph:
+two:
   username: joseph_bethlehem
   email: joseph@carpenters.org
   role: :groom
