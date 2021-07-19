@@ -1,22 +1,38 @@
+---
 en:
+  action-login: Action-login
+  action-register: Action-register
   activerecord:
     attributes:
       project:
         brideFirstName: Bride name
+        'brideFirstName, class: "block text-sm font-medium text-gray-700 required", autocomplete: ''off''': 'Bridefirstname, class: "block text-sm font-medium text-gray-700 required", autocomplete: ''off'''
         brideLastName: Bride last name
+        'brideLastName, class: "block text-sm font-medium text-gray-700 required", autocomplete: ''off''': 'Bridelastname, class: "block text-sm font-medium text-gray-700 required", autocomplete: ''off'''
         celebrantFirstName: Celebrant name
+        'celebrantFirstName, class: "block text-sm font-medium text-gray-700 required", autocomplete: ''off''': 'Celebrantfirstname, class: "block text-sm font-medium text-gray-700 required", autocomplete: ''off'''
         celebrantLastName: Celebrant last name
+        'celebrantLastName, class: "block text-sm font-medium text-gray-700 required", autocomplete: ''off''': 'Celebrantlastname, class: "block text-sm font-medium text-gray-700 required", autocomplete: ''off'''
         celebrantNamePrefix: Celebrant title
+        'celebrantNamePrefix, class: "block text-sm font-medium text-gray-700 required"': 'Celebrantnameprefix, class: "block text-sm font-medium text-gray-700 required"'
         church: Church
+        'church, class: "block text-sm font-medium text-gray-700 required"': 'Church, class: "block text-sm font-medium text-gray-700 required"'
         city: City
+        'city, class: "block text-sm font-medium text-gray-700"': 'City, class: "block text-sm font-medium text-gray-700"'
+        'email, class: "block text-sm font-medium text-gray-700"': 'Email, class: "block text-sm font-medium text-gray-700"'
         groomFirstName: Groom name
+        'groomFirstName, class: "block text-sm font-medium text-gray-700 required", autocomplete: ''off''': 'Groomfirstname, class: "block text-sm font-medium text-gray-700 required", autocomplete: ''off'''
         groomLastName: Groom last name
+        'groomLastName, class: "block text-sm font-medium text-gray-700 required", autocomplete: ''off''': 'Groomlastname, class: "block text-sm font-medium text-gray-700 required", autocomplete: ''off'''
         isSecured: is Private
         liturgy: Liturgy
-        liturgy_catholicNonCatholic: "Between a Catholic and a Catechumen or a Non-Christian"
+        'liturgy, class: "block text-sm font-medium text-gray-700 required"': 'Liturgy, class: "block text-sm font-medium text-gray-700 required"'
+        liturgy_catholicNonCatholic: Between a Catholic and a Catechumen or a Non-Christian
         liturgy_withMass: Within Mass
         liturgy_withoutMass: Without Mass
+        'role, class: "block text-sm font-medium text-gray-700 required"': 'Role, class: "block text-sm font-medium text-gray-700 required"'
         weddingdate: Wedding date
+        'weddingdate, class: "block text-sm font-medium text-gray-700 required"': 'Weddingdate, class: "block text-sm font-medium text-gray-700 required"'
       user:
         avatar: Avatar
         email: Email
@@ -54,7 +70,7 @@ en:
         relationship_stepmother: Stepmother
         relationship_stepsister: Stepsister
         relationship_uncle: Uncle
-        relationship_undefined: '---'
+        relationship_undefined: "---"
         role: Role
         role_bestman: Best man
         role_bridesmaid: Bridesmaid
@@ -79,6 +95,41 @@ en:
       clickMe: Click me
       helloWorld: Hello World
       helloWorldFrom: Hello World from %{name}!
+    projectNew:
+      addWeddingPartyMember: Addweddingpartymember
+      celebrantFirstName:
+        placeholder: Placeholder
+      celebrantLastName:
+        placeholder: Placeholder
+      celebrantPrefix:
+        bishop: Bishop
+        bishopFull: Bishopfull
+        cardinal: Cardinal
+        cardinalFull: Cardinalfull
+        deacon: Deacon
+        deaconAbbr: Deaconabbr
+        father: Father
+        fatherAbbr: Fatherabbr
+        monsignor: Monsignor
+        monsignorAbbr: Monsignorabbr
+        reverend: Reverend
+        reverendAbbr: Reverendabbr
+      create_project_button: Create project button
+      email_address:
+        description: Description
+      marriage_location:
+        church_placeholder: Church placeholder
+        city_placeholder: City placeholder
+      person_category:
+        label: Label
+      request_info:
+        description: Description
+        optional_login: Optional login
+        title: Title
+      title: Title
+      viewYourProjects: Viewyourprojects
+      wedding_party:
+        description: Description
+        title: Title
   welcome-greeting-1: Create the booklet for your Catholic Wedding ceremony
-  welcome-greeting-2: Choose the texts from the official Rite of Marriage, together
-    with the celebrant
+  welcome-greeting-2: Choose the texts from the official Rite of Marriage, together with the celebrant

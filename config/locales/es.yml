@@ -1,23 +1,38 @@
 ---
 es:
+  action-login: Action-login
+  action-register: Action-register
   activerecord:
     attributes:
       project:
         brideFirstName: Bridefirstname
+        'brideFirstName, class: "block text-sm font-medium text-gray-700 required", autocomplete: ''off''': 'Bridefirstname, class: "block text-sm font-medium text-gray-700 required", autocomplete: ''off'''
         brideLastName: Bridelastname
+        'brideLastName, class: "block text-sm font-medium text-gray-700 required", autocomplete: ''off''': 'Bridelastname, class: "block text-sm font-medium text-gray-700 required", autocomplete: ''off'''
         celebrantFirstName: Celebrantfirstname
+        'celebrantFirstName, class: "block text-sm font-medium text-gray-700 required", autocomplete: ''off''': 'Celebrantfirstname, class: "block text-sm font-medium text-gray-700 required", autocomplete: ''off'''
         celebrantLastName: Celebrantlastname
+        'celebrantLastName, class: "block text-sm font-medium text-gray-700 required", autocomplete: ''off''': 'Celebrantlastname, class: "block text-sm font-medium text-gray-700 required", autocomplete: ''off'''
         celebrantNamePrefix: Celebrantnameprefix
+        'celebrantNamePrefix, class: "block text-sm font-medium text-gray-700 required"': 'Celebrantnameprefix, class: "block text-sm font-medium text-gray-700 required"'
         church: Church
+        'church, class: "block text-sm font-medium text-gray-700 required"': 'Church, class: "block text-sm font-medium text-gray-700 required"'
         city: City
+        'city, class: "block text-sm font-medium text-gray-700"': 'City, class: "block text-sm font-medium text-gray-700"'
+        'email, class: "block text-sm font-medium text-gray-700"': 'Email, class: "block text-sm font-medium text-gray-700"'
         groomFirstName: Groomfirstname
+        'groomFirstName, class: "block text-sm font-medium text-gray-700 required", autocomplete: ''off''': 'Groomfirstname, class: "block text-sm font-medium text-gray-700 required", autocomplete: ''off'''
         groomLastName: Groomlastname
+        'groomLastName, class: "block text-sm font-medium text-gray-700 required", autocomplete: ''off''': 'Groomlastname, class: "block text-sm font-medium text-gray-700 required", autocomplete: ''off'''
         isSecured: Issecured
         liturgy: Liturgy
+        'liturgy, class: "block text-sm font-medium text-gray-700 required"': 'Liturgy, class: "block text-sm font-medium text-gray-700 required"'
         liturgy_catholicNonCatholic: Liturgy catholicnoncatholic
         liturgy_withMass: Liturgy withmass
         liturgy_withoutMass: Liturgy withoutmass
+        'role, class: "block text-sm font-medium text-gray-700 required"': 'Role, class: "block text-sm font-medium text-gray-700 required"'
         weddingdate: Weddingdate
+        'weddingdate, class: "block text-sm font-medium text-gray-700 required"': 'Weddingdate, class: "block text-sm font-medium text-gray-700 required"'
       user:
         avatar: Avatar
         email: Email
@@ -80,5 +95,41 @@ es:
       clickMe: Haz click en mi
       helloWorld: Hola Mundo
       helloWorldFrom: Hola Mundo desde %{name}!
+    projectNew:
+      addWeddingPartyMember: Addweddingpartymember
+      celebrantFirstName:
+        placeholder: Placeholder
+      celebrantLastName:
+        placeholder: Placeholder
+      celebrantPrefix:
+        bishop: Bishop
+        bishopFull: Bishopfull
+        cardinal: Cardinal
+        cardinalFull: Cardinalfull
+        deacon: Deacon
+        deaconAbbr: Deaconabbr
+        father: Father
+        fatherAbbr: Fatherabbr
+        monsignor: Monsignor
+        monsignorAbbr: Monsignorabbr
+        reverend: Reverend
+        reverendAbbr: Reverendabbr
+      create_project_button: Create project button
+      email_address:
+        description: Description
+      marriage_location:
+        church_placeholder: Church placeholder
+        city_placeholder: City placeholder
+      person_category:
+        label: Label
+      request_info:
+        description: Description
+        optional_login: Optional login
+        title: Title
+      title: Title
+      viewYourProjects: Viewyourprojects
+      wedding_party:
+        description: Description
+        title: Title
   welcome-greeting-1: Welcome-greeting-1
   welcome-greeting-2: Welcome-greeting-2

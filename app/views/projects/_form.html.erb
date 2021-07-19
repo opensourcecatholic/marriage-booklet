@@ -11,67 +11,140 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :liturgy %>
-    <%= form.select :liturgy, Project.liturgies.keys.map{ |key, value| [ t("activerecord.attributes.project.liturgy_#{key}"), key] } %>
+  <div class="md:grid md:grid-cols-3 md:gap-6 bg-gray-200 p-9 mx-4"><!-- Inner wrapper for title + card start -->
+    <div class="md:col-span-1"><!-- Title before card start -->
+      <div class="px-4 sm:px-0">
+        <h3 class="text-lg font-medium leading-6 text-gray-900"><%= t('pages.projectNew.request_info.title') %></h3> <!-- User info -->
+        <p class="mt-1 text-sm text-gray-600">
+          <%= t('pages.projectNew.request_info.description') %> <!-- Please fill in some information needed for composing the booklet. -->
+        </p>
+        <% unless logged_in? %>
+        <hr class="m-4 border-gray-400">
+        <p class="mt-1 text-sm text-gray-500 italic">
+          <%= t('pages.projectNew.request_info.optional_login') %> <!-- If you already created an account, you may login instead. In that case any previously entered information will be retrieved. Or you can go ahead and register an account right away if you would like your project to be associated with your account. -->
+        </p>
+        <div class="text-center p-4 md:grid md:grid-cols-2 md:gap-3">
+          <%= link_to t('action-login'), login_path, class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+          <%= link_to t('action-register'), new_user_path, class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+        </div>
+        <% end %>
+      </div>
+    </div><!-- Title before card end -->
+    <div class="mt-5 md:mt-0 md:col-span-2"><!-- Card outer wrapper start -->
+      <div class="shadow sm:rounded-md sm:overflow-hidden"><!-- Card inner wrapper start -->
+        <div class="px-4 py-5 bg-white space-y-6 sm:p-6"><!-- Card content start -->
+
+          <% unless logged_in? %>
+          <%= form.fields_for :users do |f| %>
+          <fieldset><!-- Category person block start -->
+          <legend class="text-base font-medium text-gray-900 required"><%= t('pages.projectNew.person_category.label') %> <!-- You are: --></legend>
+          </fieldset><!-- Person category block end -->
+          <div class="grid grid-cols-4 gap-6"><!-- Email address block start -->
+            <div class="col-span-2 sm:col-span-1">
+              <%= f.label :role, class: "block text-sm font-medium text-gray-700 required" %>
+              <%= f.select :role, User.roles.keys.map{ |key, value| [ t("activerecord.attributes.user.role_#{key}"), key ] }, {}, { class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight" } %>
+            </div>
+            <div class="col-span-2 sm:col-span-3">
+              <%= f.label :email, class: "block text-sm font-medium text-gray-700" %>
+              <%= f.text_field :email, class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight", placeholder: "me@example.com" %>
+              <p class="mt-2 text-sm text-gray-500 italic">
+                <%= t('pages.projectNew.email_address.description') %> <!-- Your email address will never be shared without your permission. Wedding booklet projects you create will be associated with your email address.  -->
+              </p>
+            </div>
+          </div><!-- Email address block end -->
+          <% end %>
+          <% end %>
+
+
+          <div class="grid grid-cols-4 gap-6"><!-- Marriage date block start -->
+            <div class="col-span-4 sm:col-span-1 field">
+              <%= form.label :liturgy, class: "block text-sm font-medium text-gray-700 required" %>
+              <%= form.select :liturgy, Project.liturgies.keys.map{ |key, value| [ t("activerecord.attributes.project.liturgy_#{key}"), key] }, {}, { class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight" } %>
+            </div>
+            <div class="col-span-4 sm:col-span-3 field">
+              <%= form.label :weddingdate, class: "block text-sm font-medium text-gray-700 required" %>
+              <% if I18n.locale == :en then %>
+              <%= form.datetime_select :weddingdate, { ampm: true }, { class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 shadow-sm sm:text-sm border-gray-300 rounded-md" } %>
+              <% else %>
+              <%= form.datetime_select :weddingdate, { ampm: false }, { class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 shadow-sm sm:text-sm border-gray-300 rounded-md" } %>
+              <% end %>
+            </div>
+          </div><!--Marriage date block end -->
+          <div class="grid grid-cols-4 gap-6"><!-- Marriage location church block start -->
+            <div class="col-span-4 sm:col-span-2 field">
+              <%= form.label :church, class: "block text-sm font-medium text-gray-700 required" %>
+              <%= form.text_field :church, class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight", placeholder: t('pages.projectNew.marriage_location.church_placeholder') %>
+            </div>
+            <div class="col-span-4 sm:col-span-2 field">
+              <%= form.label :city, class: "block text-sm font-medium text-gray-700" %>
+              <%= form.text_field :city, class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight", placeholder: t('pages.projectNew.marriage_location.city_placeholder') %>
+            </div>
+          </div><!--Marriage location block end -->
+          <div class="grid grid-cols-6 gap-6">
+            <div class="col-span-6 sm:col-span-2 field">
+              <%= form.label :celebrantNamePrefix, class: "block text-sm font-medium text-gray-700 required" %>
+              <%= form.select :celebrantNamePrefix, [[t("pages.projectNew.celebrantPrefix.deacon"),t("pages.projectNew.celebrantPrefix.deaconAbbr")],[t("pages.projectNew.celebrantPrefix.father"), t("pages.projectNew.celebrantPrefix.fatherAbbr")],[t("pages.projectNew.celebrantPrefix.reverend"), t("pages.projectNew.celebrantPrefix.reverendAbbr")],[t("pages.projectNew.celebrantPrefix.monsignor"), t("pages.projectNew.celebrantPrefix.monsignorAbbr")],[t("pages.projectNew.celebrantPrefix.bishop"),t("pages.projectNew.celebrantPrefix.bishopFull")],[t("pages.projectNew.celebrantPrefix.cardinal"),t("pages.projectNew.celebrantPrefix.cardinalFull")]], { selected: t("pages.projectNew.celebrantPrefix.cardinalFull") }, { class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" } %>
+            </div>
+            <div class="col-span-6 sm:col-span-2 field">
+              <%= form.label :celebrantFirstName, class: "block text-sm font-medium text-gray-700 required", autocomplete: 'off' %>
+              <%= form.text_field :celebrantFirstName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md", placeholder: t('pages.projectNew.celebrantFirstName.placeholder') %>
+            </div>
+            <div class="col-span-6 sm:col-span-2 field">
+              <%= form.label :celebrantLastName, class: "block text-sm font-medium text-gray-700 required", autocomplete: 'off' %>
+              <%= form.text_field :celebrantLastName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md", placeholder: t('pages.projectNew.celebrantLastName.placeholder') %>
+            </div>
+          </div>
+        </div><!-- Card content end -->
+      </div><!-- Card inner wrapper end -->
+    </div><!-- Card outer wrapper end -->
+  </div><!-- Inner wrapper for title + card end -->
+
+  <div class="hidden sm:block" aria-hidden="true">
+    <div class="py-5">
+      <div class="border-t border-gray-200"></div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :weddingdate %>
-    <%= form.datetime_select :weddingdate %>
+
+  <div class="mt-10 sm:mt-0 md:grid md:grid-cols-3 md:gap-6 bg-gray-200 p-9 mx-4">
+    <div class="md:col-span-1">
+      <div class="px-4 sm:px-0">
+        <h3 class="text-lg font-medium leading-6 text-gray-900"><%= t('pages.projectNew.wedding_party.title') %></h3><!-- Wedding party -->
+        <p class="mt-1 text-sm text-gray-600">
+          <%= t('pages.projectNew.wedding_party.description') %><!-- C -->
+        </p>
+      </div>
+    </div>
+    <div class="mt-5 md:mt-0 md:col-span-2">
+      <div class="shadow overflow-hidden sm:rounded-md">
+        <div class="px-4 py-5 bg-white sm:p-6">
+          <div class="grid grid-cols-6 gap-6">
+            <div class="col-span-6 sm:col-span-3 field">
+              <%= form.label :brideFirstName, class: "block text-sm font-medium text-gray-700 required", autocomplete: 'off' %>
+              <%= form.text_field :brideFirstName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
+            </div>
+            <div class="col-span-6 sm:col-span-3 field">
+              <%= form.label :brideLastName, class: "block text-sm font-medium text-gray-700 required", autocomplete: 'off' %>
+              <%= form.text_field :brideLastName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
+            </div>
+            <div class="col-span-6 sm:col-span-3">
+              <%= form.label :groomFirstName, class: "block text-sm font-medium text-gray-700 required", autocomplete: 'off' %>
+              <%= form.text_field :groomFirstName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
+            </div>
+            <div class="col-span-6 sm:col-span-3">
+              <%= form.label :groomLastName, class: "block text-sm font-medium text-gray-700 required", autocomplete: 'off' %>
+              <%= form.text_field :groomLastName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
+            </div>
+            <div class="text-center col-span-6 sm:col-span-6 border-t-2 border-dotted">
+              <button type="button" id="addWeddingPartyMember" class="p-3 m-3 text-md text-blue-500 bg-blue-100 hover:bg-blue-200 hover:text-blue-800 font-bold uppercase rounded-md outline-none inline-block focus:outline-none">+ <%= t('pages.projectNew.addWeddingPartyMember') %></button>
+            </div>
+          </div>
+        </div>
+        <div class="px-4 py-3 bg-gray-50 text-right sm:px-6 actions">
+          <%= form.submit t('pages.projectNew.create_project_button'), class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :church %>
-    <%= form.text_field :church %>
-  </div>
-
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city %>
-  </div>
-
-  <div class="field">
-    <%= form.label :celebrantNamePrefix %>
-    <%= form.text_field :celebrantNamePrefix %>
-  </div>
-
-  <div class="field">
-    <%= form.label :celebrantFirstName %>
-    <%= form.text_field :celebrantFirstName %>
-  </div>
-
-  <div class="field">
-    <%= form.label :celebrantLastName %>
-    <%= form.text_field :celebrantLastName %>
-  </div>
-
-  <div class="field">
-    <%= form.label :brideFirstName %>
-    <%= form.text_field :brideFirstName %>
-  </div>
-
-  <div class="field">
-    <%= form.label :brideLastName %>
-    <%= form.text_field :brideLastName %>
-  </div>
-
-  <div class="field">
-    <%= form.label :groomFirstName %>
-    <%= form.text_field :groomFirstName %>
-  </div>
-
-  <div class="field">
-    <%= form.label :groomLastName %>
-    <%= form.text_field :groomLastName %>
-  </div>
-
-  <div class="field">
-    <%= form.label :isSecured %>
-    <%= form.check_box :isSecured %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
