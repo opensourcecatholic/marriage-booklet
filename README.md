@@ -103,9 +103,10 @@ ADMINER_PORT=8080
 ```
 
 An instance of [Adminer](https://www.adminer.org/) has been included in the **docker compose** file, so as to offer a tool that can help inspect the database and the tables.
-You may change the port in the `.env` file to your liking.
+You may change the port in the `.env` file to your liking. If you do not supply the `ADMINER_PORT` environment variable,
+the adminer instance will default to port **8080**.
 
-Running `docker-compose up` should spin up the **PostgreSQL** instance, which will now be available on the unix socket.
+Now running `docker-compose up` should spin up the **PostgreSQL** instance, which will become available on the unix socket.
 
 And you should get the **Adminer** interface at `http://localhost:[ADMINER_PORT]` (for example, `http://localhost:8080`).
 You can log into the adminer interface with:
