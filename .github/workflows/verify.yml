@@ -14,13 +14,15 @@ jobs:
 
     services:
       postgres:
-        image: postgres:12
+        image: postgres:13
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: marriage_booklet_test
         ports:
           - 5432:5432
+        volumes:
+          - /var/run/postgresql:/var/run/postgresql
         # Set health checks to wait until postgres has started
         options: >-
           --health-cmd pg_isready
@@ -43,12 +45,6 @@ jobs:
         run: |
           sudo apt -y install libpq-dev
 
-      - name: Setup cache key and directory for gems cache
-        uses: actions/cache@v1
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gem-use-ruby-${{ hashFiles('**/Gemfile.lock') }}
-
       - name: Read Node.js version to install from `.nvmrc`
         run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
         id: nvm
@@ -70,7 +66,7 @@ jobs:
 
       - name: Setup test database
         run: |
-          bundle exec rails db:setup
+          bundle exec rails db:reset
 
       - name: Compile assets
         run: |

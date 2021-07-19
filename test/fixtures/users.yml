@@ -13,3 +13,10 @@ joseph:
   role: :groom
   avatar: MyString
   password_digest: MyString
+
+zechariah:
+  username: zechariah_jerusalem
+  email: zechariah@highpriest.com
+  role: :celebrant
+  avatar: MyString
+  password_digest: MyString
