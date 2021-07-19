@@ -1,7 +1,6 @@
----
 en:
-  action-login: Action-login
-  action-register: Action-register
+  action-login: Login
+  action-register: Register
   activerecord:
     attributes:
       project:
@@ -82,40 +81,45 @@ en:
     home:
       helloWorldFrom: Hello World from %{name}!
     projectNew:
-      addWeddingPartyMember: Addweddingpartymember
+      addWeddingPartyMember: Add Wedding Party Member
       celebrantFirstName:
-        placeholder: Placeholder
+        placeholder: Timothy M.
       celebrantLastName:
-        placeholder: Placeholder
+        placeholder: Dolan
       celebrantPrefix:
         bishop: Bishop
-        bishopFull: Bishopfull
+        bishopFull: His Excellency Monsignor
         cardinal: Cardinal
-        cardinalFull: Cardinalfull
+        cardinalFull: His Eminence Cardinal
         deacon: Deacon
-        deaconAbbr: Deaconabbr
+        deaconAbbr: Deac.
         father: Father
-        fatherAbbr: Fatherabbr
+        fatherAbbr: Fr.
         monsignor: Monsignor
-        monsignorAbbr: Monsignorabbr
+        monsignorAbbr: Msgr.
         reverend: Reverend
-        reverendAbbr: Reverendabbr
-      create_project_button: Create project button
+        reverendAbbr: Rev.
+      create_project_button: Start composing the booklet!
       email_address:
-        description: Description
+        description: Your email address will never be shared without your permission.
+          Wedding booklet projects you create will be associated with your email address.
       marriage_location:
-        church_placeholder: Church placeholder
-        city_placeholder: City placeholder
+        church_placeholder: Saint Patrick's Cathedral
+        city_placeholder: New York City, New York
       person_category:
-        label: Label
+        label: I am
       request_info:
-        description: Description
-        optional_login: Optional login
-        title: Title
-      title: Title
-      viewYourProjects: Viewyourprojects
+        description: Please fill in some information needed for composing the booklet.
+        optional_login: If you already created an account, you may login instead.
+          In that case any previously entered information will be retrieved. Or you
+          can go ahead and register an account right away if you would like your project
+          to be associated with your account.
+        title: User info
+      title: New wedding booklet project
+      viewYourProjects: View your projects
       wedding_party:
-        description: Description
-        title: Title
+        description: Describe the composition of your wedding party
+        title: Wedding party
   welcome-greeting-1: Create the booklet for your Catholic Wedding ceremony
-  welcome-greeting-2: Choose the texts from the official Rite of Marriage, together with the celebrant
+  welcome-greeting-2: Choose the texts from the official Rite of Marriage, together
+    with the celebrant
