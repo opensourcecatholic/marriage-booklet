@@ -1,7 +1,6 @@
----
 it:
-  action-login: Action-login
-  action-register: Action-register
+  action-login: Effettua l'accesso
+  action-register: Regìstrati
   activerecord:
     attributes:
       project:
@@ -12,14 +11,15 @@ it:
         celebrantNamePrefix: Titolo celebrante
         church: Chiesa
         city: Città
-        email: Email
+        email: Posta elettronica
         groomFirstName: Nome sposo
         groomLastName: Cognome sposo
         liturgy: Liturgia
-        liturgy_catholicNonCatholic: Tra una parte cattolica e una parte catecumena o non cristiana
+        liturgy_catholicNonCatholic: Tra una parte cattolica e una parte catecumena
+          o non cristiana
         liturgy_withMass: Nella celebrazione eucaristica
         liturgy_withoutMass: Nella celebrazione della Parola
-        role: Role
+        role: Ruolo
         weddingdate: Data del matrimonio
       user:
         avatar: Avatar
@@ -82,40 +82,47 @@ it:
     home:
       helloWorldFrom: Ciao Mondo da %{name}!
     projectNew:
-      addWeddingPartyMember: Addweddingpartymember
+      addWeddingPartyMember: Aggiungi Testimoni
       celebrantFirstName:
-        placeholder: Placeholder
+        placeholder: Angelo
       celebrantLastName:
-        placeholder: Placeholder
+        placeholder: De Donatis
       celebrantPrefix:
-        bishop: Bishop
-        bishopFull: Bishopfull
-        cardinal: Cardinal
-        cardinalFull: Cardinalfull
-        deacon: Deacon
-        deaconAbbr: Deaconabbr
-        father: Father
-        fatherAbbr: Fatherabbr
-        monsignor: Monsignor
-        monsignorAbbr: Monsignorabbr
-        reverend: Reverend
-        reverendAbbr: Reverendabbr
-      create_project_button: Create project button
+        bishop: Vescovo
+        bishopFull: Sua Eccellenza Monsignor
+        cardinal: Cardinale
+        cardinalFull: Sua Eminenza il Cardinale
+        deacon: Diacono
+        deaconAbbr: Diac.
+        father: Padre
+        fatherAbbr: P.
+        monsignor: Monsignore
+        monsignorAbbr: Mons.
+        reverend: Reverendo
+        reverendAbbr: Rev.
+      create_project_button: Inizia a comporre il libretto!
       email_address:
-        description: Description
+        description: Il tuo indirizzo di posta elettronica non verrà mai condiviso
+          senza il tuo consenso. I libretti di matrimonio da te creati verranno associati
+          al tuo indirizzo di posta elettronica.
       marriage_location:
-        church_placeholder: Church placeholder
-        city_placeholder: City placeholder
+        church_placeholder: Basilica di San Giovanni in Laterano
+        city_placeholder: Roma
       person_category:
-        label: Label
+        label: Io sono
       request_info:
-        description: Description
-        optional_login: Optional login
-        title: Title
-      title: Title
-      viewYourProjects: Viewyourprojects
+        description: Compila le informazioni base per avviare la composizione del
+          libretto.
+        optional_login: Se hai già un account, puoi effettuare l'accesso. In questo
+          caso le informazioni immesse in precedenza saranno recuperate. Oppure puoi
+          registrare da subito un account in modo da garantire la privacy del libretto,
+          che verrà associato al tuo account.
+        title: Informazioni utente
+      title: Nuovo libretto matrimonio
+      viewYourProjects: Indice dei progetti
       wedding_party:
-        description: Description
-        title: Title
+        description: Descrivi la composizione del corteo nuziale
+        title: Corteo nuziale
   welcome-greeting-1: Crea il libretto di cerimonia per il tuo Matrimonio
-  welcome-greeting-2: Scegli dai testi del rito ufficiale del matrimonio, insieme al Sacerdote (o diacono) officiante
+  welcome-greeting-2: Scegli dai testi del rito ufficiale del matrimonio, insieme
+    al Sacerdote (o diacono) officiante
