@@ -1,84 +1,84 @@
----
 en:
   activerecord:
     attributes:
       project:
-        brideFirstName: Bridefirstname
-        brideLastName: Bridelastname
-        celebrantFirstName: Celebrantfirstname
-        celebrantLastName: Celebrantlastname
-        celebrantNamePrefix: Celebrantnameprefix
+        brideFirstName: Bride name
+        brideLastName: Bride last name
+        celebrantFirstName: Celebrant name
+        celebrantLastName: Celebrant last name
+        celebrantNamePrefix: Celebrant title
         church: Church
         city: City
-        groomFirstName: Groomfirstname
-        groomLastName: Groomlastname
-        isSecured: Issecured
+        groomFirstName: Groom name
+        groomLastName: Groom last name
+        isSecured: is Private
         liturgy: Liturgy
-        liturgy_catholicNonCatholic: Liturgy catholicnoncatholic
-        liturgy_withMass: Liturgy withmass
-        liturgy_withoutMass: Liturgy withoutmass
-        weddingdate: Weddingdate
+        liturgy_catholicNonCatholic: "Between a Catholic and a\nCatechumen or a Non-Christian"
+        liturgy_withMass: Within Mass
+        liturgy_withoutMass: Without Mass
+        weddingdate: Wedding date
       user:
         avatar: Avatar
         email: Email
         password: Password
         role: Role
-        role_bride: Role bride
-        role_celebrant: Role celebrant
-        role_groom: Role groom
-        role_guest: Role guest
+        role_bride: Bride
+        role_celebrant: Celebrant
+        role_groom: Groom
+        role_guest: Guest
         username: Username
       wedding_party_member:
-        firstName: Firstname
-        lastName: Lastname
+        firstName: First name
+        lastName: Last name
         project_id: Project
         relationship: Relationship
-        relationshipTo: Relationshipto
-        relationship_aunt: Relationship aunt
-        relationship_brother: Relationship brother
-        relationship_cousin: Relationship cousin
-        relationship_father: Relationship father
-        relationship_friend: Relationship friend
-        relationship_grandfather: Relationship grandfather
-        relationship_grandmother: Relationship grandmother
-        relationship_greataunt: Relationship greataunt
-        relationship_greatgrandfather: Relationship greatgrandfather
-        relationship_greatgrandmother: Relationship greatgrandmother
-        relationship_greatuncle: Relationship greatuncle
-        relationship_mother: Relationship mother
-        relationship_nephew: Relationship nephew
-        relationship_niece: Relationship niece
-        relationship_relative: Relationship relative
-        relationship_sister: Relationship sister
-        relationship_stepbrother: Relationship stepbrother
-        relationship_stepfather: Relationship stepfather
-        relationship_stepmother: Relationship stepmother
-        relationship_stepsister: Relationship stepsister
-        relationship_uncle: Relationship uncle
-        relationship_undefined: Relationship undefined
+        relationshipTo: To
+        relationship_aunt: Aunt
+        relationship_brother: Brother
+        relationship_cousin: Cousin
+        relationship_father: Father
+        relationship_friend: Friend
+        relationship_grandfather: Grandfather
+        relationship_grandmother: Grandmother
+        relationship_greataunt: Great aunt
+        relationship_greatgrandfather: Great grandfather
+        relationship_greatgrandmother: Great grandmother
+        relationship_greatuncle: Great uncle
+        relationship_mother: Mother
+        relationship_nephew: Nephew
+        relationship_niece: Niece
+        relationship_relative: Relative
+        relationship_sister: Sister
+        relationship_stepbrother: Stepbrother
+        relationship_stepfather: Stepfather
+        relationship_stepmother: Stepmother
+        relationship_stepsister: Stepsister
+        relationship_uncle: Uncle
+        relationship_undefined: '---'
         role: Role
-        role_bestman: Role bestman
-        role_bridesmaid: Role bridesmaid
-        role_fatherbride: Role fatherbride
-        role_fathergroom: Role fathergroom
-        role_flowergirl: Role flowergirl
-        role_groomsman: Role groomsman
-        role_maidofhonor: Role maidofhonor
-        role_matronofhonor: Role matronofhonor
-        role_motherbride: Role motherbride
-        role_mothergroom: Role mothergroom
-        role_ringbearer: Role ringbearer
+        role_bestman: Best man
+        role_bridesmaid: Bridesmaid
+        role_fatherbride: Father of the bride
+        role_fathergroom: Father of the groom
+        role_flowergirl: Flower girl
+        role_groomsman: Groomsman
+        role_maidofhonor: Maid of Honor
+        role_matronofhonor: Matron of Honor
+        role_motherbride: Mother of the bride
+        role_mothergroom: Mother of the groom
+        role_ringbearer: Ringbearer
   application:
     guest: Guest
     hello: Hello
     welcome: Welcome
-  get-started-link: Get-started-link
+  get-started-link: Get started!
   hello: Hello world
-  page-title: Page-title
+  page-title: Marriage Booklet Assistant
   pages:
     home:
       clickMe: Click me
       helloWorld: Hello World
       helloWorldFrom: Hello World from %{name}!
-  welcome-greeting-1: Welcome-greeting-1
-  welcome-greeting-2: Welcome-greeting-2
+  welcome-greeting-1: Create the booklet for your Catholic Wedding ceremony
+  welcome-greeting-2: Choose the texts from the official Rite of Marriage, together
+    with the celebrant
