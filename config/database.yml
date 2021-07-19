@@ -57,6 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+  host: <%= ENV["POSTGRES_HOST"] %>
   database: marriage_booklet_test
   username: <%= ENV['MARRIAGE_BOOKLET_DATABASE_USER'] %>
   password: <%= ENV['MARRIAGE_BOOKLET_DATABASE_PASSWORD'] %>
