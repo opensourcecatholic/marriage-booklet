@@ -5,7 +5,7 @@ class ScanResourceFormLabels < I18n::Tasks::Scanners::FileScanner
   # @return [Array<[absolute key, Results::Occurrence]>]
   def scan_file(path)
     text = read_file(path)
-    text.scan(/^\s*<%= f(?:orm){0,1}.label :(.*) %>$/).map do |attribute|
+    text.scan(/^\s*<%= f(?:orm){0,1}.label :(.+?)[, ](?:.*?)%>$/).map do |attribute|
       occurrence = occurrence_from_position(
           path, text, Regexp.last_match.offset(0).first)
       model = File.dirname(path).split('/').last
