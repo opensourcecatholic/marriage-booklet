@@ -1,22 +1,17 @@
 <div class="bg-gray-400 p-1 pb-3">
-  <h1 class="text-center text-xl p-4 text-blue-900"><%= t('projects.index.myWeddingBookletProjects') %></h1>
+  <h1 class="text-center text-xl p-4 text-blue-900"><%= t('pages.projectIndex.myWeddingBookletProjects') %></h1>
   <div class="container border rounded mx-auto tab-component bg-white">
 
-    <ul class="flex border-b tab-buttons bg-gray-100">
+    <ul class="flex border-b tab-buttons bg-gray-100 max-h-12">
         <% @projects.each_with_index do |project, index| %>
-          <% if index == 0 then %>
-          <li class="-mb-px">
-            <button data-tab-index="<%= (index).to_s %>" class="tab-item bg-white inline-block py-2 px-4 border-l border-t border-r rounded-t text-blue-700 font-semibold focus:outline-none active">
-          <% else %>
           <li>
-            <button data-tab-index="<%= (index).to_s %>" class="tab-item bg-white inline-block py-2 px-4 border-r text-gray-500 hover:text-blue-800 focus:outline-none font-semibold">
-          <% end %>
-              <%= t('bookletProject') + ' ' + (index+1).to_s %>
-          </button>
+            <button <%= if index == 0 then 'autofocus' end %> data-tab-index="<%= (index).to_s %>" class="tab-item bg-gray-400 inline-block py-2 px-4 border-gray-100 border-t border-r text-gray-100 hover:text-gray-200 hover:bg-gray-500 font-semibold focus:outline-none focus:bg-white focus:text-blue-700 h-12 focus:h-13 shadow-inner focus:shadow-none">
+              <%= t('pages.projectIndex.bookletProject') + ' ' + (index+1).to_s %>
+            </button>
           </li>
         <% end %>
         <li class="ml-3">
-          <%= link_to '+', new_project_path, { title: t('Create New Booklet Project'), class: "tab-item bg-white inline-block py-2 px-3 border text-gray-500 hover:bg-white hover:text-blue-800 focus:outline-none font-semibold rounded-3xl" } %>
+          <%= link_to '+', new_project_path, { title: t('pages.projectIndex.createNewProject'), class: "tab-item bg-white inline-block pb-1 px-3 mt-1 border text-gray-500 hover:bg-white hover:text-blue-800 focus:outline-none font-semibold rounded-3xl max-h-11" } %>
         </li>
     </ul>
     <ul class="tab-contents pb-6 pl-6 pr-6 py-6 text-lg">
@@ -28,10 +23,10 @@
           <% end %>
             <% if project.isSecured %>
             <h5 class="text-green-800">
-            <i class="fas fa-lock mr-3"></i><%= t('projects.index.projectIsPrivate') %>
+            <i class="fas fa-lock mr-3"></i><%= t('pages.projectIndex.projectIsPrivate') %>
             <% else %>
             <h5 class="text-red-800">
-            <i class="fas fa-lock-open mr-3"></i><%= t('projects.index.projectIsPubliclyAccessible') %>
+            <i class="fas fa-lock-open mr-3"></i><%= t('pages.projectIndex.projectIsPubliclyAccessible') %>
             <% if logged_in? %>
               <button class="bg-gray-300 p-3 rounded text-gray-600 text-sm hover:bg-gray-200 hover:text-gray-700 ml-6"><i class="fa fa-key mr-3"></i>Secure this project</button>
             <% else %>
@@ -51,8 +46,8 @@
               <tbody>
                 <tr>
                   <td><%= project.weddingdate %></td>
-                  <td><%= project.church %>, <%= project.city %></td>
-                  <td><%= project.celebrantNamePrefix %> <%= project.celebrantFirstName %> <%= project.celebrantLastName %></td>
+                  <td><%= project.church %>,<br><%= project.city %></td>
+                  <td><%= project.celebrantNamePrefix %><br><%= project.celebrantFirstName %> <%= project.celebrantLastName %></td>
                   <td><%= t("activerecord.attributes.project.liturgy_#{project.liturgy}") %></td>
                 </tr>
               </tbody>
@@ -76,34 +71,34 @@
             <div class="grid grid-cols-3 gap-6 m-9 text-center text-xl">
               <div class="col-span-1">
                 <%= link_to project, class: "py-3 px-4 hover:bg-blue-200 hover:text-blue-800 rounded border bg-blue-100" do %>
-                  <i class="far fa-eye mr-3"></i><%= t('previewThisProject') %>
+                  <i class="far fa-eye mr-3"></i><%= t('pages.projectIndex.previewThisProject') %>
                 <% end %>
               </div>
               <div class="col-span-1">
                 <%= link_to edit_project_path(project), class: "py-3 px-4 hover:bg-green-200 hover:text-green-800 rounded border bg-green-100" do %>
-                  <i class="fas fa-pencil-alt mr-3"></i><%= t('editThisProject') %>
+                  <i class="fas fa-pencil-alt mr-3"></i><%= t('pages.projectIndex.editThisProject') %>
                 <% end %>
               </div>
               <div class="col-span-1">
                 <%= link_to project, method: :delete, data: { confirm: 'Are you sure?' }, class: "py-3 px-4 hover:bg-red-200 hover:text-red-800 rounded border bg-red-100" do %>
-                  <i class="fas fa-trash-alt mr-3"></i><%= t('deleteThisProject') %>
+                  <i class="fas fa-trash-alt mr-3"></i><%= t('pages.projectIndex.deleteThisProject') %>
                 <% end %>
               </div>
             </div>
             <div class="grid grid-cols-4 gap-0 m-9 text-center text-lg">
               <div class="col-span-1">
-                <%= link_to '#', class: "py-3 px-4 hover:bg-blue-700 text-blue-200 hover:text-blue-100 rounded border bg-blue-900" do %>
-                  <i class="fas fa-file-word mr-3"></i><%= t('generateDOCX') %>
+                <%= link_to '#', class: "py-3 px-4 hover:bg-blue-700 text-white hover:text-white rounded border bg-blue-900" do %>
+                  <i class="fas fa-file-word mr-3"></i><%= t('pages.projectIndex.generateDOCX') %>
                 <% end %>
               </div>
               <div class="col-span-1">
-                <%= link_to '#', class: "py-3 px-4 hover:bg-blue-700 text-blue-200 hover:text-blue-100 rounded border bg-blue-900" do %>
-                  <i class="fas fa-file-pdf mr-3"></i><%= t('generatePDF') %>
+                <%= link_to '#', class: "py-3 px-4 hover:bg-blue-700 text-white hover:text-white rounded border bg-blue-900" do %>
+                  <i class="fas fa-file-pdf mr-3"></i><%= t('pages.projectIndex.generatePDF') %>
                 <% end %>
               </div>
               <div class="col-span-1">
-                <%= link_to '#', class: "py-3 px-4 hover:bg-blue-700 text-blue-200 hover:text-blue-100 rounded border bg-blue-900" do %>
-                  <i class="fas fa-file-code mr-3"></i><%= t('generateLatex') %>
+                <%= link_to '#', class: "py-3 px-4 hover:bg-blue-700 text-white hover:text-white rounded border bg-blue-900" do %>
+                  <i class="fas fa-file-code mr-3"></i><%= t('pages.projectIndex.generateLatex') %>
                 <% end %>
               </div>
             </div>

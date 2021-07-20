@@ -9,16 +9,17 @@ function toggleTabs(activeIndex) {
   $('.tab-buttons > li > button').each(function (k,v) {
     let current = $(v);
     if (current.hasClass('active')) {
-      current.removeClass(activeTabClasses);
-      current.addClass(inactiveTabClasses);
-      current.parent().removeClass('-mb-px');
+      current.removeClass('active');
+      //current.removeClass(activeTabClasses);
+      //current.addClass(inactiveTabClasses);
+      //current.parent().removeClass('-mb-px');
     } else {
-      current.parent().addClass('-mb-px');
+      //current.parent().addClass('-mb-px');
     }
   }); 
   $('.tab-buttons > li > button[data-tab-index=' + activeIndex + ']').each(function (k,v) {
-    $(v).removeClass(inactiveTabClasses);
-    $(v).addClass(activeTabClasses);
+    //$(v).removeClass(inactiveTabClasses);
+    //$(v).addClass(activeTabClasses);
   }); 
 }
 
