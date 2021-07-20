@@ -9,9 +9,9 @@ es:
         celebrantFirstName: Celebrante nombre
         celebrantLastName: Celebrante apellido
         celebrantNamePrefix: Celebrante titulo
-        church: Church
-        city: City
-        email: Email
+        church: Iglesia
+        city: Ciudad
+        email: Correo electrónico
         groomFirstName: Novio nombre
         groomLastName: Novio apellido
         liturgy: Liturgia
