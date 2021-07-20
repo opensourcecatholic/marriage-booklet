@@ -1,3 +1,4 @@
+---
 es:
   action-login: Inicia sesión
   action-register: Registrate
@@ -15,8 +16,7 @@ es:
         groomFirstName: Novio nombre
         groomLastName: Novio apellido
         liturgy: Liturgia
-        liturgy_catholicNonCatholic: Entre parte católica y parte catecúmena o no
-          cristiana
+        liturgy_catholicNonCatholic: Entre parte católica y parte catecúmena o no cristiana
         liturgy_withMass: Con Misa
         liturgy_withoutMass: Sin Misa
         role: Role
@@ -58,7 +58,7 @@ es:
         relationship_stepmother: Madrasta
         relationship_stepsister: Hermanastra
         relationship_uncle: Tío
-        relationship_undefined: '---'
+        relationship_undefined: "---"
         role: Role
         role_bestman: Padrino de boda
         role_bridesmaid: Testiga de la novia
@@ -75,13 +75,14 @@ es:
     guest: Huésped
     hello: Hola
     welcome: Bienvenido/a
-  get-started-link: ¡Vamos a empezar!
+  get-started-link: "¡Vamos a empezar!"
   hello: Hola mundo
   page-title: Nuestro Librete de Boda
   pages:
     home:
       helloWorldFrom: Hola Mundo desde %{name}!
     projectIndex:
+      actionSecureProject: Actionsecureproject
       bookletProject: Proyecto de Librete
       createNewProject: Crea Nuevo Proyecto
       deleteThisProject: Elimina este Proyecto
@@ -93,6 +94,7 @@ es:
       previewThisProject: Preestreno de este Librete
       projectIsPrivate: Proyecto es Privado
       projectIsPubliclyAccessible: Proyecto es Públicamente Accesible
+      tooltipSecureProject: Tooltipsecureproject
     projectNew:
       addWeddingPartyMember: Agrega Testigo/a
       celebrantFirstName:
@@ -112,11 +114,9 @@ es:
         monsignorAbbr: Mons.
         reverend: Reverendo
         reverendAbbr: Rev.
-      create_project_button: ¡Empiece a redactar el librete!
+      create_project_button: "¡Empiece a redactar el librete!"
       email_address:
-        description: Su dirección de correo electrónico nunca se compartirá sin su
-          consentimiento. Los libretes de boda que cree se asociarán con su dirección
-          de correo electrónico.
+        description: Su dirección de correo electrónico nunca se compartirá sin su consentimiento. Los libretes de boda que cree se asociarán con su dirección de correo electrónico.
       marriage_location:
         church_placeholder: Catedral Basílica de la Asunción de María Santísima
         city_placeholder: Guadalajara
@@ -124,16 +124,15 @@ es:
         label: Yo soy
       request_info:
         description: Complete la información básica para comenzar a redactar el librete.
-        optional_login: Si ya tiene una cuenta, puede iniciar sesión. En este caso
-          se recuperará la información ingresada previamente. O puede registrar una
-          cuenta inmediatamente para garantizar la privacidad del librete, que se
-          asociará con su cuenta.
+        optional_login: Si ya tiene una cuenta, puede iniciar sesión. En este caso se recuperará la información ingresada previamente. O puede registrar una cuenta inmediatamente para garantizar la privacidad del librete, que se asociará con su cuenta.
         title: Informacion del usuario
       title: Nuevo librete de boda
       viewYourProjects: Índice de proyectos
       wedding_party:
         description: Describe la composición de la procesión nupcial
         title: Procesión nupcial
+    projectPreview:
+      ourWeddingCeremony: Ourweddingceremony
+      theWeddingParty: Theweddingparty
   welcome-greeting-1: Crea el librete de ceremonia para tu Boda
-  welcome-greeting-2: Elija entre los textos del ritual oficial del matrimonio, junto
-    con el sacerdote (o diácono) oficiante
+  welcome-greeting-2: Elija entre los textos del ritual oficial del matrimonio, junto con el sacerdote (o diácono) oficiante
