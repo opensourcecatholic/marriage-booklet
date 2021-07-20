@@ -22,16 +22,16 @@
           <li class="hidden" data-tab-content-index="<%= (index).to_s %>">
           <% end %>
             <% if project.isSecured %>
-            <h5 class="text-green-800">
-            <i class="fas fa-lock mr-3"></i><%= t('pages.projectIndex.projectIsPrivate') %>
+              <h5 class="text-green-800">
+              <i class="fas fa-lock mr-3"></i><%= t('pages.projectIndex.projectIsPrivate') %>
             <% else %>
-            <h5 class="text-red-800">
-            <i class="fas fa-lock-open mr-3"></i><%= t('pages.projectIndex.projectIsPubliclyAccessible') %>
-            <% if logged_in? %>
-              <button class="bg-gray-300 p-3 rounded text-gray-600 text-sm hover:bg-gray-200 hover:text-gray-700 ml-6"><i class="fa fa-key mr-3"></i>Secure this project</button>
-            <% else %>
-              <i class="fa fa-info" title="If you do not want this project to be publicly accessible, create a user account. You will then be able to secure the project."></i>
-            <% end %>
+              <h5 class="text-red-800">
+              <i class="fas fa-lock-open mr-3"></i><%= t('pages.projectIndex.projectIsPubliclyAccessible') %>
+              <% if logged_in? %>
+                <button class="bg-gray-300 p-3 rounded text-gray-600 text-sm hover:bg-gray-200 hover:text-gray-700 ml-6"><i class="fa fa-key mr-3"></i><%= t('pages.projectIndex.actionSecureProject') %></button>
+              <% else %>
+                <i class="fa fa-info" title="<%= t('pages.projectIndex.tooltipSecureProject') %>"></i>
+              <% end %>
             <% end %>
             <h5>
             <table class="table-fixed mx-auto">
