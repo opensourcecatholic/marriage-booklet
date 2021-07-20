@@ -81,6 +81,18 @@ es:
   pages:
     home:
       helloWorldFrom: Hola Mundo desde %{name}!
+    projectIndex:
+      bookletProject: Bookletproject
+      createNewProject: Createnewproject
+      deleteThisProject: Deletethisproject
+      editThisProject: Editthisproject
+      generateDOCX: Generatedocx
+      generateLatex: Generatelatex
+      generatePDF: Generatepdf
+      myWeddingBookletProjects: Myweddingbookletprojects
+      previewThisProject: Previewthisproject
+      projectIsPrivate: Projectisprivate
+      projectIsPubliclyAccessible: Projectispubliclyaccessible
     projectNew:
       addWeddingPartyMember: Addweddingpartymember
       celebrantFirstName:
