@@ -1,4 +1,3 @@
----
 it:
   action-login: Effettua l'accesso
   action-register: Regìstrati
@@ -16,7 +15,8 @@ it:
         groomFirstName: Nome sposo
         groomLastName: Cognome sposo
         liturgy: Liturgia
-        liturgy_catholicNonCatholic: Tra una parte cattolica e una parte catecumena o non cristiana
+        liturgy_catholicNonCatholic: Tra una parte cattolica e una parte catecumena
+          o non cristiana
         liturgy_withMass: Nella celebrazione eucaristica
         liturgy_withoutMass: Nella celebrazione della Parola
         role: Ruolo
@@ -82,17 +82,17 @@ it:
     home:
       helloWorldFrom: Ciao Mondo da %{name}!
     projectIndex:
-      bookletProject: Bookletproject
-      createNewProject: Createnewproject
-      deleteThisProject: Deletethisproject
-      editThisProject: Editthisproject
-      generateDOCX: Generatedocx
-      generateLatex: Generatelatex
-      generatePDF: Generatepdf
-      myWeddingBookletProjects: Myweddingbookletprojects
-      previewThisProject: Previewthisproject
-      projectIsPrivate: Projectisprivate
-      projectIsPubliclyAccessible: Projectispubliclyaccessible
+      bookletProject: Progetto
+      createNewProject: Crea Nuovo Progetto
+      deleteThisProject: Elimina questo progetto
+      editThisProject: Modifica questo progetto
+      generateDOCX: Genera DOCX
+      generateLatex: Genera LaTeX
+      generatePDF: Genera PDF
+      myWeddingBookletProjects: I miei Progetti di Libretto Matrimonio
+      previewThisProject: Anteprima del Libretto
+      projectIsPrivate: Progetto è privato
+      projectIsPubliclyAccessible: Progetto è accessibile da tutti
     projectNew:
       addWeddingPartyMember: Aggiungi Testimoni
       celebrantFirstName:
@@ -114,15 +114,21 @@ it:
         reverendAbbr: Rev.
       create_project_button: Inizia a comporre il libretto!
       email_address:
-        description: Il tuo indirizzo di posta elettronica non verrà mai condiviso senza il tuo consenso. I libretti di matrimonio da te creati verranno associati al tuo indirizzo di posta elettronica.
+        description: Il tuo indirizzo di posta elettronica non verrà mai condiviso
+          senza il tuo consenso. I libretti di matrimonio da te creati verranno associati
+          al tuo indirizzo di posta elettronica.
       marriage_location:
         church_placeholder: Basilica di San Giovanni in Laterano
         city_placeholder: Roma
       person_category:
         label: Io sono
       request_info:
-        description: Compila le informazioni base per avviare la composizione del libretto.
-        optional_login: Se hai già un account, puoi effettuare l'accesso. In questo caso le informazioni immesse in precedenza saranno recuperate. Oppure puoi registrare da subito un account in modo da garantire la privacy del libretto, che verrà associato al tuo account.
+        description: Compila le informazioni base per avviare la composizione del
+          libretto.
+        optional_login: Se hai già un account, puoi effettuare l'accesso. In questo
+          caso le informazioni immesse in precedenza saranno recuperate. Oppure puoi
+          registrare da subito un account in modo da garantire la privacy del libretto,
+          che verrà associato al tuo account.
         title: Informazioni utente
       title: Nuovo libretto matrimonio
       viewYourProjects: Indice dei progetti
@@ -130,4 +136,5 @@ it:
         description: Descrivi la composizione del corteo nuziale
         title: Corteo nuziale
   welcome-greeting-1: Crea il libretto di cerimonia per il tuo Matrimonio
-  welcome-greeting-2: Scegli dai testi del rito ufficiale del matrimonio, insieme al Sacerdote (o diacono) officiante
+  welcome-greeting-2: Scegli dai testi del rito ufficiale del matrimonio, insieme
+    al Sacerdote (o diacono) officiante
