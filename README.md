@@ -17,20 +17,20 @@ like Active Record and routing.
 
 # Setting up the Development environment
 
-- [Set up the Database](#set-up-the-database)
-- [Clone a fork of the project repository](#clone-a-fork-of-the-project-repository)
-    - [PostgreSQL in a docker container](#postgresql-in-a-docker-container)
-- [Install Ruby](#install-ruby)
-    - [Test for the correct version of ruby](#test-for-the-correct-version-of-ruby)
-- [Install Bundler](#install-bundler)
-- [Install ruby gem dependencies](#install-ruby-gem-dependencies)
-    - [Optionally patch webpacker/dev-server-runner.rb](#optionally-patch-webpackerdev-server-runnerrb)
-- [Check your environment](#check-your-environment)
-- [Load the database schema](#load-the-database-schema)
-- [NodeJS dependencies](#nodejs-dependencies)
-    - [Install node dependencies](#install-node-dependencies)
-- [Compile assets](#compile-assets)
-- [Run the App](#run-the-app)
+- 🧮 [Set up the Database](#set-up-the-database)
+- 🍴 [Clone a fork of the project repository](#clone-a-fork-of-the-project-repository)
+    - 🧰 [PostgreSQL in a docker container](#postgresql-in-a-docker-container)
+- ♦️ [Install Ruby](#install-ruby)
+    - 🧪 [Test for the correct version of ruby](#test-for-the-correct-version-of-ruby)
+- 🔡 [Install Bundler](#install-bundler)
+- 💎 [Install ruby gem dependencies](#install-ruby-gem-dependencies)
+    - 🔧 [Optionally patch webpacker/dev-server-runner.rb](#optionally-patch-webpackerdev-server-runnerrb)
+- 🌥️ [Check your environment](#check-your-environment)
+- 📈 [Load the database schema](#load-the-database-schema)
+- 📑 [NodeJS dependencies](#nodejs-dependencies)
+    - 🎱 [Install node dependencies](#install-node-dependencies)
+- 🌩️ [Compile assets](#compile-assets)
+- ⚛️ [Run the App](#run-the-app)
 
 ### Set up the Database
 Since the application uses a PostgreSQL database, you will need to have **PostgreSQL** >= v9.3 installed (`sudo apt install postgresql libpq-dev`) and running (`sudo service postgresql start`). If you prefer to spin up a docker container for PostgreSQL, skip ahead to [Clone a fork of the project repository](#clone-a-fork-of-the-project-repository), then make sure to include the steps from [PostgreSQL in a docker container](#postgresql-in-a-docker-container).
