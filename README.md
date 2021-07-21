@@ -440,3 +440,19 @@ but will ensure you use the correct version of dependencies
 in case there are multiple versions installed.
 
 Once the server is running, you can open it in a browser at <http://127.0.0.1:3000> (or <http://localhost:3000>).
+
+# Contributing
+
+Check out the dedicated wiki page [Contributing a patch](https://github.com/opensourcecatholic/marriage-booklet/wiki/2-Contributing-a-patch) for more information.
+
+If you contribute a patch that contains a user facing string, please don't hard code the string, but keep I18n in mind. See the dedicated wiki page [Handling i18n](https://github.com/opensourcecatholic/marriage-booklet/wiki/3-Handling-i18n) for more info.
+
+# Translating
+
+If you would like to contribute to the translations of the user facing strings in this project, you can do so by opening an issue requesting an account on the weblate server where translations take place.
+
+Current state of translations:
+
+<a href="https://translate.johnromanodorazio.com/engage/marriage-booklet/">
+<img src="https://translate.johnromanodorazio.com/widgets/marriage-booklet/-/multi-auto.svg" alt="Stato traduzione" />
+</a>
