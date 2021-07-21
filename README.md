@@ -1,12 +1,21 @@
-This is a [Rails](https://rubyonrails.org/) app.
-
 **New to Rails?** Checkout the video "Rails 5: The Tour" on <https://rubyonrails.org/> as an introduction.
 
 [Rails Guides](https://guides.rubyonrails.org/) has a getting started guide 
 as well as detailed guides about other Rails components,
 like Active Record and routing.
 
-In order to set up the development environment, the following steps will be taken:
+|<a href="https://www.ruby-lang.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Ruby_logo.svg" width="120" alt="Ruby" /></a>|<a href="https://rubyonrails.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/6/62/Ruby_On_Rails_Logo.svg" height="50" alt="Ruby on Rails" /></a>|<a href="https://nodejs.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" width="150" alt="Node JS" /></a>|<a href="https://tailwindcss.com/"><img src="https://cdn.worldvectorlogo.com/logos/tailwind-css-1.svg" width="450" alt="Tailwind CSS" /></a>|<a href="https://jquery.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/JQuery-Logo.svg" width="150" alt="jQuery" /></a>|<a href=""><img src="https://raw.githubusercontent.com/webpack/media/master/logo/logo-on-white-bg.svg" width="80" alt="webpack"/></a>|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+| ![ruby version](https://img.shields.io/badge/ruby-3.0.1-brightgreen) | ![rails version](https://img.shields.io/badge/rails-6.1.3.2-brightgreen) | ![node version](https://img.shields.io/badge/node-12.22.3-brightgreen) | ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/opensourcecatholic/marriage-booklet/tailwindcss) | ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/opensourcecatholic/marriage-booklet/jquery) | ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/opensourcecatholic/marriage-booklet/webpack) |
+||![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/opensourcecatholic/marriage-booklet/i18n-js)||![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/opensourcecatholic/marriage-booklet/postcss) ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/opensourcecatholic/marriage-booklet/@fortawesome/fontawesome-free)||![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/opensourcecatholic/marriage-booklet/@rails/webpacker) ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/opensourcecatholic/marriage-booklet/dev/webpack-dev-server) ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/opensourcecatholic/marriage-booklet/webpack-cli)|
+
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/opensourcecatholic/marriage-booklet/Verify)
+<a href="https://translate.johnromanodorazio.com/engage/marriage-booklet/">
+<img src="https://translate.johnromanodorazio.com/widgets/marriage-booklet/-/svg-badge.svg" alt="Stato traduzione" />
+</a>
+
+
+# Setting up the Development environment
 
 - [Set up the Database](#set-up-the-database)
 - [Clone a fork of the project repository](#clone-a-fork-of-the-project-repository)
