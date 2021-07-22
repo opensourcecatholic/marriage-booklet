@@ -418,7 +418,7 @@ _while maintaining compatibility between the packages in the dependency tree._
 
 **Refresh node dependencies**
 
-When `package.json` and/or `yarn.lock' changes adding new dependencies, such as when pulling changes into your local environment from the remote repo in a team setting, be sure to keep your NPM packages up-to-date:
+When `package.json` and/or `yarn.lock` changes adding new dependencies, such as when pulling changes into your local environment from the remote repo in a team setting, be sure to keep your NPM packages up-to-date:
 
 ```bash
 yarn install
