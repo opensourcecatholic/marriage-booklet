@@ -37,7 +37,7 @@ like Active Record and routing.
     - 🔧 [Optionally patch webpacker/dev-server-runner.rb](#optionally-patch-webpackerdev-server-runnerrb)
 - 🌥️ [Check your environment](#check-your-environment)
 - 📈 [Load the database schema](#load-the-database-schema)
-- 📑 [NodeJS dependencies](#nodejs-dependencies)
+- 📑 [Check NodeJS environment](#check-nodejs-environment)
     - 🎱 [Install node dependencies](#install-node-dependencies)
 - 🌩️ [Compile assets](#compile-assets)
 - ⚛️ [Run the App](#run-the-app)
@@ -318,7 +318,7 @@ Database schema version   0
 ### Load the database schema
 Run `bundle exec rails db:setup`. This will create the `development` and `test` databases and load the current `schema`.
 
-### NodeJS dependencies
+### Check NodeJS environment
 
 You will also have to install node dependencies with `yarn install` before proceeding,
 in order for `rails/webpacker` to function correctly. **`webpack`** is in fact a node package.
