@@ -1,6 +1,10 @@
 {
   "name": "marriage-booklet",
   "private": true,
+  "engines": {
+    "node": "^12.13.0",
+    "npm": "^6.2.0"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
     "@rails/actioncable": "^6.0.0",
