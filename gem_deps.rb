@@ -16,5 +16,4 @@ require 'json'
          end
     end
 
-puts JSON.pretty_generate(deps)
-
+File.write("gemfile.json", JSON.pretty_generate(deps)+"\n")
