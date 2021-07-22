@@ -28,5 +28,8 @@
     "selenium-webdriver": ">=0",
     "webdrivers": ">=0",
     "i18n-tasks": "~>0.9"
+  },
+  "engines": {
+    "ruby": "3.0.1"
   }
 }

@@ -16,4 +16,7 @@ require 'json'
          end
     end
 
+ruby_version = File.open(".ruby-version").readlines.map(&:chomp)[0]
+deps.merge!("engines" => { :ruby => "#{ruby_version}" })
+
 File.write("gemfile.json", JSON.pretty_generate(deps)+"\n")
