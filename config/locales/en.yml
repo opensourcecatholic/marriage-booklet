@@ -1,4 +1,3 @@
----
 en:
   action-login: Login
   action-register: Register
@@ -82,7 +81,7 @@ en:
     home:
       helloWorldFrom: Hello World from %{name}!
     projectIndex:
-      actionSecureProject: Actionsecureproject
+      actionSecureProject: Secure this project
       bookletProject: Booklet Project
       createNewProject: Create New Booklet Project
       deleteThisProject: Delete This Project
@@ -94,7 +93,8 @@ en:
       previewThisProject: Preview This Project
       projectIsPrivate: Project is Private
       projectIsPubliclyAccessible: Project is Publicly Accessible
-      tooltipSecureProject: Tooltipsecureproject
+      tooltipSecureProject: If you do not want this project to be publicly accessible,
+        create a user account. You will then be able to secure the project.
     projectNew:
       addWeddingPartyMember: Add Wedding Party Member
       celebrantFirstName:
@@ -116,7 +116,8 @@ en:
         reverendAbbr: Rev.
       create_project_button: Start composing the booklet!
       email_address:
-        description: Your email address will never be shared without your permission. Wedding booklet projects you create will be associated with your email address.
+        description: Your email address will never be shared without your permission.
+          Wedding booklet projects you create will be associated with your email address.
       marriage_location:
         church_placeholder: Saint Patrick's Cathedral
         city_placeholder: New York City, New York
@@ -124,7 +125,10 @@ en:
         label: I am
       request_info:
         description: Please fill in some information needed for composing the booklet.
-        optional_login: If you already created an account, you may login instead. In that case any previously entered information will be retrieved. Or you can go ahead and register an account right away if you would like your project to be associated with your account.
+        optional_login: If you already created an account, you may login instead.
+          In that case any previously entered information will be retrieved. Or you
+          can go ahead and register an account right away if you would like your project
+          to be associated with your account.
         title: User info
       title: New wedding booklet project
       viewYourProjects: View your projects
@@ -132,7 +136,8 @@ en:
         description: Describe the composition of your wedding party
         title: Wedding party
     projectPreview:
-      ourWeddingCeremony: Ourweddingceremony
-      theWeddingParty: Theweddingparty
+      ourWeddingCeremony: Our Wedding Ceremony
+      theWeddingParty: The Wedding Party
   welcome-greeting-1: Create the booklet for your Catholic Wedding ceremony
-  welcome-greeting-2: Choose the texts from the official Rite of Marriage, together with the celebrant
+  welcome-greeting-2: Choose the texts from the official Rite of Marriage, together
+    with the celebrant
