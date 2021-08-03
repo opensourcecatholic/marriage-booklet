@@ -58,4 +58,5 @@ Rails.application.configure do
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
   routes.default_url_options[:locale]= I18n.default_locale
+  config.middleware.use I18n::JS::Middleware
 end
