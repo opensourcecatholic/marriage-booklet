@@ -2,7 +2,7 @@
 
 <%= render 'form', project: @project %>
 <% if @projects.size > 0 then %>
-    <%= link_to projects_path, class: "absolute top-1 right-3 py-3 px-4 text-lg text-blue-500 bg-blue-100 hover:bg-blue-200 hover:text-blue-800 font-bold rounded" do %>
+    <%= link_to projects_path, class: "absolute top-12 right-3 py-3 px-4 text-lg text-blue-500 bg-blue-100 hover:bg-blue-200 hover:text-blue-800 font-bold rounded" do %>
         <i class="fa fa-search mr-2"></i><%= t('pages.projectNew.viewYourProjects') %>
     <% end %>
 <% end %>

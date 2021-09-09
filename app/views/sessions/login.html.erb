@@ -1,19 +1,51 @@
 <p id="notice"><%= notice %></p>
-<div>
-    <h2>Log In</h2>
-    <%= form_with do |form| %>
+<div class="w-screen h-screen flex justify-center items-center bg-gray-100">
+<% unless logged_in? %>
+    <%= form_with class: "p-10 pt-3 bg-white rounded flex justify-center items-center flex-col shadow-md text-base" do |form| %>
+        <h3 class="text-indigo-600 text-xl font-bold pb-7"><%= t('pages.projectPreview.ourWeddingCeremony') %></h3>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20 text-gray-600 mb-2" viewbox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
+        </svg>
         <div class="field">
-            <%= form.label :username %>
-            <%= form.text_field :username %>
+            <%= form.text_field :username, placeholder: t('placeholder-username-or-email'), class: "mb-5 p-3 w-80 focus:border-purple-700 rounded border-2 outline-none", :required => true %>
         </div>
-        <div class="field">
-            <%= form.label :password %>
-            <%= form.password_field :password %>
+        <div class="field relative">
+            <%= form.password_field :password, placeholder: t('placeholder-password'), class: "mb-5 p-3 w-80 focus:border-purple-700 rounded border-2 outline-none", :required => true %>
+            <i class="fas fa-eye ml-3 absolute right-5 top-3 text-lg text-gray-300 hover:text-gray-500 cursor-pointer" title="<%= t('reveal password') %>" id="reveal-password"></i>
         </div>
         <div class="actions">
-            <%= form.submit %>
+            <div class="action">
+                <%= button_tag( :class => "bg-blue-600 hover:bg-blue-900 text-white font-bold mb-1 p-2 rounded w-80 cursor-pointer" ) do %>
+                    <i class="fas fa-sign-in-alt mr-3"></i><%= t('action-login') %>
+                <% end %>
+            </div>
+            <div class="action mb-5">
+                <%= link_to root_path, class: "text-blue-400 hover:text-blue-600 text-center text-sm" do %>
+                    <i class="fas fa-hammer mr-3"></i><%= t('action-recover-password') %>
+                <% end %>
+            </div>
+            <hr />
+            <div class="action">
+                <%= link_to new_user_path, class: "bg-green-600 hover:bg-green-900 text-white font-bold my-5 p-2 rounded w-80 block" do %>
+                    <i class="fas fa-user-plus mr-3"></i><%= t('action-register') %>
+                <% end %>
+            </div>
+            <div class="action">
+                <%= link_to root_path, class: "bg-gray-900 hover:bg-gray-600 text-white font-bold p-2 rounded w-80 block" do %>
+                    <i class="fas fa-backspace mr-3"></i><%= t('action-cancel') %>
+                <% end %>
+            </div>
         </div>
     <% end %>
+<% else %>
+    <div class="p-10 pt-3 bg-white rounded flex justify-center items-center flex-col shadow-md">
+        <h3 class="text-indigo-600 text-xl font-bold pb-7"><%= t('pages.projectPreview.ourWeddingCeremony') %></h3>
+        <%= link_to logout_path, class: "bg-blue-900 hover:bg-blue-600 text-white font-bold p-2 rounded w-80 block m-5" do %>
+            <i class="fas fa-sign-out-alt mr-3"></i><%= t('action-logout') %>
+        <% end %>
+        <%= link_to root_path, class: "bg-gray-900 hover:bg-gray-600 text-white font-bold p-2 rounded w-80 block m-5" do %>
+            <i class="fas fa-backspace mr-3"></i><%= t('action-cancel') %>
+        <% end %>
 </div>
-<%= link_to 'Register', new_user_path %>
-<%= link_to 'Home', root_path %>
+<% end %>
+</div>

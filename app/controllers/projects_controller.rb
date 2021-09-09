@@ -22,6 +22,8 @@ class ProjectsController < ApplicationController
   # GET /projects/1/edit
   def edit
     @projects = Project.all
+    user = @project.users.build
+    wedding_party_member = @project.wedding_party_members.build
   end
 
   # POST /projects or /projects.json
