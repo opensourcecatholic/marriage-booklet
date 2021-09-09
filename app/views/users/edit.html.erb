@@ -1,6 +1,6 @@
-<h1>Editing User</h1>
-
-<%= render 'form', user: @user %>
-
+<h1 class="p-7"><%= t("pages.userEdit.editUserTitle") %></h1>
+<div class="w-screen flex justify-center items-center bg-gray-100">
+    <%= render 'form', user: @user %>
+</div>
 <%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>
