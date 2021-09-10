@@ -38,13 +38,16 @@
           <%= link_to user, method: :delete, data: { confirm: 'Are you sure?' }, class: "bg-red-900 hover:bg-red-600 text-white text-sm font-bold p-2 rounded inline-block w-60" do %>
             <i class="fas fa-trash-alt mr-3"></i><%= t('action-delete') %>
           <% end %>
-
+        </td>
+      </tr>
+      <tr class="bg-gray-300">
+        <td class="border px-8 py-2 text-left" colspan="7">
+          <span>Total number of user accounts:&nbsp;&nbsp;&nbsp;<b><%= @users.count %></b></span>
+          <%= link_to new_user_path, class: "bg-green-900 hover:bg-green-600 text-white text-sm text-center font-bold p-2 mx-6 rounded inline-block w-60" do %>
+            <i class="fas fa-user-plus mr-3"></i><%= t('action-newuser') %>
+          <% end %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<p class="m-3 text-sm">Total number of user accounts: <b><%= @users.count %></b></p>
-<%= link_to new_user_path, class: "bg-green-900 hover:bg-green-600 text-white text-sm font-bold p-2 rounded inline-block w-60" do %>
-  <i class="fas fa-user-plus mr-3"></i><%= t('action-newuser') %>
-<% end %>
