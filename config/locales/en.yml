@@ -1,10 +1,17 @@
 ---
 en:
   action-cancel: Action-cancel
+  action-create-account: Action-create-account
+  action-delete: Action-delete
+  action-edit: Action-edit
   action-login: Login
   action-logout: Action-logout
+  action-newuser: Action-newuser
   action-recover-password: Action-recover-password
   action-register: Register
+  action-reset-password: Action-reset-password
+  action-show: Action-show
+  action-update-account: Action-update-account
   activerecord:
     attributes:
       project:
@@ -141,6 +148,8 @@ en:
       theWeddingParty: The Wedding Party
     userEdit:
       editUserTitle: Editusertitle
+      emailEditMessage: Emaileditmessage
+      usernameMessage: Usernamemessage
     userNew:
       newUserTitle: Newusertitle
   placeholder-email: Placeholder-email

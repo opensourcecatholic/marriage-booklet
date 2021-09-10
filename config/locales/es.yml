@@ -1,10 +1,17 @@
 ---
 es:
   action-cancel: Action-cancel
+  action-create-account: Action-create-account
+  action-delete: Action-delete
+  action-edit: Action-edit
   action-login: Inicia sesión
   action-logout: Action-logout
+  action-newuser: Action-newuser
   action-recover-password: Action-recover-password
   action-register: Registrate
+  action-reset-password: Action-reset-password
+  action-show: Action-show
+  action-update-account: Action-update-account
   activerecord:
     attributes:
       project:
@@ -141,6 +148,8 @@ es:
       theWeddingParty: La Procesión Nupcial
     userEdit:
       editUserTitle: Editusertitle
+      emailEditMessage: Emaileditmessage
+      usernameMessage: Usernamemessage
     userNew:
       newUserTitle: Newusertitle
   placeholder-email: Placeholder-email
