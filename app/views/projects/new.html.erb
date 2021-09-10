@@ -1,9 +1,66 @@
+<%
+    gradients = {
+        "0%"   => "from-red-500 to-red-300",
+        "20%"  => "from-red-300 to-yellow-500",
+        "40%"  => "from-yellow-500 via-yellow-300 to-green-100",
+        "60%"  => "from-yellow-400 via-yellow-200 to-green-300",
+        "80%"  => "from-yellow-200 to-green-300",
+        "100%" => "from-green-300 to-green-500",
+    }
+    progress = "60%";
+%>
+
 <h1 class="py-4 my-4 text-center text-2xl"><%= t('pages.projectNew.title') %></h1>
 
-<%= render 'form', project: @project %>
+<div class="grid grid-cols-8 gap-6">
+    <div class="col-span-2 p-6 text-sm flex-col justify-center">
+        <h2 class="text-lg p-6 font-bold bg-gradient-to-r <%= gradients[progress] %>">Project progress <%= progress %></h2>
+        <ol class="bg-white">
+            <li class="border p-6<%= if 1==1 then " bg-green-100" end %>">
+                <div class="grid grid-cols-6">
+                    <i class="fas fa-user-alt col-span-1"></i>
+                    <span class="col-span-4"><%= t('pages.projectNew.request_info.title') %></span>
+                    <i class="fas fa-check col-span-1 text-green-800"></i>
+                </div>
+            </li>
+            <li class="border p-6<%= if 1==1 then " bg-green-100" end %>">
+                <div class="grid grid-cols-6">
+                    <i class="fas fa-calendar col-span-1"></i>
+                    <span class="col-span-4">Wedding date and place</span>
+                    <i class="fas fa-check col-span-1 text-green-800"></i>
+                </div>
+            </li>
+            <li class="border p-6<%= if 1==1 then " bg-green-100" end %>">
+                <div class="grid grid-cols-6">
+                    <i class="fas fa-users col-span-1"></i>
+                    <span class="col-span-4"><%= t('pages.projectNew.wedding_party.title') %></span>
+                    <i class="fas fa-check col-span-1 text-green-800"></i>
+                </div>
+            </li>
+            <li class="border p-6<%= if 1==0 then " bg-green-100" end %>">
+                <div class="grid grid-cols-6">
+                    <i class="fas fa-bible col-span-1"></i>
+                    <span class="col-span-4">Liturgical texts</span>
+                    <% if 1==0 then %><i class="fas fa-check col-span-1 text-green-800"></i><% end %>
+                </div>
+            </li>
+            <li class="border p-6<%= if 1==0 then " bg-green-100" end %>">
+                <div class="grid grid-cols-6">
+                    <i class="fas fa-bolt col-span-1"></i>
+                    <span class="col-span-4">Booklet format</span>
+                    <% if 1==0 then %><i class="fas fa-check col-span-1 text-green-800"></i><% end %>
+                </div>
+            </li>
+        </ol>
+        <h2 class="text-lg pt-3">STATUS:&nbsp;&nbsp;&nbsp;Not quite ready to print yet...</h2>
+    </div>
+    <div class="col-span-6 mr-10">
+        <%= render 'form', project: @project %>
+    </div>
+</div>
 <% if @projects.size > 0 then %>
     <%= link_to projects_path, class: "absolute top-12 right-3 py-3 px-4 text-lg text-blue-500 bg-blue-100 hover:bg-blue-200 hover:text-blue-800 font-bold rounded" do %>
         <i class="fa fa-search mr-2"></i><%= t('pages.projectNew.viewYourProjects') %>
     <% end %>
 <% end %>
-<%= javascript_pack_tag 'projectsNew' %>
+<%= javascript_packs_with_chunks_tag 'projectsNew', 'data-turbolinks-track': 'reload' %>

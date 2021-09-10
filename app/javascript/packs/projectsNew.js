@@ -1,3 +1,4 @@
+import "stylesheets/projects"
 
 $(document).ready(() => {
     let idx=0;
