@@ -15,7 +15,7 @@
 
   <!-- Slide 1 -->
   <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
-  <div class="carousel-item absolute opacity-0 bg-gray-200 p-4"><!-- Inner wrapper for title + card start -->
+  <div class="carousel-item absolute opacity-0 bg-gray-200 p-4 invisible"><!-- Inner wrapper for title + card start -->
     <h3 class="text-lg font-medium leading-6 text-gray-900 mb-3"><%= t('pages.projectNew.request_info.title') %></h3> <!-- User info -->
     <div class="px-4 sm:px-0">
       <% unless logged_in? %>
@@ -77,7 +77,7 @@
 
   <!-- Slide 2 -->
   <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
-  <div class="carousel-item absolute opacity-0 bg-gray-200 p-4"><!-- Inner wrapper for title + card start -->
+  <div class="carousel-item absolute opacity-0 bg-gray-200 p-4 invisible"><!-- Inner wrapper for title + card start -->
     <h3 class="text-lg font-medium leading-6 text-gray-900 mb-3"><%= t('pages.projectNew.marriageDatePlaceTitle') %></h3> <!-- User info -->
     <div class="mt-5 md:mt-0"><!-- Card outer wrapper start -->
       <div class="shadow sm:rounded-md sm:overflow-hidden"><!-- Card inner wrapper start -->
@@ -129,7 +129,7 @@
 
   <!-- Slide 3 -->
   <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
-  <div class="carousel-item absolute opacity-0 mt-10 sm:mt-0 bg-gray-200 p-4">
+  <div class="carousel-item absolute opacity-0 mt-10 sm:mt-0 bg-gray-200 p-4 invisible">
     <h3 class="text-lg font-medium leading-6 text-gray-900 mb-3"><%= t('pages.projectNew.wedding_party.title') %></h3><!-- Wedding party -->
     <p class="mt-1 text-sm text-gray-600">
       <%= t('pages.projectNew.wedding_party.description') %><!-- C -->
