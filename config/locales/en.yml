@@ -2,15 +2,16 @@
 en:
   action-cancel: Action-cancel
   action-create-account: Action-create-account
-  action-delete: Action-delete
+  action-deleteUser: Action-deleteuser
   action-edit: Action-edit
+  action-editUser: Action-edituser
   action-login: Login
   action-logout: Action-logout
   action-newuser: Action-newuser
   action-recover-password: Action-recover-password
   action-register: Register
   action-reset-password: Action-reset-password
-  action-show: Action-show
+  action-showUser: Action-showuser
   action-update-account: Action-update-account
   activerecord:
     attributes:
@@ -86,7 +87,6 @@ en:
     hello: Hello
     welcome: Welcome
   get-started-link: Get started!
-  hello: Hello world
   page-title: Our Wedding Booklet
   pages:
     home:
@@ -129,16 +129,17 @@ en:
       create_project_button: Start composing the booklet!
       email_address:
         description: Your email address will never be shared without your permission. Wedding booklet projects you create will be associated with your email address.
+      marriageDatePlace: Marriagedateplace
       marriage_location:
         church_placeholder: Saint Patrick's Cathedral
         city_placeholder: New York City, New York
       person_category:
         label: I am
       request_info:
-        description: Please fill in some information needed for composing the booklet.
         optional_login: If you already created an account, you may login instead. In that case any previously entered information will be retrieved. Or you can go ahead and register an account right away if you would like your project to be associated with your account.
         title: User info
       title: New wedding booklet project
+      update_project_button: Update project button
       viewYourProjects: My Projects
       wedding_party:
         description: Describe the composition of your wedding party

@@ -2,6 +2,7 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
 .carousel input[type='radio'] {
   display: none;
 }
@@ -28,7 +29,7 @@
   margin: 0;
   padding: 0;
   position: absolute;
-  bottom: 2%;
+  bottom: -2em;
   left: 0;
   right: 0;
   text-align: center;

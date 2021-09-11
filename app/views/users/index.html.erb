@@ -2,7 +2,7 @@
 
 <h1>Users</h1>
 
-<table class="w-1/2 mx-auto bg-white shadow-lg mt-6 text-sm">
+<table class="mx-auto bg-white shadow-lg mt-6 text-sm" style="max-width:80vw;">
   <thead>
     <tr class="bg-blue-300 text-blue-900">
       <th></th>
@@ -25,18 +25,18 @@
         <!--<td><%= user.avatar %></td>-->
         <!--<td><%= user.password_digest %></td>-->
         <td class="border px-8 py-4">
-          <%= link_to user, class: "bg-blue-900 hover:bg-blue-600 text-white text-sm font-bold p-2 rounded inline-block w-60" do %>
-            <i class="fas fa-door-open mr-3"></i><%= t('action-show') %>
+          <%= link_to user, class: "bg-blue-900 hover:bg-blue-600 text-white text-sm font-bold p-2 rounded inline-block w-40" do %>
+            <i class="fas fa-door-open mr-3"></i><%= t('action-showUser') %>
           <% end %>
         </td>
         <td class="border px-8 py-4">
-          <%= link_to edit_user_path(user), class: "bg-yellow-600 hover:bg-yellow-500 text-white text-sm font-bold p-2 rounded inline-block w-60" do %>
-            <i class="fas fa-user-edit mr-3"></i><%= t('action-edit') %>
+          <%= link_to edit_user_path(user), class: "bg-yellow-600 hover:bg-yellow-500 text-white text-sm font-bold p-2 rounded inline-block w-40" do %>
+            <i class="fas fa-user-edit mr-3"></i><%= t('action-editUser') %>
           <% end %>
         </td>
         <td class="border px-8 py-4">
-          <%= link_to user, method: :delete, data: { confirm: 'Are you sure?' }, class: "bg-red-900 hover:bg-red-600 text-white text-sm font-bold p-2 rounded inline-block w-60" do %>
-            <i class="fas fa-trash-alt mr-3"></i><%= t('action-delete') %>
+          <%= link_to user, method: :delete, data: { confirm: 'Are you sure?' }, class: "bg-red-900 hover:bg-red-600 text-white text-sm font-bold p-2 rounded inline-block w-40" do %>
+            <i class="fas fa-trash-alt mr-3"></i><%= t('action-deleteUser') %>
           <% end %>
         </td>
       </tr>

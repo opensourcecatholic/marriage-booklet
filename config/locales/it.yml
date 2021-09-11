@@ -2,15 +2,16 @@
 it:
   action-cancel: Action-cancel
   action-create-account: Action-create-account
-  action-delete: Action-delete
+  action-deleteUser: Action-deleteuser
   action-edit: Action-edit
+  action-editUser: Action-edituser
   action-login: Effettua l'accesso
   action-logout: Action-logout
   action-newuser: Action-newuser
   action-recover-password: Action-recover-password
   action-register: Regìstrati
   action-reset-password: Action-reset-password
-  action-show: Action-show
+  action-showUser: Action-showuser
   action-update-account: Action-update-account
   activerecord:
     attributes:
@@ -86,7 +87,6 @@ it:
     hello: Ciao
     welcome: Benvenuto/a
   get-started-link: Iniziamo!
-  hello: Ciao mondo
   page-title: Nostro Libretto Matrimonio
   pages:
     home:
@@ -129,16 +129,17 @@ it:
       create_project_button: Inizia a comporre il libretto!
       email_address:
         description: Il tuo indirizzo di posta elettronica non verrà mai condiviso senza il tuo consenso. I libretti di matrimonio da te creati verranno associati al tuo indirizzo di posta elettronica.
+      marriageDatePlace: Marriagedateplace
       marriage_location:
         church_placeholder: Basilica di San Giovanni in Laterano
         city_placeholder: Roma
       person_category:
         label: Io sono
       request_info:
-        description: Compila le informazioni base per avviare la composizione del libretto.
         optional_login: Se hai già un account, puoi effettuare l'accesso. In questo caso le informazioni immesse in precedenza saranno recuperate. Oppure puoi registrare da subito un account in modo da garantire la privacy del libretto, che verrà associato al tuo account.
         title: Informazioni utente
       title: Nuovo libretto matrimonio
+      update_project_button: Update project button
       viewYourProjects: Miei Progetti
       wedding_party:
         description: Descrivi la composizione del corteo nuziale

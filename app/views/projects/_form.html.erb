@@ -78,7 +78,7 @@
   <!-- Slide 2 -->
   <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
   <div class="carousel-item absolute opacity-0 bg-gray-200 p-4 invisible"><!-- Inner wrapper for title + card start -->
-    <h3 class="text-lg font-medium leading-6 text-gray-900 mb-3"><%= t('pages.projectNew.marriageDatePlaceTitle') %></h3> <!-- User info -->
+    <h3 class="text-lg font-medium leading-6 text-gray-900 mb-3"><%= t('pages.projectNew.marriageDatePlace') %></h3> <!-- User info -->
     <div class="mt-5 md:mt-0"><!-- Card outer wrapper start -->
       <div class="shadow sm:rounded-md sm:overflow-hidden"><!-- Card inner wrapper start -->
         <div class="px-4 py-5 bg-white space-y-6 sm:p-6"><!-- Card content start -->
@@ -160,7 +160,8 @@
           </div>
         </div>
         <div class="px-4 py-3 bg-gray-50 text-right sm:px-6 actions">
-          <%= form.submit t('pages.projectNew.create_project_button'), class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+          <% submit_text = (action_name == 'new') ? t('pages.projectNew.create_project_button') : t('pages.projectNew.update_project_button') %>
+          <%= form.submit submit_text, class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
         </div>
       </div>
     </div>
@@ -181,7 +182,6 @@
         class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
     </li>
   </ol>
-
 
   </div><!-- Carousel inner end -->
 </div><!-- Carousel end -->

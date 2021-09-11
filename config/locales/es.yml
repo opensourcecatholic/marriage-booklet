@@ -2,15 +2,16 @@
 es:
   action-cancel: Action-cancel
   action-create-account: Action-create-account
-  action-delete: Action-delete
+  action-deleteUser: Action-deleteuser
   action-edit: Action-edit
+  action-editUser: Action-edituser
   action-login: Inicia sesión
   action-logout: Action-logout
   action-newuser: Action-newuser
   action-recover-password: Action-recover-password
   action-register: Registrate
   action-reset-password: Action-reset-password
-  action-show: Action-show
+  action-showUser: Action-showuser
   action-update-account: Action-update-account
   activerecord:
     attributes:
@@ -86,7 +87,6 @@ es:
     hello: Hola
     welcome: Bienvenido/a
   get-started-link: "¡Vamos a empezar!"
-  hello: Hola mundo
   page-title: Nuestro Librete de Boda
   pages:
     home:
@@ -129,16 +129,17 @@ es:
       create_project_button: "¡Empiece a redactar el librete!"
       email_address:
         description: Su dirección de correo electrónico nunca se compartirá sin su consentimiento. Los libretes de boda que cree se asociarán con su dirección de correo electrónico.
+      marriageDatePlace: Marriagedateplace
       marriage_location:
         church_placeholder: Catedral Basílica de la Asunción de María Santísima
         city_placeholder: Guadalajara
       person_category:
         label: Yo soy
       request_info:
-        description: Complete la información básica para comenzar a redactar el librete.
         optional_login: Si ya tiene una cuenta, puede iniciar sesión. En este caso se recuperará la información ingresada previamente. O puede registrar una cuenta inmediatamente para garantizar la privacidad del librete, que se asociará con su cuenta.
         title: Informacion del usuario
       title: Nuevo librete de boda
+      update_project_button: Update project button
       viewYourProjects: Mis Proyectos
       wedding_party:
         description: Describe la composición de la procesión nupcial
