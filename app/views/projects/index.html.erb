@@ -6,7 +6,7 @@
     <ul class="flex border-b tab-buttons bg-gray-100 max-h-12">
         <% @projects.each_with_index do |project, index| %>
           <li>
-            <button <%= if index == 0 then 'autofocus' end %> data-tab-index="<%= (index).to_s %>" class="text-base md:text-lg tab-item bg-gray-400 inline-block py-2 px-4 border-gray-100 border-t border-r text-gray-100 hover:text-gray-200 hover:bg-gray-500 font-semibold focus:outline-none focus:bg-white focus:text-blue-700 h-12 focus:h-13 shadow-inner focus:shadow-none">
+            <button <%= if index == 0 then 'autofocus' end %> data-tab-index="<%= (index).to_s %>" class="text-base md:text-lg tab-item bg-gray-400 inline-block py-2 px-4 border-gray-100 border-t border-r text-gray-100 hover:text-gray-200 hover:bg-gray-500 font-semibold focus:outline-none focus:bg-white focus:text-blue-700 h-12 shadow-inner focus:shadow-none">
               <i class="fas fa-book-open mr-3"></i><%= t('pages.projectIndex.bookletProject') + ' ' + (index+1).to_s %>
             </button>
           </li>
@@ -109,4 +109,4 @@
   </div>
 </div>
 
-<%= javascript_pack_tag 'projectsIndex' %>
+<%= javascript_packs_with_chunks_tag 'projectsIndex' %>

@@ -46,3 +46,7 @@
   color: #2b6cb0;
   /*Set to match the Tailwind colour you want the active one to be */
 }
+
+.tab-buttons > li > button.active {
+  @apply outline-none bg-white text-blue-700;
+}
