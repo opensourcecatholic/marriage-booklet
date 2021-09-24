@@ -1,6 +1,18 @@
+---
 it:
+  action-cancel: Action-cancel
+  action-create-account: Action-create-account
+  action-deleteUser: Action-deleteuser
+  action-edit: Action-edit
+  action-editUser: Action-edituser
   action-login: Effettua l'accesso
+  action-logout: Action-logout
+  action-newuser: Action-newuser
+  action-recover-password: Action-recover-password
   action-register: Regìstrati
+  action-reset-password: Action-reset-password
+  action-showUser: Action-showuser
+  action-update-account: Action-update-account
   activerecord:
     attributes:
       project:
@@ -15,8 +27,7 @@ it:
         groomFirstName: Nome sposo
         groomLastName: Cognome sposo
         liturgy: Liturgia
-        liturgy_catholicNonCatholic: Tra una parte cattolica e una parte catecumena
-          o non cristiana
+        liturgy_catholicNonCatholic: Tra una parte cattolica e una parte catecumena o non cristiana
         liturgy_withMass: Nella celebrazione eucaristica
         liturgy_withoutMass: Nella celebrazione della Parola
         role: Ruolo
@@ -76,11 +87,12 @@ it:
     hello: Ciao
     welcome: Benvenuto/a
   get-started-link: Iniziamo!
-  hello: Ciao mondo
   page-title: Nostro Libretto Matrimonio
   pages:
     home:
       helloWorldFrom: Ciao Mondo da %{name}!
+    projectEdit:
+      title: Title
     projectIndex:
       actionSecureProject: Rendi sicuro il progetto
       bookletProject: Progetto
@@ -94,8 +106,7 @@ it:
       previewThisProject: Anteprima del Libretto
       projectIsPrivate: Progetto è privato
       projectIsPubliclyAccessible: Progetto è accessibile da tutti
-      tooltipSecureProject: Se non vuoi che questo progetto sia accessibile a chiunque,
-        crea un account utente. Allora potrai rendere sicuro il progetto.
+      tooltipSecureProject: Se non vuoi che questo progetto sia accessibile a chiunque, crea un account utente. Allora potrai rendere sicuro il progetto.
     projectNew:
       addWeddingPartyMember: Aggiungi Testimoni
       celebrantFirstName:
@@ -117,23 +128,18 @@ it:
         reverendAbbr: Rev.
       create_project_button: Inizia a comporre il libretto!
       email_address:
-        description: Il tuo indirizzo di posta elettronica non verrà mai condiviso
-          senza il tuo consenso. I libretti di matrimonio da te creati verranno associati
-          al tuo indirizzo di posta elettronica.
+        description: Il tuo indirizzo di posta elettronica non verrà mai condiviso senza il tuo consenso. I libretti di matrimonio da te creati verranno associati al tuo indirizzo di posta elettronica.
+      marriageDatePlace: Marriagedateplace
       marriage_location:
         church_placeholder: Basilica di San Giovanni in Laterano
         city_placeholder: Roma
       person_category:
         label: Io sono
       request_info:
-        description: Compila le informazioni base per avviare la composizione del
-          libretto.
-        optional_login: Se hai già un account, puoi effettuare l'accesso. In questo
-          caso le informazioni immesse in precedenza saranno recuperate. Oppure puoi
-          registrare da subito un account in modo da garantire la privacy del libretto,
-          che verrà associato al tuo account.
+        optional_login: Se hai già un account, puoi effettuare l'accesso. In questo caso le informazioni immesse in precedenza saranno recuperate. Oppure puoi registrare da subito un account in modo da garantire la privacy del libretto, che verrà associato al tuo account.
         title: Informazioni utente
       title: Nuovo libretto matrimonio
+      update_project_button: Update project button
       viewYourProjects: Miei Progetti
       wedding_party:
         description: Descrivi la composizione del corteo nuziale
@@ -141,6 +147,15 @@ it:
     projectPreview:
       ourWeddingCeremony: Il nostro Matrimonio
       theWeddingParty: Il Corteo Nuziale
+    userEdit:
+      editUserTitle: Editusertitle
+      emailEditMessage: Emaileditmessage
+      usernameMessage: Usernamemessage
+    userNew:
+      newUserTitle: Newusertitle
+  placeholder-email: Placeholder-email
+  placeholder-password: Placeholder-password
+  placeholder-username: Placeholder-username
+  placeholder-username-or-email: Placeholder-username-or-email
   welcome-greeting-1: Crea il libretto di cerimonia per il tuo Matrimonio
-  welcome-greeting-2: Scegli dai testi del rito ufficiale del matrimonio, insieme
-    al Sacerdote (o diacono) officiante
+  welcome-greeting-2: Scegli dai testi del rito ufficiale del matrimonio, insieme al Sacerdote (o diacono) officiante
