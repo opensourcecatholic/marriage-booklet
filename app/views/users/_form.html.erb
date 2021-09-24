@@ -13,13 +13,13 @@
 
   <div class="field">
     <%= form.label :username, class: "block text-sm font-medium text-gray-700" %>
-    <%= form.text_field :username, placeholder: t('placeholder-username'), class: "p-3 w-80 focus:border-purple-700 rounded border-2 outline-none text-sm" %>
+    <%= form.text_field :username, placeholder: t('placeholder-username'), class: "p-3 w-80 focus:border-purple-700 rounded border-2 outline-none text-sm", required: true %>
     <p class="text-sm mb-5 italic text-gray-500"><%= t('pages.userEdit.usernameMessage') %></p><!-- A username is usually a short name without spaces or special symbols. It could be a screen name, a nickname, your first and last name combined... -->
   </div>
 
   <div class="field">
     <%= form.label :email, class: "block text-sm font-medium text-gray-700" %>
-    <%= form.text_field :email, placeholder: t('placeholder-email'), class: "p-3 w-80 focus:border-purple-700 rounded border-2 outline-none text-sm" %>
+    <%= form.text_field :email, placeholder: t('placeholder-email'), class: "p-3 w-80 focus:border-purple-700 rounded border-2 outline-none text-sm", required: true %>
     <p class="text-sm mb-5 italic text-gray-500"><%= t('pages.userEdit.emailEditMessage') %></p><!-- If you change this, we will send you an email at your new address to confirm it. The new address will not become active until confirmed. -->
   </div>
 
@@ -46,7 +46,11 @@
 <% elsif action_name == 'new' %>
   <div class="field">
     <%= form.label :password, class: "block text-sm font-medium text-gray-700" %>
-    <%= form.text_field :password, placeholder: t('placeholder-password'), class: "mb-5 p-3 w-80 focus:border-purple-700 rounded border-2 outline-none text-sm" %>
+    <%= form.password_field :password, placeholder: t('placeholder-password'), class: "mb-5 p-3 w-80 focus:border-purple-700 rounded border-2 outline-none text-sm", autocomplete: "new-password", required: true %>
+  </div>
+  <div class="field">
+    <%= form.label :password_confirmation, t('pages.newUser.confirmPassword'), class: "block text-sm font-medium text-gray-700" %>
+    <%= form.password_field :password_confirmation, class: "mb-5 p-3 w-80 focus:border-purple-700 rounded border-2 outline-none text-sm", autocomplete: "new-password", required: true %>
   </div>
 <% end %>
 
