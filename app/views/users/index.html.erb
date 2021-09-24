@@ -40,14 +40,14 @@
           <% end %>
         </td>
       </tr>
-      <tr class="bg-gray-300">
-        <td class="border px-8 py-2 text-left" colspan="7">
-          <span>Total number of user accounts:&nbsp;&nbsp;&nbsp;<b><%= @users.count %></b></span>
-          <%= link_to new_user_path, class: "bg-green-900 hover:bg-green-600 text-white text-sm text-center font-bold p-2 mx-6 rounded inline-block w-60" do %>
-            <i class="fas fa-user-plus mr-3"></i><%= t('action-newuser') %>
-          <% end %>
-        </td>
-      </tr>
     <% end %>
+    <tr class="bg-gray-300">
+      <td class="border px-8 py-2 text-left" colspan="7">
+        <span>Total number of user accounts:&nbsp;&nbsp;&nbsp;<b><%= @users.count %></b></span>
+        <%= link_to new_user_path, class: "bg-green-900 hover:bg-green-600 text-white text-sm text-center font-bold p-2 mx-6 rounded inline-block w-60" do %>
+          <i class="fas fa-user-plus mr-3"></i><%= t('action-newuser') %>
+        <% end %>
+      </td>
+    </tr>
   </tbody>
 </table>
