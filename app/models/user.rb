@@ -6,4 +6,8 @@ class User < ApplicationRecord
     left_outer_joins(:projects)
     .where(projects_users: { user_id: nil })
   }
+  validates :username, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
+  validates :password, confirmation: true, length: { in: 6..25 }
+  validates :password_confirmation, presence: true
 end
