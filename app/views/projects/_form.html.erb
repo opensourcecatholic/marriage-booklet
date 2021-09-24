@@ -10,51 +10,78 @@
       </ul>
     </div>
   <% end %>
+<div class="carousel shadow-xl">
+  <div class="carousel-inner relative w-full">
 
-  <div class="md:grid md:grid-cols-3 md:gap-6 bg-gray-200 p-9 mx-4"><!-- Inner wrapper for title + card start -->
-    <div class="md:col-span-1"><!-- Title before card start -->
-      <div class="px-4 sm:px-0">
-        <h3 class="text-lg font-medium leading-6 text-gray-900"><%= t('pages.projectNew.request_info.title') %></h3> <!-- User info -->
-        <p class="mt-1 text-sm text-gray-600">
-          <%= t('pages.projectNew.request_info.description') %> <!-- Please fill in some information needed for composing the booklet. -->
-        </p>
-        <% unless logged_in? %>
-        <hr class="m-4 border-gray-400">
-        <p class="mt-1 text-sm text-gray-500 italic">
-          <%= t('pages.projectNew.request_info.optional_login') %> <!-- If you already created an account, you may login instead. In that case any previously entered information will be retrieved. Or you can go ahead and register an account right away if you would like your project to be associated with your account. -->
-        </p>
-        <div class="text-center p-4 md:grid md:grid-cols-2 md:gap-3">
-          <%= link_to t('action-login'), login_path, class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
-          <%= link_to t('action-register'), new_user_path, class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+  <!-- Slide 1 -->
+  <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+  <div class="carousel-item absolute opacity-0 bg-gray-200 p-4 invisible"><!-- Inner wrapper for title + card start -->
+    <h3 class="text-lg font-medium leading-6 text-gray-900 mb-3"><%= t('pages.projectNew.request_info.title') %></h3> <!-- User info -->
+    <div class="px-4 sm:px-0">
+      <% unless logged_in? %>
+      <hr class="m-4 border-gray-400">
+      <p class="mt-1 text-sm text-gray-500 italic">
+        <%= t('pages.projectNew.request_info.optional_login') %> <!-- If you already created an account, you may login instead. In that case any previously entered information will be retrieved. Or you can go ahead and register an account right away if you would like your project to be associated with your account. -->
+      </p>
+      <div class="text-center p-4 flex-col">
+        <div class="m-2 flex justify-center items-center">
+          <%= link_to login_path, class: "items-center inline-flex justify-center w-60 mx-5 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-700 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" do %>
+            <i class="fas fa-sign-in-alt mr-3"></i><%= t('action-login') %>
+          <% end %>
+          <%= link_to new_user_path, class: "items-center inline-flex justify-center w-60 mx-5 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-700 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500" do %>
+            <i class="fas fa-user-plus mr-3"></i><%= t('action-register') %>
+          <% end %>
         </div>
-        <% end %>
       </div>
-    </div><!-- Title before card end -->
-    <div class="mt-5 md:mt-0 md:col-span-2"><!-- Card outer wrapper start -->
+      <hr class="m-4 border-gray-400">
+      <% end %>
+    </div>
+    <div class="mt-5 md:mt-0"><!-- Card outer wrapper start -->
       <div class="shadow sm:rounded-md sm:overflow-hidden"><!-- Card inner wrapper start -->
         <div class="px-4 py-5 bg-white space-y-6 sm:p-6"><!-- Card content start -->
 
           <% unless logged_in? %>
           <%= form.fields_for :users do |f| %>
           <fieldset><!-- Category person block start -->
-          <legend class="text-base font-medium text-gray-900 required"><%= t('pages.projectNew.person_category.label') %> <!-- You are: --></legend>
+            <legend class="text-base font-medium text-gray-900 required"><%= t('pages.projectNew.person_category.label') %> <!-- You are: --></legend>
+            <div class="grid grid-cols-4 gap-6"><!-- Email address block start -->
+              <div class="col-span-2 sm:col-span-1">
+                <%= f.label :role, class: "block text-sm font-medium text-gray-700 required" %>
+                <%= f.select :role, User.roles.keys.map{ |key, value| [ t("activerecord.attributes.user.role_#{key}"), key ] }, {}, { class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight" } %>
+              </div>
+              <div class="col-span-2 sm:col-span-3">
+                <%= f.label :email, class: "block text-sm font-medium text-gray-700" %>
+                <%= f.text_field :email, class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight", placeholder: "me@example.com" %>
+                <p class="mt-2 text-sm text-gray-500 italic">
+                  <%= t('pages.projectNew.email_address.description') %> <!-- Your email address will never be shared without your permission. Wedding booklet projects you create will be associated with your email address.  -->
+                </p>
+              </div>
+            </div><!-- Email address block end -->
           </fieldset><!-- Person category block end -->
-          <div class="grid grid-cols-4 gap-6"><!-- Email address block start -->
-            <div class="col-span-2 sm:col-span-1">
-              <%= f.label :role, class: "block text-sm font-medium text-gray-700 required" %>
-              <%= f.select :role, User.roles.keys.map{ |key, value| [ t("activerecord.attributes.user.role_#{key}"), key ] }, {}, { class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight" } %>
-            </div>
-            <div class="col-span-2 sm:col-span-3">
-              <%= f.label :email, class: "block text-sm font-medium text-gray-700" %>
-              <%= f.text_field :email, class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight", placeholder: "me@example.com" %>
-              <p class="mt-2 text-sm text-gray-500 italic">
-                <%= t('pages.projectNew.email_address.description') %> <!-- Your email address will never be shared without your permission. Wedding booklet projects you create will be associated with your email address.  -->
-              </p>
-            </div>
-          </div><!-- Email address block end -->
           <% end %>
+          <% else %>
+            <% if action_name == 'new' %>
+              <p class="mt-2 text-sm text-gray-500 italic">Since you are logged in, the project will be associated with your account, and will not be publicly accessible.</p>
+              <p class="mt-2 text-sm text-gray-500 italic">Username and email that this project will be associated with:</p>
+              <p><%= current_user.username %>&nbsp;&lt;<%= current_user.email %>&gt;</p>
+              <p class="mt-2 text-sm text-gray-500 italic">Role in Project:</p>
+              <p><%= t("activerecord.attributes.user.role_#{current_user.role}") %></p>
+            <% elsif action_name == 'edit' %>
+            <% end %>
           <% end %>
 
+        </div><!-- Card content end -->
+      </div><!-- Card inner wrapper end -->
+    </div><!-- Card outer wrapper end -->
+  </div><!-- Inner wrapper for title + card end -->
+
+  <!-- Slide 2 -->
+  <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+  <div class="carousel-item absolute opacity-0 bg-gray-200 p-4 invisible"><!-- Inner wrapper for title + card start -->
+    <h3 class="text-lg font-medium leading-6 text-gray-900 mb-3"><%= t('pages.projectNew.marriageDatePlace') %></h3> <!-- User info -->
+    <div class="mt-5 md:mt-0"><!-- Card outer wrapper start -->
+      <div class="shadow sm:rounded-md sm:overflow-hidden"><!-- Card inner wrapper start -->
+        <div class="px-4 py-5 bg-white space-y-6 sm:p-6"><!-- Card content start -->
 
           <div class="grid grid-cols-4 gap-6"><!-- Marriage date block start -->
             <div class="col-span-4 sm:col-span-1 field">
@@ -94,28 +121,20 @@
               <%= form.text_field :celebrantLastName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md", placeholder: t('pages.projectNew.celebrantLastName.placeholder') %>
             </div>
           </div>
+
         </div><!-- Card content end -->
       </div><!-- Card inner wrapper end -->
     </div><!-- Card outer wrapper end -->
   </div><!-- Inner wrapper for title + card end -->
 
-  <div class="hidden sm:block" aria-hidden="true">
-    <div class="py-5">
-      <div class="border-t border-gray-200"></div>
-    </div>
-  </div>
-
-
-  <div class="mt-10 sm:mt-0 md:grid md:grid-cols-3 md:gap-6 bg-gray-200 p-9 mx-4">
-    <div class="md:col-span-1">
-      <div class="px-4 sm:px-0">
-        <h3 class="text-lg font-medium leading-6 text-gray-900"><%= t('pages.projectNew.wedding_party.title') %></h3><!-- Wedding party -->
-        <p class="mt-1 text-sm text-gray-600">
-          <%= t('pages.projectNew.wedding_party.description') %><!-- C -->
-        </p>
-      </div>
-    </div>
-    <div class="mt-5 md:mt-0 md:col-span-2">
+  <!-- Slide 3 -->
+  <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+  <div class="carousel-item absolute opacity-0 mt-10 sm:mt-0 bg-gray-200 p-4 invisible">
+    <h3 class="text-lg font-medium leading-6 text-gray-900 mb-3"><%= t('pages.projectNew.wedding_party.title') %></h3><!-- Wedding party -->
+    <p class="mt-1 text-sm text-gray-600">
+      <%= t('pages.projectNew.wedding_party.description') %><!-- C -->
+    </p>
+    <div class="mt-5 md:mt-0">
       <div class="shadow overflow-hidden sm:rounded-md">
         <div class="px-4 py-5 bg-white sm:p-6">
           <div class="grid grid-cols-6 gap-6">
@@ -136,15 +155,34 @@
               <%= form.text_field :groomLastName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
             </div>
             <div class="text-center col-span-6 sm:col-span-6 border-t-2 border-dotted">
-              <button type="button" id="addWeddingPartyMember" class="p-3 m-3 text-md text-blue-500 bg-blue-100 hover:bg-blue-200 hover:text-blue-800 font-bold uppercase rounded-md outline-none inline-block focus:outline-none">+ <%= t('pages.projectNew.addWeddingPartyMember') %></button>
+              <button type="button" id="addWeddingPartyMember" class="p-3 m-3 text-sm text-blue-500 bg-blue-100 hover:bg-blue-200 hover:text-blue-800 font-bold uppercase rounded-md outline-none inline-block focus:outline-none">+ <%= t('pages.projectNew.addWeddingPartyMember') %></button>
             </div>
           </div>
         </div>
         <div class="px-4 py-3 bg-gray-50 text-right sm:px-6 actions">
-          <%= form.submit t('pages.projectNew.create_project_button'), class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+          <% submit_text = (action_name == 'new') ? t('pages.projectNew.create_project_button') : t('pages.projectNew.update_project_button') %>
+          <%= form.submit submit_text, class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Add additional indicators for each slide-->
+  <ol class="carousel-indicators">
+    <li class="inline-block mr-3">
+      <label for="carousel-1"
+        class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
+    </li>
+    <li class="inline-block mr-3">
+      <label for="carousel-2"
+        class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
+    </li>
+    <li class="inline-block mr-3">
+      <label for="carousel-3"
+        class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
+    </li>
+  </ol>
+
+  </div><!-- Carousel inner end -->
+</div><!-- Carousel end -->
 <% end %>

@@ -1,25 +1,14 @@
-const activeTabClasses = [
-  'border-l','border-t','border-r','rounded-t','text-blue-700','font-semibold','active'
-];
-const inactiveTabClasses = [
- 'text-gray-500','hover:text-blue-800','font-semibold'
-];
+import "stylesheets/projects"
 
 function toggleTabs(activeIndex) {
   $('.tab-buttons > li > button').each(function (k,v) {
     let current = $(v);
     if (current.hasClass('active')) {
       current.removeClass('active');
-      //current.removeClass(activeTabClasses);
-      //current.addClass(inactiveTabClasses);
-      //current.parent().removeClass('-mb-px');
-    } else {
-      //current.parent().addClass('-mb-px');
     }
   }); 
   $('.tab-buttons > li > button[data-tab-index=' + activeIndex + ']').each(function (k,v) {
-    //$(v).removeClass(inactiveTabClasses);
-    //$(v).addClass(activeTabClasses);
+    $(v).addClass('active');
   }); 
 }
 

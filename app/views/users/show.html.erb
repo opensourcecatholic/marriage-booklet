@@ -1,29 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Role:</strong>
-  <%= @user.role %>
-</p>
-
-<p>
-  <strong>Avatar:</strong>
-  <%= @user.avatar %>
-</p>
-
-<p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="w-screen flex-col justify-center items-center bg-gray-100 p-12">
+  <table class="w-1/2 mx-auto bg-white shadow-lg mt-24">
+    <tbody>
+      <tr>
+        <td class="border px-8 py-4 bg-gray-300"><strong>Username:</strong></td>
+        <td class="border px-8 py-4"><%= @user.username %></td>
+      </tr>
+      <tr>
+        <td class="border px-8 py-4 bg-gray-300"><strong>Email:</strong></td>
+        <td class="border px-8 py-4"><%= @user.email %></td>
+      </tr>
+      <tr>
+        <td class="border px-8 py-4 bg-gray-300"><strong>Role:</strong></td>
+        <td class="border px-8 py-4"><%= @user.role %></td>
+      </tr>
+      <!--<tr><td><strong>Avatar:</strong></td><td><%= @user.avatar %></td></tr>-->
+      <tr>
+        <td class="border px-8 py-4 bg-gray-300"><strong>Password digest:</strong></td>
+        <td class="border px-8 py-4"><%= @user.password_digest %></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="flex justify-center items-center">
+    <%= link_to edit_user_path(@user), class: "bg-yellow-600 hover:bg-yellow-500 text-white font-bold m-5 p-2 rounded w-80 block" do %>
+      <i class="fas fa-user-edit mr-3"></i><%= t('action-edit') %>
+    <% end %>
+    <%= link_to users_path, class: "bg-gray-900 hover:bg-gray-600 text-white font-bold m-5 p-2 rounded w-80 block" do %>
+      <i class="fas fa-backspace mr-3"></i><%= t('action-cancel') %>
+    <% end %>
+  </div>
+</div>
