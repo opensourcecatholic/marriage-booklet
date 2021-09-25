@@ -8,6 +8,8 @@ class User < ApplicationRecord
   }
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
-  validates :password, confirmation: true, length: { in: 6..25 }
-  validates :password_confirmation, presence: true
+  validates :password, presence: true, confirmation: true, length: { in: 6..25 }, on: :create
+  validates :password, presence: true, confirmation: true, length: { in: 6..25 }, on: :update, if: :password_digest_changed?
+  validates :password_confirmation, presence: true, on: :create
+  validates :password_confirmation, presence: true, on: :update, if: :password_digest_changed?
 end

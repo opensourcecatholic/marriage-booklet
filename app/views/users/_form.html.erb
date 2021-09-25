@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+  <%= form.hidden_field :actionname, value: action_name %>
   <div class="field">
     <%= form.label :username, class: "block text-sm font-medium text-gray-700" %>
     <%= form.text_field :username, placeholder: t('placeholder-username'), class: "p-3 w-80 focus:border-purple-700 rounded border-2 outline-none text-sm", required: true %>
@@ -23,12 +23,12 @@
     <p class="text-sm mb-5 italic text-gray-500"><%= t('pages.userEdit.emailEditMessage') %></p><!-- If you change this, we will send you an email at your new address to confirm it. The new address will not become active until confirmed. -->
   </div>
 
-<% if action_name == 'edit' %>
+<% if action_name == 'edit' || action_name == 'update' %>
   <div class="field">
     <%= form.label :role, class: "block text-sm font-medium text-gray-700" %>
     <%= form.select :role, User.roles.keys.map{ |key, value| [ t("activerecord.attributes.user.role_#{key}"), key ] }, {}, { class: "mb-5 p-3 focus:border-purple-700 block w-80 rounded border-2 outline-none text-sm" } %>
   </div>
-<% elsif action_name == 'new' %>
+<% elsif action_name == 'new' || action_name == 'create' %>
   <div class="field">
     <%= form.label :role, class: "block text-sm font-medium text-gray-700" %>
     <%= form.select :role, User.roles.keys.map{ |key, value| [ t("activerecord.attributes.user.role_#{key}"), key ] }, {}, { class: "mb-5 p-3 focus:border-purple-700 block w-80 rounded border-2 outline-none text-sm" } %>
@@ -39,11 +39,11 @@
     <%= form.label :avatar, class: "block text-sm font-medium text-gray-700" %>
     <%= form.text_field :avatar, class: "mb-5 p-3 w-80 focus:border-purple-700 rounded border-2 outline-none text-sm" %>
   </div>-->
-<% if action_name == 'edit' %>
+<% if action_name == 'edit' || action_name == 'update' %>
   <%= button_tag( :class => "bg-indigo-600 hover:bg-indigo-900 text-white font-bold my-5 p-2 rounded w-80 block text-sm", :type => 'button') do %>
     <i class="fas fa-key mr-3"></i><%= t('action-reset-password') %>
   <% end %>
-<% elsif action_name == 'new' %>
+<% elsif action_name == 'new' || action_name == 'create' %>
   <div class="field">
     <%= form.label :password, class: "block text-sm font-medium text-gray-700" %>
     <%= form.password_field :password, placeholder: t('placeholder-password'), class: "mb-5 p-3 w-80 focus:border-purple-700 rounded border-2 outline-none text-sm", autocomplete: "new-password", required: true %>
@@ -57,9 +57,9 @@
   <div class="actions">
     <div class="action">
       <%= button_tag( :class => "bg-blue-600 hover:bg-blue-900 text-white font-bold my-5 p-2 rounded w-80 block text-sm") do %>
-        <% if action_name == 'edit' %>
+        <% if action_name == 'edit' || action_name == 'update' %>
           <i class="fas fa-user-edit mr-3"></i><%= t('action-update-account') %>
-        <% elsif action_name == 'new' %>
+        <% elsif action_name == 'new' || action_name == 'create' %>
           <i class="fas fa-user-plus mr-3"></i><%= t('action-create-account') %>
         <% end %>
       <% end %>
