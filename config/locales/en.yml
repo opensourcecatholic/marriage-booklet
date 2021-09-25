@@ -153,8 +153,12 @@ en:
       theWeddingParty: The Wedding Party
     userEdit:
       editUserTitle: Edit my account
-      emailEditMessage: Change my email address
-      usernameMessage: Change my username
+      emailEditMessage: Your email address will be used to verify your account, so
+        that your projects will be protected from random users
+      usernameMessage: Your username is a short name that identifies you to this service,
+        you'll use it to login. It can be formed by a nickname, or a combination of
+        your given name and your family name, or a combination of your name and an
+        interest of yours, etc.
     userNew:
       newUserTitle: Create New Account
   placeholder-email: e.g. joseph@carpenter.com
