@@ -6,10 +6,11 @@ class User < ApplicationRecord
     left_outer_joins(:projects)
     .where(projects_users: { user_id: nil })
   }
+
   validates :username, presence: true, uniqueness: true
-  validates :email, presence: true, uniqueness: true
-  validates :password, presence: true, confirmation: true, length: { in: 6..25 }, on: :create
-  validates :password, presence: true, confirmation: true, length: { in: 6..25 }, on: :update, if: :password_digest_changed?
-  validates :password_confirmation, presence: true, on: :create
-  validates :password_confirmation, presence: true, on: :update, if: :password_digest_changed?
+  validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: URI::MailTo::EMAIL_REGEXP } 
+  validates :password, length: { in: 6..25 }, on: :create #confirmation: true, 
+  validates :password, length: { in: 6..25 }, on: :update, if: :password_digest_changed? #confirmation: true, 
+  #validates :password_confirmation, presence: true, on: :create
+  #validates :password_confirmation, presence: true, on: :update, if: :password_digest_changed?
 end
