@@ -36,6 +36,7 @@ es:
         avatar: Avatar
         email: Email
         password: Password
+        password_confirmation: Password confirmation
         role: Role
         role_bride: Novia
         role_celebrant: Celebrante
@@ -91,6 +92,8 @@ es:
   pages:
     home:
       helloWorldFrom: Hola Mundo desde %{name}!
+    newUser:
+      confirmPassword: Confirmpassword
     projectEdit:
       title: Title
     projectIndex:
@@ -157,5 +160,6 @@ es:
   placeholder-password: Placeholder-password
   placeholder-username: Placeholder-username
   placeholder-username-or-email: Placeholder-username-or-email
+  reveal-password: Reveal-password
   welcome-greeting-1: Crea el librete de ceremonia para tu Boda
   welcome-greeting-2: Elija entre los textos del ritual oficial del matrimonio, junto con el sacerdote (o diácono) oficiante
