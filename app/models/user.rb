@@ -9,9 +9,10 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: URI::MailTo::EMAIL_REGEXP } 
-  validates :password, length: { in: 6..25 }, confirmation: true, on: :create
-  validates :password, length: { in: 6..25 }, confirmation: true, on: :update, if: :password_digest_changed?
-  validates_confirmation_of :password
-  validates :password_confirmation, presence: true, on: :create
-  validates :password_confirmation, presence: true, on: :update, if: :password_digest_changed?
+  validates :password,
+    presence: { on: :create },
+    length: { in: 6..25, allow_nil: true },
+    confirmation: true
+  validates :password_confirmation,
+    presence: { if: :password_digest_changed? }
 end
