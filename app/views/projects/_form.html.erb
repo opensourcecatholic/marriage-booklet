@@ -2,7 +2,6 @@
   <% if project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
-
       <ul>
         <% project.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -19,54 +18,86 @@
     <h3 class="text-lg font-medium leading-6 text-gray-900 mb-3"><%= t('pages.projectNew.request_info.title') %></h3> <!-- User info -->
     <div class="px-4 sm:px-0">
       <% unless logged_in? %>
-      <hr class="m-4 border-gray-400">
-      <p class="mt-1 text-sm text-gray-500 italic">
-        <%= t('pages.projectNew.request_info.optional_login') %> <!-- If you already created an account, you may login instead. In that case any previously entered information will be retrieved. Or you can go ahead and register an account right away if you would like your project to be associated with your account. -->
-      </p>
-      <div class="text-center p-4 flex-col">
-        <div class="m-2 flex justify-center items-center">
-          <%= link_to login_path, class: "items-center inline-flex justify-center w-60 mx-5 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-700 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" do %>
-            <i class="fas fa-sign-in-alt mr-3"></i><%= t('action-login') %>
-          <% end %>
-          <%= link_to new_user_path, class: "items-center inline-flex justify-center w-60 mx-5 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-700 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500" do %>
-            <i class="fas fa-user-plus mr-3"></i><%= t('action-register') %>
-          <% end %>
+        <hr class="m-4 border-gray-400">
+        <p class="mt-1 text-sm text-gray-500 italic">
+          <%= t('pages.projectNew.request_info.optional_login') %> <!-- If you already created an account, you may login instead. In that case any previously entered information will be retrieved. Or you can go ahead and register an account right away if you would like your project to be associated with your account. -->
+        </p>
+        <div class="text-center p-4 flex-col">
+          <div class="m-2 flex justify-center items-center">
+            <%= link_to login_path, class: "items-center inline-flex justify-center w-60 mx-5 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-700 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" do %>
+              <i class="fas fa-sign-in-alt mr-3"></i><%= t('action-login') %>
+            <% end %>
+            <%= link_to new_user_path, class: "items-center inline-flex justify-center w-60 mx-5 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-700 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500" do %>
+              <i class="fas fa-user-plus mr-3"></i><%= t('action-register') %>
+            <% end %>
+          </div>
         </div>
-      </div>
-      <hr class="m-4 border-gray-400">
+        <hr class="m-4 border-gray-400">
       <% end %>
     </div>
     <div class="mt-5 md:mt-0"><!-- Card outer wrapper start -->
       <div class="shadow sm:rounded-md sm:overflow-hidden"><!-- Card inner wrapper start -->
         <div class="px-4 py-5 bg-white space-y-6 sm:p-6"><!-- Card content start -->
 
-          <% unless logged_in? %>
-          <%= form.fields_for :users do |f| %>
-          <fieldset><!-- Category person block start -->
-            <legend class="text-base font-medium text-gray-900 required"><%= t('pages.projectNew.person_category.label') %> <!-- You are: --></legend>
-            <div class="grid grid-cols-4 gap-6"><!-- Email address block start -->
-              <div class="col-span-2 sm:col-span-1">
-                <%= f.label :role, class: "block text-sm font-medium text-gray-700 required" %>
-                <%= f.select :role, User.roles.keys.map{ |key, value| [ t("activerecord.attributes.user.role_#{key}"), key ] }, {}, { class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight" } %>
-              </div>
-              <div class="col-span-2 sm:col-span-3">
-                <%= f.label :email, class: "block text-sm font-medium text-gray-700" %>
-                <%= f.text_field :email, class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight", placeholder: "me@example.com" %>
-                <p class="mt-2 text-sm text-gray-500 italic">
-                  <%= t('pages.projectNew.email_address.description') %> <!-- Your email address will never be shared without your permission. Wedding booklet projects you create will be associated with your email address.  -->
-                </p>
-              </div>
-            </div><!-- Email address block end -->
-          </fieldset><!-- Person category block end -->
-          <% end %>
-          <% else %>
+          <% if logged_in? %>
             <% if action_name == 'new' %>
               <p class="mt-2 text-sm text-gray-500 italic">Since you are logged in, the project will be associated with your account, and will not be publicly accessible.</p>
               <p class="mt-2 text-sm text-gray-500 italic">Username and email that this project will be associated with:</p>
               <p><%= current_user.username %>&nbsp;&lt;<%= current_user.email %>&gt;</p>
               <p class="mt-2 text-sm text-gray-500 italic">Role in Project:</p>
               <p><%= t("activerecord.attributes.user.role_#{current_user.role}") %></p>
+              <%= form.hidden_field :isSecured, value: true %>
             <% elsif action_name == 'edit' %>
+              <% if project.isSecured %>
+                <h5 class="text-sm md:text-base text-green-800">
+                  <i class="fas fa-lock mr-3"></i><%= t('pages.projectIndex.projectIsPrivate') %>
+                </h5>
+                <p class="mt-2 text-sm text-gray-500 italic">This project is associated with <%= pluralize(@project.users.count, "user") %>:</p>
+                <% @project.users.reject{|n| n.username.instance_of? NilClass}.each do |n| %>
+                  <p>
+                    <%= n.username %>
+                    &lt;<%= n.email %>&gt;
+                  </p>
+                <% end %>
+              <% else %>
+                <h5 class="text-sm md:text-base text-red-800">
+                  <i class="fas fa-lock-open mr-3"></i><%= t('pages.projectIndex.projectIsPubliclyAccessible') %>
+                  <button class="text-xs md:text-sm bg-gray-300 p-3 rounded text-gray-600 hover:bg-gray-200 hover:text-gray-700 ml-6"><i class="fa fa-key mr-3"></i><%= t('pages.projectIndex.actionSecureProject') %></button>
+                </h5>
+              <% end %>
+            <% end %>
+          <% else %>
+            <% if action_name == 'new' %>
+              <p>Else if you do not wish to login or register at this time, please indicate at least some minimum info to help you identify your project:</p>
+              <%= form.fields_for :users do |f| %>
+                <fieldset><!-- Category person block start -->
+                  <legend class="text-base font-medium text-gray-900 required"><%= t('pages.projectNew.person_category.label') %> <!-- You are: --></legend>
+                  <div class="grid grid-cols-4 gap-6"><!-- Email address block start -->
+                    <div class="col-span-2 sm:col-span-1">
+                      <%= f.label :role, class: "block text-sm font-medium text-gray-700 required" %>
+                      <%= f.select :role, User.roles.keys.map{ |key, value| [ t("activerecord.attributes.user.role_#{key}"), key ] }, {}, { class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight" } %>
+                    </div>
+                    <div class="col-span-2 sm:col-span-3">
+                      <%= f.label :email, class: "block text-sm font-medium text-gray-700" %>
+                      <%= f.text_field :email, class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight", placeholder: "me@example.com" %>
+                      <p class="mt-2 text-sm text-gray-500 italic">
+                        <%= t('pages.projectNew.email_address.description') %> <!-- Your email address will never be shared without your permission. Wedding booklet projects you create will be associated with your email address, which will not however be publicly visible.  -->
+                      </p>
+                    </div>
+                    <%= f.hidden_field :username, value: 'anonymous' %>
+                    <%= f.hidden_field :password, value: 'anonymous' %>
+                    <%= f.hidden_field :password_confirmation, value: 'anonymous' %>
+                  </div><!-- Email address block end -->
+                </fieldset><!-- Person category block end -->
+              <% end %>
+            <% elsif action_name == 'edit' %>
+              <p class="mt-2 text-sm text-gray-500 italic">This project is associated with <%= pluralize(@project.users.count, "user") %>:</p>
+              <% @project.users.reject{|n| n.username.instance_of? NilClass}.each do |n| %>
+                <p>
+                  <%= n.username %>
+                  (<%= n.role %>)
+                </p>
+              <% end %>
             <% end %>
           <% end %>
 
