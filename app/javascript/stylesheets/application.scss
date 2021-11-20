@@ -31,3 +31,8 @@ label.required::before, legend.required::before {
     transform: rotateY(-20deg) rotateZ(0deg);
     filter: drop-shadow( 3px 0 12px rgba(0, 0, 0, 0.6));
 }
+
+.field_with_errors input {
+    border: 1px solid red;
+    box-shadow: 0 0 2px 0 red;
+}
