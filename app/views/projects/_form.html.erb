@@ -84,7 +84,7 @@
                         <%= t('pages.projectNew.email_address.description') %> <!-- Your email address will never be shared without your permission. Wedding booklet projects you create will be associated with your email address, which will not however be publicly visible.  -->
                       </p>
                     </div>
-                    <%= f.hidden_field :username, value: 'anonymous' %>
+                    <%= f.hidden_field :username, value: ('anonymous-' + @randomUsername) %>
                     <%= f.hidden_field :password, value: 'anonymous' %>
                     <%= f.hidden_field :password_confirmation, value: 'anonymous' %>
                   </div><!-- Email address block end -->

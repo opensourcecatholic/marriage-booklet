@@ -27,16 +27,16 @@ class ProjectsController < ApplicationController
   def new
     @projects = Project.all
     @project = Project.new
-    user = current_user
     users = @project.users.build
     wedding_party_members = 3.times { @project.wedding_party_members.build }
+    unless logged_in?
+      @randomUsername = SecureRandom.hex(10)
+    end
   end
 
   # GET /projects/1/edit
   def edit
     @projects = Project.all
-    #user = @project.users.build
-    #wedding_party_member = @project.wedding_party_members.build
   end
 
   # POST /projects or /projects.json
@@ -44,10 +44,6 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     if logged_in?
       @project.users << current_user
-    else
-      Rails.logger.debug project_params.inspect
-      #@user = User.new(role: project_params[:user][:role], email: project_params[:user][:email])
-      #@project.users << @user
     end
     respond_to do |format|
       if @project.save
