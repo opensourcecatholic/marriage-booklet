@@ -91,14 +91,17 @@ $(document).ready(() => {
         console.log('there are still ' + $('.addedDynamically').length + ' dynamically added wedding party members');
         $('.addedDynamically').each((i,el) => {
             $(el).find('label, select, input').each((ix,elx) => {
-                if($(elx).is("[for]")){
+                if( $(elx).is("[for]") ) {
                     let forVal = $(elx).attr('for').replace( /_\d+_/g, `_${idx}_`);
                     $(elx).attr('for',forVal);
-                } else {
+                }
+                if( $(elx).is("[id]") ) {
                     let idVal = $(elx).attr('id').replace( /_\d+_/g, `_${idx}_`);
                     $(elx).attr('id',idVal);
+                }
+                if( $(elx).is("[name]") ) {
                     let nameVal = $(elx).attr('name').replace( /\[\d+\]/g, `[${idx}]`);
-                    $(elx).attr('name',idVal);
+                    $(elx).attr('name',nameVal);
                 }
             });
             idx++;
