@@ -1,15 +1,14 @@
 import "stylesheets/projects"
 
 $(document).ready(() => {
-    let idx= parseInt($('.weddingPartyMembersIndex').last().val()) + 1;
+    let idx = parseInt($('.weddingPartyMembersIndex').last().val()) + 1;
     //alert("document is ready!");
 
     $(document).on('click','#addWeddingPartyMember',ev => {
-        console.log('Add wedding party member button was clicked!');
         const $parentDiv = $(ev.target).closest('div');
-        console.log($parentDiv);
-        let newPartyMemberRow = `<div class="col-span-6 border-l-8 border-solid border-blue-700 rounded-lg weddingPartyMemberWrapper">
+        let newPartyMemberRow = `<div class="col-span-6 border-l-8 border-solid border-green-400 rounded-lg weddingPartyMemberWrapper addedDynamically">
         <div class="w-full grid grid-cols-6 gap-6 border-t border-b border-r border-dashed border-gray-300 rounded-lg p-10 relative -left-2.5">
+        <div class="removeWeddingPartyMember bg-red-700 hover:bg-red-500 absolute top-2 right-2 inline-block p-2 rounded text-xs text-white cursor-pointer"><i class="fa fa-trash-alt"></i></div>
         <div class="col-span-6 sm:col-span-2">
             <label for="project_wedding_party_members_attributes_${idx}_role" class="block text-sm font-medium text-gray-700 required">Role</label>
             <select id="project_wedding_party_members_attributes_${idx}_role" name="project[wedding_party_members_attributes][${idx}][role]" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight">
@@ -81,6 +80,29 @@ $(document).ready(() => {
         </div></div></div>`;
         $(newPartyMemberRow).insertBefore($parentDiv);
         idx++;
+    });
+
+    $(document).on('click', '.removeWeddingPartyMember', ev => {
+        const $parentDiv = $(ev.target).closest('.weddingPartyMemberWrapper');
+        $parentDiv.remove();
+
+        idx = parseInt($('.weddingPartyMembersIndex').last().val()) + 1;
+        console.log('resetting idx back to ' + idx);
+        console.log('there are still ' + $('.addedDynamically').length + ' dynamically added wedding party members');
+        $('.addedDynamically').each((i,el) => {
+            $(el).find('label, select, input').each((ix,elx) => {
+                if($(elx).is("[for]")){
+                    let forVal = $(elx).attr('for').replace( /_\d+_/g, `_${idx}_`);
+                    $(elx).attr('for',forVal);
+                } else {
+                    let idVal = $(elx).attr('id').replace( /_\d+_/g, `_${idx}_`);
+                    $(elx).attr('id',idVal);
+                    let nameVal = $(elx).attr('name').replace( /\[\d+\]/g, `[${idx}]`);
+                    $(elx).attr('name',idVal);
+                }
+            });
+            idx++;
+        });
     });
 });
 
