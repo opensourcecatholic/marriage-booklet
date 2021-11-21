@@ -12,7 +12,7 @@ class ProjectsController < ApplicationController
   # GET /projects or /projects.json
   def index
     if logged_in?
-      @projects = (Project.where(isSecured: false) + current_user.projects)
+      @projects = (current_user.projects + Project.where(isSecured: false))
     else
       @projects = Project.where(isSecured: false)
     end
@@ -28,9 +28,19 @@ class ProjectsController < ApplicationController
     @projects = Project.all
     @project = Project.new
     users = @project.users.build
-    wedding_party_members = 3.times { @project.wedding_party_members.build }
+    wedding_party_members = 2.times { @project.wedding_party_members.build }
     unless logged_in?
       @randomUsername = SecureRandom.hex(10)
+    end
+    @weddingPartyMemberRoleOptions = case I18n.locale
+    when :en
+      ["maidofhonor","bestman"]
+    when :it
+      ["bridesmaid","groomsman"]
+    when :es
+      ["bridesmaid","groomsman"]
+    else
+      ["bridesmaid","groomsman"]
     end
   end
 
@@ -43,7 +53,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     if logged_in?
-      @project.users << current_user
+      @project.users = [ current_user ]
     end
     respond_to do |format|
       if @project.save
@@ -86,6 +96,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:liturgy, :weddingdate, :church, :city, :celebrantNamePrefix, :celebrantFirstName, :celebrantLastName, :brideFirstName, :brideLastName, :groomFirstName, :groomLastName, :isSecured, users_attributes: [:role, :email, :username, :password, :password_confirmation])
+      params.require(:project).permit(:liturgy, :weddingdate, :church, :city, :celebrantNamePrefix, :celebrantFirstName, :celebrantLastName, :brideFirstName, :brideLastName, :groomFirstName, :groomLastName, :isSecured, users_attributes: [:role, :email, :username, :password, :password_confirmation], wedding_party_members_attributes: [:role, :relationship, :relationshipTo, :firstName, :lastName])
     end
 end

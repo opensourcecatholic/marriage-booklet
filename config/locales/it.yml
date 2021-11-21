@@ -24,12 +24,16 @@ it:
         church: Chiesa
         city: Città
         email: Posta elettronica
+        firstName: Firstname
         groomFirstName: Nome sposo
         groomLastName: Cognome sposo
+        lastName: Lastname
         liturgy: Liturgia
         liturgy_catholicNonCatholic: Tra una parte cattolica e una parte catecumena o non cristiana
         liturgy_withMass: Nella celebrazione eucaristica
         liturgy_withoutMass: Nella celebrazione della Parola
+        relationship: Relationship
+        relationshipTo: Relationshipto
         role: Ruolo
         weddingdate: Data del matrimonio
       user:
@@ -72,17 +76,22 @@ it:
         relationship_uncle: Zio
         relationship_undefined: "---"
         role: Ruolo
+        role_altarserver: Role altarserver
         role_bestman: "---"
         role_bridesmaid: Testimone della sposa
+        role_chorist: Role chorist
         role_fatherbride: Padre della sposa
         role_fathergroom: Padre dello sposo
         role_flowergirl: "---"
         role_groomsman: Testimone dello sposo
+        role_lector: Role lector
         role_maidofhonor: "---"
         role_matronofhonor: "---"
         role_motherbride: Madre della sposa
         role_mothergroom: Madre dello sposo
+        role_musician: Role musician
         role_ringbearer: Portatore di anelli
+        role_soloist: Role soloist
   application:
     guest: Ospite
     hello: Ciao
@@ -160,6 +169,16 @@ it:
   placeholder-password: Placeholder-password
   placeholder-username: Placeholder-username
   placeholder-username-or-email: Placeholder-username-or-email
+  projects:
+    new:
+      weddingpartymember:
+        relationshipto:
+          theBride: Thebride
+          theBrideAndTheGroom: Thebrideandthegroom
+          theFamiliesOfTheBrideAndTheGroom: Thefamiliesofthebrideandthegroom
+          theFamilyOfTheBride: Thefamilyofthebride
+          theFamilyOfTheGroom: Thefamilyofthegroom
+          theGroom: Thegroom
   reveal-password: Reveal-password
   welcome-greeting-1: Crea il libretto di cerimonia per il tuo Matrimonio
   welcome-greeting-2: Scegli dai testi del rito ufficiale del matrimonio, insieme al Sacerdote (o diacono) officiante

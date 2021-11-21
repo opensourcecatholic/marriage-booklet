@@ -24,12 +24,16 @@ en:
         church: Church
         city: City
         email: Email
+        firstName: Firstname
         groomFirstName: Groom name
         groomLastName: Groom last name
+        lastName: Lastname
         liturgy: Liturgy
         liturgy_catholicNonCatholic: Between a Catholic and a Catechumen or a Non-Christian
         liturgy_withMass: Within Mass
         liturgy_withoutMass: Without Mass
+        relationship: Relationship
+        relationshipTo: Relationshipto
         role: Role
         weddingdate: Wedding date
       user:
@@ -72,17 +76,22 @@ en:
         relationship_uncle: Uncle
         relationship_undefined: "---"
         role: Role
+        role_altarserver: Role altarserver
         role_bestman: Best man
         role_bridesmaid: Bridesmaid
+        role_chorist: Role chorist
         role_fatherbride: Father of the bride
         role_fathergroom: Father of the groom
         role_flowergirl: Flower girl
         role_groomsman: Groomsman
+        role_lector: Role lector
         role_maidofhonor: Maid of Honor
         role_matronofhonor: Matron of Honor
         role_motherbride: Mother of the bride
         role_mothergroom: Mother of the groom
+        role_musician: Role musician
         role_ringbearer: Ringbearer
+        role_soloist: Role soloist
   application:
     guest: Guest
     hello: Hello
@@ -160,6 +169,16 @@ en:
   placeholder-password: e.g. ThyWillBeDone
   placeholder-username: e.g. joseph.carpenter
   placeholder-username-or-email: e.g. joseph@carpenter.com
+  projects:
+    new:
+      weddingpartymember:
+        relationshipto:
+          theBride: Thebride
+          theBrideAndTheGroom: Thebrideandthegroom
+          theFamiliesOfTheBrideAndTheGroom: Thefamiliesofthebrideandthegroom
+          theFamilyOfTheBride: Thefamilyofthebride
+          theFamilyOfTheGroom: Thefamilyofthegroom
+          theGroom: Thegroom
   reveal-password: Reveal-password
   welcome-greeting-1: Create the booklet for your Catholic Wedding ceremony
   welcome-greeting-2: Choose the texts from the official Rite of Marriage, together with the celebrant
