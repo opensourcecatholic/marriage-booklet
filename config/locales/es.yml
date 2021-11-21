@@ -24,12 +24,16 @@ es:
         church: Iglesia
         city: Ciudad
         email: Correo electrónico
+        firstName: Firstname
         groomFirstName: Novio nombre
         groomLastName: Novio apellido
+        lastName: Lastname
         liturgy: Liturgia
         liturgy_catholicNonCatholic: Entre parte católica y parte catecúmena o no cristiana
         liturgy_withMass: Con Misa
         liturgy_withoutMass: Sin Misa
+        relationship: Relationship
+        relationshipTo: Relationshipto
         role: Role
         weddingdate: Fecha de boda
       user:
@@ -72,17 +76,22 @@ es:
         relationship_uncle: Tío
         relationship_undefined: "---"
         role: Role
+        role_altarserver: Role altarserver
         role_bestman: Padrino de boda
         role_bridesmaid: Testiga de la novia
+        role_chorist: Role chorist
         role_fatherbride: Padre de la novia
         role_fathergroom: Padre del novio
         role_flowergirl: Niña de las flores
         role_groomsman: Testigo del novio
+        role_lector: Role lector
         role_maidofhonor: Dama de honor
         role_matronofhonor: Madrina de Honor
         role_motherbride: Madre de la novia
         role_mothergroom: Madre del novio
+        role_musician: Role musician
         role_ringbearer: Portador de los anillos
+        role_soloist: Role soloist
   application:
     guest: Huésped
     hello: Hola
@@ -160,6 +169,16 @@ es:
   placeholder-password: Placeholder-password
   placeholder-username: Placeholder-username
   placeholder-username-or-email: Placeholder-username-or-email
+  projects:
+    new:
+      weddingpartymember:
+        relationshipto:
+          theBride: Thebride
+          theBrideAndTheGroom: Thebrideandthegroom
+          theFamiliesOfTheBrideAndTheGroom: Thefamiliesofthebrideandthegroom
+          theFamilyOfTheBride: Thefamilyofthebride
+          theFamilyOfTheGroom: Thefamilyofthegroom
+          theGroom: Thegroom
   reveal-password: Reveal-password
   welcome-greeting-1: Crea el librete de ceremonia para tu Boda
   welcome-greeting-2: Elija entre los textos del ritual oficial del matrimonio, junto con el sacerdote (o diácono) oficiante
