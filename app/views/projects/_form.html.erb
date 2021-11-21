@@ -208,7 +208,7 @@
             </div>
             <%= form.fields_for :wedding_party_members do |f| %>
               <div class="col-span-6 border-l-8 border-solid border-blue-700 rounded-lg weddingPartyMemberWrapper">
-                <div class="w-full grid grid-cols-6 gap-6 border-t border-b border-r border-dashed border-gray-300 rounded-lg p-10">
+                <div class="w-full grid grid-cols-6 gap-6 border-t border-b border-r border-dashed border-gray-300 rounded-lg p-10 relative -left-2.5">
                 <div class="col-span-6 sm:col-span-2">
                   <input type="hidden" class="weddingPartyMembersIndex" value="<%= f.index  %>" />
                   <%= f.label :role, class: "block text-sm font-medium text-gray-700 required" %>

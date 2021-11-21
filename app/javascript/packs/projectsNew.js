@@ -9,8 +9,8 @@ $(document).ready(() => {
         const $parentDiv = $(ev.target).closest('div');
         console.log($parentDiv);
         let newPartyMemberRow = `<div class="col-span-6 border-l-8 border-solid border-blue-700 rounded-lg weddingPartyMemberWrapper">
-        <div class="w-full grid grid-cols-6 gap-6 border-t border-b border-r border-dashed border-gray-300 rounded-lg p-10">
-        <div class="col-span-6 sm:col-span-2 border-t-2 border-dotted">
+        <div class="w-full grid grid-cols-6 gap-6 border-t border-b border-r border-dashed border-gray-300 rounded-lg p-10 relative -left-2.5">
+        <div class="col-span-6 sm:col-span-2">
             <label for="project_wedding_party_members_attributes_${idx}_role" class="block text-sm font-medium text-gray-700 required">Role</label>
             <select id="project_wedding_party_members_attributes_${idx}_role" name="project[wedding_party_members_attributes][${idx}][role]" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight">
                 <option value="">---</option>
@@ -32,7 +32,7 @@ $(document).ready(() => {
                 <option value="soloist">${I18n.t("activerecord.attributes.wedding_party_member.role_soloist")}</option>
             </select>
         </div>
-        <div class="col-span-6 sm:col-span-2 border-t-2 border-dotted">
+        <div class="col-span-6 sm:col-span-2">
             <label for="project_wedding_party_members_attributes_${idx}_relationship" class="block text-sm font-medium text-gray-700">Relationship</label>
             <select id="project_wedding_party_members_attributes_${idx}_relationship" name="project[wedding_party_members_attributes][${idx}][relationship]" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight">
                 <option value="undefined">---</option>
@@ -59,7 +59,7 @@ $(document).ready(() => {
                 <option value="greataunt">Great aunt of</option>
             </select>
         </div>
-        <div class="col-span-6 sm:col-span-2 border-t-2 border-dotted">
+        <div class="col-span-6 sm:col-span-2">
             <label for="project_wedding_party_members_attributes_${idx}_relationshipTo" class="block text-sm font-medium text-gray-700">To</label>
             <select id="project_wedding_party_members_attributes_${idx}_relationshipTo" name="project[wedding_party_members_attributes][${idx}][relationshipTo]" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight">
                 <option value="undefined">---</option>
