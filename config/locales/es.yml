@@ -1,18 +1,17 @@
----
 es:
-  action-cancel: Action-cancel
-  action-create-account: Action-create-account
-  action-deleteUser: Action-deleteuser
-  action-edit: Action-edit
-  action-editUser: Action-edituser
+  action-cancel: Cancelar
+  action-create-account: Crea Perfil
+  action-deleteUser: Borra perfil
+  action-edit: Edita
+  action-editUser: Edita perfil
   action-login: Inicia sesión
-  action-logout: Action-logout
-  action-newuser: Action-newuser
-  action-recover-password: Action-recover-password
+  action-logout: Cerra sesión
+  action-newuser: Registrarse
+  action-recover-password: Recupera contraseña
   action-register: Registrate
-  action-reset-password: Action-reset-password
-  action-showUser: Action-showuser
-  action-update-account: Action-update-account
+  action-reset-password: Restablezca la contraseña
+  action-showUser: Mi perfil
+  action-update-account: Actualiza mi perfil
   activerecord:
     attributes:
       project:
@@ -27,7 +26,8 @@ es:
         groomFirstName: Novio nombre
         groomLastName: Novio apellido
         liturgy: Liturgia
-        liturgy_catholicNonCatholic: Entre parte católica y parte catecúmena o no cristiana
+        liturgy_catholicNonCatholic: Entre parte católica y parte catecúmena o no
+          cristiana
         liturgy_withMass: Con Misa
         liturgy_withoutMass: Sin Misa
         role: Role
@@ -36,7 +36,7 @@ es:
         avatar: Avatar
         email: Email
         password: Password
-        password_confirmation: Password confirmation
+        password_confirmation: Confirmación de contraseña
         role: Role
         role_bride: Novia
         role_celebrant: Celebrante
@@ -93,9 +93,9 @@ es:
     home:
       helloWorldFrom: Hola Mundo desde %{name}!
     newUser:
-      confirmPassword: Confirmpassword
+      confirmPassword: Confirma contraseña
     projectEdit:
-      title: Title
+      title: Edita Proyecto
     projectIndex:
       actionSecureProject: Haz que el proyecto sea seguro
       bookletProject: Proyecto de Librete
@@ -109,7 +109,8 @@ es:
       previewThisProject: Preestreno de este Librete
       projectIsPrivate: Proyecto es Privado
       projectIsPubliclyAccessible: Proyecto es Públicamente Accesible
-      tooltipSecureProject: Si no desea que este proyecto sea de acceso público, cree una cuenta de usuario. Entonces podrá asegurar el proyecto.
+      tooltipSecureProject: Si no desea que este proyecto sea de acceso público, cree
+        una cuenta de usuario. Entonces podrá asegurar el proyecto.
     projectNew:
       addWeddingPartyMember: Agrega Testigo/a
       celebrantFirstName:
@@ -131,18 +132,23 @@ es:
         reverendAbbr: Rev.
       create_project_button: "¡Empiece a redactar el librete!"
       email_address:
-        description: Su dirección de correo electrónico nunca se compartirá sin su consentimiento. Los libretes de boda que cree se asociarán con su dirección de correo electrónico.
-      marriageDatePlace: Marriagedateplace
+        description: Su dirección de correo electrónico nunca se compartirá sin su
+          consentimiento. Los libretes de boda que cree se asociarán con su dirección
+          de correo electrónico.
+      marriageDatePlace: Fecha y lugar de boda
       marriage_location:
         church_placeholder: Catedral Basílica de la Asunción de María Santísima
         city_placeholder: Guadalajara
       person_category:
         label: Yo soy
       request_info:
-        optional_login: Si ya tiene una cuenta, puede iniciar sesión. En este caso se recuperará la información ingresada previamente. O puede registrar una cuenta inmediatamente para garantizar la privacidad del librete, que se asociará con su cuenta.
+        optional_login: Si ya tiene una cuenta, puede iniciar sesión. En este caso
+          se recuperará la información ingresada previamente. O puede registrar una
+          cuenta inmediatamente para garantizar la privacidad del librete, que se
+          asociará con su cuenta.
         title: Informacion del usuario
       title: Nuevo librete de boda
-      update_project_button: Update project button
+      update_project_button: Actualiza el Proyecto
       viewYourProjects: Mis Proyectos
       wedding_party:
         description: Describe la composición de la procesión nupcial
@@ -151,15 +157,20 @@ es:
       ourWeddingCeremony: Nuestra Ceremonia de Boda
       theWeddingParty: La Procesión Nupcial
     userEdit:
-      editUserTitle: Editusertitle
-      emailEditMessage: Emaileditmessage
-      usernameMessage: Usernamemessage
+      editUserTitle: Edita mi perfil
+      emailEditMessage: Tu perfil será verificado con tu dirección de correo electrónico,
+        con el fin de proteger tus proyectos del acceso público
+      usernameMessage: Tu nombre de usuario es un nombre corto, sin caracteres de
+        espacio, que te identifica al acceder al servicio. Puede estar formado por
+        un apodo, o una combinación de tu nombre de pila y tu apellido, o una combinación
+        de tu nombre y un interés tuyo, etc.
     userNew:
-      newUserTitle: Newusertitle
-  placeholder-email: Placeholder-email
-  placeholder-password: Placeholder-password
-  placeholder-username: Placeholder-username
-  placeholder-username-or-email: Placeholder-username-or-email
-  reveal-password: Reveal-password
+      newUserTitle: Crea perfil
+  placeholder-email: por ej. josé@carpintero.es
+  placeholder-password: por ej. TuVoluntadSeaHecha
+  placeholder-username: por ej. josé.carpintero
+  placeholder-username-or-email: por ej. josé@carpintero.es
+  reveal-password: Revela contraseña
   welcome-greeting-1: Crea el librete de ceremonia para tu Boda
-  welcome-greeting-2: Elija entre los textos del ritual oficial del matrimonio, junto con el sacerdote (o diácono) oficiante
+  welcome-greeting-2: Elija entre los textos del ritual oficial del matrimonio, junto
+    con el sacerdote (o diácono) oficiante

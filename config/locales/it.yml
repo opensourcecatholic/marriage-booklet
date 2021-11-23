@@ -1,18 +1,17 @@
----
 it:
-  action-cancel: Action-cancel
-  action-create-account: Action-create-account
-  action-deleteUser: Action-deleteuser
-  action-edit: Action-edit
-  action-editUser: Action-edituser
+  action-cancel: Annulla
+  action-create-account: Regìstrati
+  action-deleteUser: Cancella account
+  action-edit: Modifica
+  action-editUser: Modifica account
   action-login: Effettua l'accesso
-  action-logout: Action-logout
-  action-newuser: Action-newuser
-  action-recover-password: Action-recover-password
+  action-logout: Disconnèttiti
+  action-newuser: Regìstrati
+  action-recover-password: Recupera la password
   action-register: Regìstrati
-  action-reset-password: Action-reset-password
-  action-showUser: Action-showuser
-  action-update-account: Action-update-account
+  action-reset-password: Resetta la password
+  action-showUser: Mio profilo
+  action-update-account: Aggiorna il profilo
   activerecord:
     attributes:
       project:
@@ -27,7 +26,8 @@ it:
         groomFirstName: Nome sposo
         groomLastName: Cognome sposo
         liturgy: Liturgia
-        liturgy_catholicNonCatholic: Tra una parte cattolica e una parte catecumena o non cristiana
+        liturgy_catholicNonCatholic: Tra una parte cattolica e una parte catecumena
+          o non cristiana
         liturgy_withMass: Nella celebrazione eucaristica
         liturgy_withoutMass: Nella celebrazione della Parola
         role: Ruolo
@@ -36,7 +36,7 @@ it:
         avatar: Avatar
         email: Posta elettronica
         password: Password
-        password_confirmation: Password confirmation
+        password_confirmation: Conferma password
         role: Ruolo
         role_bride: Sposa
         role_celebrant: Celebrante
@@ -93,9 +93,9 @@ it:
     home:
       helloWorldFrom: Ciao Mondo da %{name}!
     newUser:
-      confirmPassword: Confirmpassword
+      confirmPassword: Conferma la password
     projectEdit:
-      title: Title
+      title: Modifica Progetto
     projectIndex:
       actionSecureProject: Rendi sicuro il progetto
       bookletProject: Progetto
@@ -109,7 +109,8 @@ it:
       previewThisProject: Anteprima del Libretto
       projectIsPrivate: Progetto è privato
       projectIsPubliclyAccessible: Progetto è accessibile da tutti
-      tooltipSecureProject: Se non vuoi che questo progetto sia accessibile a chiunque, crea un account utente. Allora potrai rendere sicuro il progetto.
+      tooltipSecureProject: Se non vuoi che questo progetto sia accessibile a chiunque,
+        crea un account utente. Allora potrai rendere sicuro il progetto.
     projectNew:
       addWeddingPartyMember: Aggiungi Testimoni
       celebrantFirstName:
@@ -131,18 +132,23 @@ it:
         reverendAbbr: Rev.
       create_project_button: Inizia a comporre il libretto!
       email_address:
-        description: Il tuo indirizzo di posta elettronica non verrà mai condiviso senza il tuo consenso. I libretti di matrimonio da te creati verranno associati al tuo indirizzo di posta elettronica.
-      marriageDatePlace: Marriagedateplace
+        description: Il tuo indirizzo di posta elettronica non verrà mai condiviso
+          senza il tuo consenso. I libretti di matrimonio da te creati verranno associati
+          al tuo indirizzo di posta elettronica.
+      marriageDatePlace: Data e Luogo del Matrimonio
       marriage_location:
         church_placeholder: Basilica di San Giovanni in Laterano
         city_placeholder: Roma
       person_category:
         label: Io sono
       request_info:
-        optional_login: Se hai già un account, puoi effettuare l'accesso. In questo caso le informazioni immesse in precedenza saranno recuperate. Oppure puoi registrare da subito un account in modo da garantire la privacy del libretto, che verrà associato al tuo account.
+        optional_login: Se hai già un account, puoi effettuare l'accesso. In questo
+          caso le informazioni immesse in precedenza saranno recuperate. Oppure puoi
+          registrare da subito un account in modo da garantire la privacy del libretto,
+          che verrà associato al tuo account.
         title: Informazioni utente
       title: Nuovo libretto matrimonio
-      update_project_button: Update project button
+      update_project_button: Aggiorna Progetto
       viewYourProjects: Miei Progetti
       wedding_party:
         description: Descrivi la composizione del corteo nuziale
@@ -151,15 +157,20 @@ it:
       ourWeddingCeremony: Il nostro Matrimonio
       theWeddingParty: Il Corteo Nuziale
     userEdit:
-      editUserTitle: Editusertitle
-      emailEditMessage: Emaileditmessage
-      usernameMessage: Usernamemessage
+      editUserTitle: Modifica profilo
+      emailEditMessage: Il tuo profilo verrà verificato con il tuo indirizzo email,
+        in modo da proteggere i tuoi progetti dall'accesso pubblico
+      usernameMessage: Il nome utente è un nome breve, senza caratteri di spaziatura,
+        che ti identifica in fase di accesso al servizio. Può essere formato da un
+        nomignolo, o una combinazione del tuo nome e cognome, o una combinazione del
+        tuo nome e un tuo interesse, ecc.
     userNew:
-      newUserTitle: Newusertitle
-  placeholder-email: Placeholder-email
-  placeholder-password: Placeholder-password
-  placeholder-username: Placeholder-username
-  placeholder-username-or-email: Placeholder-username-or-email
-  reveal-password: Reveal-password
+      newUserTitle: Crea profilo
+  placeholder-email: per es. giuseppe@falegname.it
+  placeholder-password: per es. SiaFattaLaTuaVolontà
+  placeholder-username: per es. giuseppe.falegname
+  placeholder-username-or-email: per es. giuseppe@falegname.it
+  reveal-password: Svela la password
   welcome-greeting-1: Crea il libretto di cerimonia per il tuo Matrimonio
-  welcome-greeting-2: Scegli dai testi del rito ufficiale del matrimonio, insieme al Sacerdote (o diacono) officiante
+  welcome-greeting-2: Scegli dai testi del rito ufficiale del matrimonio, insieme
+    al Sacerdote (o diacono) officiante
