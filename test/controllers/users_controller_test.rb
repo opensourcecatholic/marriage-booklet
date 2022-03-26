@@ -43,7 +43,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update user" do
-    patch user_url(@user), params: { user: { avatar: @user.avatar, email: @user.email, password: @user.password_digest, role: @user.role, username: @user.username } }
+    patch user_url(@user), params: { user: { avatar: 'DifferentUserAvatar' } }
     assert_redirected_to projects_url
   end
 
