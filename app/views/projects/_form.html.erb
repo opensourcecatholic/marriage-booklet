@@ -209,55 +209,55 @@
             <%= form.fields_for :wedding_party_members do |f| %>
               <div class="col-span-6 border-l-8 border-solid border-blue-700 rounded-lg weddingPartyMemberWrapper">
                 <div class="w-full grid grid-cols-6 gap-6 border-t border-b border-r border-dashed border-gray-300 rounded-lg p-10 relative -left-2.5">
-                <div class="col-span-6 sm:col-span-2">
-                  <input type="hidden" class="weddingPartyMembersIndex" value="<%= f.index  %>" />
-                  <%= f.label :role, class: "block text-sm font-medium text-gray-700 required" %>
-                  <% if action_name == 'new' %>
-                    <%= f.select :role,
-                      WeddingPartyMember.roles.keys.map{ |key, value| [ t("activerecord.attributes.wedding_party_member.role_#{key}"), key ] },
-                      { selected: @weddingPartyMemberRoleOptions[f.index] },
-                      { class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight" }
-                    %>
-                  <% else %>
-                    <%= f.select :role,
-                      WeddingPartyMember.roles.keys.map{ |key, value| [ t("activerecord.attributes.wedding_party_member.role_#{key}"), key ] },
+                  <div class="col-span-6 sm:col-span-2">
+                    <input type="hidden" class="weddingPartyMembersIndex" value="<%= f.index  %>" />
+                    <%= f.label :role, class: "block text-sm font-medium text-gray-700 required" %>
+                    <% if action_name == 'new' %>
+                      <%= f.select :role,
+                        WeddingPartyMember.roles.keys.map{ |key, value| [ t("activerecord.attributes.wedding_party_member.role_#{key}"), key ] },
+                        { selected: @weddingPartyMemberRoleOptions[f.index] },
+                        { class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight" }
+                      %>
+                    <% else %>
+                      <%= f.select :role,
+                        WeddingPartyMember.roles.keys.map{ |key, value| [ t("activerecord.attributes.wedding_party_member.role_#{key}"), key ] },
+                        {},
+                        { class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight" }
+                      %>
+                    <% end %>
+                  </div>
+                  <div class="col-span-6 sm:col-span-2">
+                    <%= f.label :relationship, class: "block text-sm font-medium text-gray-700" %>
+                    <%= f.select :relationship,
+                      WeddingPartyMember.relationships.keys.map{ |key, value| [ t("activerecord.attributes.wedding_party_member.relationship_#{key}")+(key != 'undefined' ? " of" : ""), key ] },
                       {},
                       { class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight" }
                     %>
-                  <% end %>
-                </div>
-                <div class="col-span-6 sm:col-span-2">
-                  <%= f.label :relationship, class: "block text-sm font-medium text-gray-700" %>
-                  <%= f.select :relationship,
-                    WeddingPartyMember.relationships.keys.map{ |key, value| [ t("activerecord.attributes.wedding_party_member.relationship_#{key}")+(key != 'undefined' ? " of" : ""), key ] },
-                    {},
-                    { class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight" }
-                  %>
-                </div>
-                <div class="col-span-6 sm:col-span-2">
-                  <%= f.label :relationshipTo, class: "block text-sm font-medium text-gray-700" %>
-                  <%= f.select :relationshipTo,
-                    options_for_select([
-                        ["---",""],
-                        [t("projects.new.weddingpartymember.relationshipto.theBride"),"theBride"],
-                        [t("projects.new.weddingpartymember.relationshipto.theGroom"),"theGroom"],
-                        [t("projects.new.weddingpartymember.relationshipto.theFamilyOfTheBride"),"theFamilyOfTheBride"],
-                        [t("projects.new.weddingpartymember.relationshipto.theFamilyOfTheGroom"),"theFamilyOfTheGroom"],
-                        [t("projects.new.weddingpartymember.relationshipto.theBrideAndTheGroom"),"theBrideAndTheGroom"],
-                        [t("projects.new.weddingpartymember.relationshipto.theFamiliesOfTheBrideAndTheGroom"),"theFamiliesOfTheBrideAndTheGroom"]
-                      ], (f.object.relationshipTo || "")),
-                    {},
-                    { class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight" }
-                  %>
-                </div>
-                <div class="col-span-6 sm:col-span-3">
-                  <%= f.label :firstName, class: "block text-sm font-medium text-gray-700 required" %>
-                  <%= f.text_field :firstName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md", autocomplete: 'off' %>
-                </div>
-                <div class="col-span-6 sm:col-span-3">
-                  <%= f.label :lastName, class: "block text-sm font-medium text-gray-700 required" %>
-                  <%= f.text_field :lastName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md", autocomplete: 'off' %>
-                </div>
+                  </div>
+                  <div class="col-span-6 sm:col-span-2">
+                    <%= f.label :relationshipTo, class: "block text-sm font-medium text-gray-700" %>
+                    <%= f.select :relationshipTo,
+                      options_for_select([
+                          ["---",""],
+                          [t("projects.new.weddingpartymember.relationshipto.theBride"),"theBride"],
+                          [t("projects.new.weddingpartymember.relationshipto.theGroom"),"theGroom"],
+                          [t("projects.new.weddingpartymember.relationshipto.theFamilyOfTheBride"),"theFamilyOfTheBride"],
+                          [t("projects.new.weddingpartymember.relationshipto.theFamilyOfTheGroom"),"theFamilyOfTheGroom"],
+                          [t("projects.new.weddingpartymember.relationshipto.theBrideAndTheGroom"),"theBrideAndTheGroom"],
+                          [t("projects.new.weddingpartymember.relationshipto.theFamiliesOfTheBrideAndTheGroom"),"theFamiliesOfTheBrideAndTheGroom"]
+                        ], (f.object.relationshipTo || "")),
+                      {},
+                      { class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight" }
+                    %>
+                  </div>
+                  <div class="col-span-6 sm:col-span-3">
+                    <%= f.label :firstName, class: "block text-sm font-medium text-gray-700 required" %>
+                    <%= f.text_field :firstName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md", autocomplete: 'off' %>
+                  </div>
+                  <div class="col-span-6 sm:col-span-3">
+                    <%= f.label :lastName, class: "block text-sm font-medium text-gray-700 required" %>
+                    <%= f.text_field :lastName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md", autocomplete: 'off' %>
+                  </div>
                 </div>
               </div>
             <% end %>
