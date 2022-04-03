@@ -1,3 +1,3 @@
 i18n: weblate
-bugfix: ['fix/*', 'bugfix/*']
-enhancement: ['feature/*', 'feat/*']
+bugfix: ['fix/*', 'bugfix/*', 'fix-*', 'bugfix-*']
+enhancement: ['feature/*', 'feat/*', 'feature-*', 'feat-*']
