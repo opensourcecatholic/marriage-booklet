@@ -16,8 +16,17 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create user" do
+    user_to_create = {
+      avatar: 'NewUserAvatar',
+      email: 'new_user@example.com',
+      password: 'new_user_password',
+      password_confirmation: 'new_user_password',
+      role: 'bride',
+      username: 'new_user'
+    }
+
     assert_difference('User.count') do
-      post users_url, params: { user: { avatar: @user.avatar, email: @user.email, password: @user.password_digest, role: @user.role, username: @user.username } }
+      post users_url, params: { user: user_to_create }
     end
 
     assert_redirected_to projects_url
@@ -34,7 +43,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update user" do
-    patch user_url(@user), params: { user: { avatar: @user.avatar, email: @user.email, password: @user.password_digest, role: @user.role, username: @user.username } }
+    patch user_url(@user), params: { user: { avatar: 'DifferentUserAvatar' } }
     assert_redirected_to projects_url
   end
 
