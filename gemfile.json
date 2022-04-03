@@ -19,7 +19,6 @@
     "web-console": ">=4.1.0",
     "rack-mini-profiler": "~>2.0",
     "listen": "~>3.3",
-    "spring": ">=0",
     "i18n-tasks": "~>0.9"
   },
   "test": {
