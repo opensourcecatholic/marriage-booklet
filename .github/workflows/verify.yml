@@ -46,7 +46,7 @@ jobs:
           sudo apt -y install libpq-dev
 
       - name: Read Node.js version to install from `.nvmrc`
-        run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
+        run: echo "NVMRC=$(cat .nvmrc)" >> $GITHUB_OUTPUT
         id: nvm
 
       - name: Install required Node.js version
@@ -56,7 +56,7 @@ jobs:
 
       - name: Get Yarn cache directory path
         id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
+        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
 
       - name: Setup cache key and directory for node_modules cache
         uses: actions/cache@v1
