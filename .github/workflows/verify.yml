@@ -50,24 +50,9 @@ jobs:
         with:
           node-version-file: '.nvmrc'
 
-      - name: Get Yarn cache directory path
-        id: yarn-cache
-        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
-
-      - name: Setup cache key and directory for node_modules cache
-        uses: actions/cache@v3
-        with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-
       - name: Setup test database
         run: |
           bundle exec rails db:reset
-
-      - name: Compile assets
-        run: |
-          yarn install
-          bundle exec rails webpacker:compile
 
       - name: Run tests
         run: |
