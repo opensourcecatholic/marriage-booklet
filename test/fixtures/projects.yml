@@ -1,29 +1,29 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  liturgy: 1
+  liturgy: 0
   weddingdate: 2023-01-04 20:05:55
-  church: MyString
-  city: MyString
-  celebrantNamePrefix: MyString
-  celebrantFirstName: MyString
-  celebrantLastName: MyString
-  brideFirstName: MyString
-  brideLastName: MyString
-  groomFirstName: MyString
-  groomLastName: MyString
+  church: Saint Patrick Cathedral
+  city: New York City, New York
+  celebrantNamePrefix: Card.
+  celebrantFirstName: Timothy
+  celebrantLastName: Dolan
+  brideFirstName: Cecile
+  brideLastName: Gomez
+  groomFirstName: John
+  groomLastName: Smith
   isSecured: false
 
 two:
-  liturgy: 1
+  liturgy: 0
   weddingdate: 2023-01-04 20:05:55
-  church: MyString
-  city: MyString
-  celebrantNamePrefix: MyString
-  celebrantFirstName: MyString
-  celebrantLastName: MyString
-  brideFirstName: MyString
-  brideLastName: MyString
-  groomFirstName: MyString
-  groomLastName: MyString
+  church: Basilica di Sant'Anna in Vaticano
+  city: Roma, Italia
+  celebrantNamePrefix: Fr.
+  celebrantFirstName: John
+  celebrantLastName: D'Orazio
+  brideFirstName: Anna
+  brideLastName: De Iorio
+  groomFirstName: Michele
+  groomLastName: Tricarico
   isSecured: false

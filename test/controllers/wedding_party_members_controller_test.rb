@@ -17,7 +17,7 @@ class WeddingPartyMembersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create wedding_party_member" do
     assert_difference("WeddingPartyMember.count") do
-      post wedding_party_members_url, params: { wedding_party_member: { firstName: @wedding_party_member.firstName, lastName: @wedding_party_member.lastName, project_id: @wedding_party_member.project_id, relationship: @wedding_party_member.relationship, relationshipTo: @wedding_party_member.relationshipTo, role: @wedding_party_member.role } }
+      post wedding_party_members_url, params: { wedding_party_member: { firstName: @wedding_party_member.firstName, lastName: @wedding_party_member.lastName, project_id: @wedding_party_member.project_id, role: @wedding_party_member.role, relationship: @wedding_party_member.relationship, relationshipTo: @wedding_party_member.relationshipTo } }
     end
 
     assert_redirected_to wedding_party_member_url(WeddingPartyMember.last)
@@ -34,7 +34,7 @@ class WeddingPartyMembersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update wedding_party_member" do
-    patch wedding_party_member_url(@wedding_party_member), params: { wedding_party_member: { firstName: @wedding_party_member.firstName, lastName: @wedding_party_member.lastName, project_id: @wedding_party_member.project_id, relationship: @wedding_party_member.relationship, relationshipTo: @wedding_party_member.relationshipTo, role: @wedding_party_member.role } }
+    patch wedding_party_member_url(@wedding_party_member), params: { wedding_party_member: { firstName: 'Alicia', lastName: 'Keys' } }
     assert_redirected_to wedding_party_member_url(@wedding_party_member)
   end
 
