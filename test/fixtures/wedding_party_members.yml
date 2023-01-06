@@ -1,17 +1,32 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  firstName: MyString
-  lastName: MyString
-  role: 1
-  relationship: 1
-  relationshipTo: MyString
+  firstName: Aretha
+  lastName: Franklin
+  role: 0
   project: one
 
 two:
-  firstName: MyString
-  lastName: MyString
+  firstName: Elvis
+  lastName: Presley
   role: 1
-  relationship: 1
-  relationshipTo: MyString
+  project: one
+
+three:
+  firstName: Celine
+  lastName: Dion
+  relationship: 4
+  relationshipTo: of the Bride
+  project: one
+
+four:
+  firstName: Billie
+  lastName: Holiday
+  role: 0
+  project: two
+
+five:
+  firstName: Frank
+  lastName: Sinatra
+  role: 1
   project: two
