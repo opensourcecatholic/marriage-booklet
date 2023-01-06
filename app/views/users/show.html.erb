@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<% if notice.present? %>
+  <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+<% end %>
 
 <div class="w-screen flex-col justify-center items-center bg-gray-100 p-12">
   <table class="w-1/2 mx-auto bg-white shadow-lg mt-24">

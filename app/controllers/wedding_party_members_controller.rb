@@ -25,7 +25,7 @@ class WeddingPartyMembersController < ApplicationController
 
     respond_to do |format|
       if @wedding_party_member.save
-        format.html { redirect_to @wedding_party_member, notice: "Wedding party member was successfully created." }
+        format.html { redirect_to wedding_party_member_url(@wedding_party_member), notice: "Wedding party member was successfully created." }
         format.json { render :show, status: :created, location: @wedding_party_member }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class WeddingPartyMembersController < ApplicationController
   def update
     respond_to do |format|
       if @wedding_party_member.update(wedding_party_member_params)
-        format.html { redirect_to @wedding_party_member, notice: "Wedding party member was successfully updated." }
+        format.html { redirect_to wedding_party_member_url(@wedding_party_member), notice: "Wedding party member was successfully updated." }
         format.json { render :show, status: :ok, location: @wedding_party_member }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -50,6 +50,7 @@ class WeddingPartyMembersController < ApplicationController
   # DELETE /wedding_party_members/1 or /wedding_party_members/1.json
   def destroy
     @wedding_party_member.destroy
+
     respond_to do |format|
       format.html { redirect_to wedding_party_members_url, notice: "Wedding party member was successfully destroyed." }
       format.json { head :no_content }

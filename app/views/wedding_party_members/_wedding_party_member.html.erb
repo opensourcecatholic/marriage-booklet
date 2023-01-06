@@ -1,0 +1,37 @@
+<div id="<%= dom_id wedding_party_member %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Firstname:</strong>
+    <%= wedding_party_member.firstName %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Lastname:</strong>
+    <%= wedding_party_member.lastName %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Role:</strong>
+    <%= wedding_party_member.role %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Relationship:</strong>
+    <%= wedding_party_member.relationship %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Relationshipto:</strong>
+    <%= wedding_party_member.relationshipTo %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Project:</strong>
+    <%= wedding_party_member.project_id %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this wedding party member", wedding_party_member, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this wedding party member', edit_wedding_party_member_path(wedding_party_member), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

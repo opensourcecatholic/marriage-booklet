@@ -1,176 +1,174 @@
+---
 es:
-  action-cancel: Cancelar
-  action-create-account: Crea Perfil
-  action-deleteUser: Borra perfil
-  action-edit: Edita
-  action-editUser: Edita perfil
-  action-login: Inicia sesión
-  action-logout: Cerra sesión
-  action-newuser: Registrarse
-  action-recover-password: Recupera contraseña
-  action-register: Registrate
-  action-reset-password: Restablezca la contraseña
-  action-showUser: Mi perfil
-  action-update-account: Actualiza mi perfil
+  action-cancel: Action-cancel
+  action-create-account: Action-create-account
+  action-deleteUser: Action-deleteuser
+  action-edit: Action-edit
+  action-editUser: Action-edituser
+  action-login: Action-login
+  action-logout: Action-logout
+  action-newuser: Action-newuser
+  action-recover-password: Action-recover-password
+  action-register: Action-register
+  action-reset-password: Action-reset-password
+  action-showMyAccount: Action-showmyaccount
+  action-showUser: Action-showuser
+  action-update-account: Action-update-account
   activerecord:
     attributes:
       project:
-        brideFirstName: Novia nombre
-        brideLastName: Novia apellido
-        celebrantFirstName: Celebrante nombre
-        celebrantLastName: Celebrante apellido
-        celebrantNamePrefix: Celebrante titulo
-        church: Iglesia
-        city: Ciudad
-        email: Correo electrónico
-        groomFirstName: Novio nombre
-        groomLastName: Novio apellido
-        liturgy: Liturgia
-        liturgy_catholicNonCatholic: Entre parte católica y parte catecúmena o no
-          cristiana
-        liturgy_withMass: Con Misa
-        liturgy_withoutMass: Sin Misa
+        brideFirstName: Bridefirstname
+        brideLastName: Bridelastname
+        celebrantFirstName: Celebrantfirstname
+        celebrantLastName: Celebrantlastname
+        celebrantNamePrefix: Celebrantnameprefix
+        church: Church
+        city: City
+        email: Email
+        groomFirstName: Groomfirstname
+        groomLastName: Groomlastname
+        liturgy: Liturgy
+        liturgy_catholicNonCatholic: Liturgy catholicnoncatholic
+        liturgy_withMass: Liturgy withmass
+        liturgy_withoutMass: Liturgy withoutmass
         role: Role
-        weddingdate: Fecha de boda
+        weddingdate: Weddingdate
+      session:
+        password: Password
+        username: Username
       user:
         avatar: Avatar
         email: Email
         password: Password
-        password_confirmation: Confirmación de contraseña
+        password_confirmation: Password confirmation
         role: Role
-        role_bride: Novia
-        role_celebrant: Celebrante
-        role_groom: Novio
-        role_guest: Huésped
-        username: Usuario
+        role_bride: Role bride
+        role_celebrant: Role celebrant
+        role_groom: Role groom
+        role_guest: Role guest
+        username: Username
       wedding_party_member:
-        firstName: Nombre
-        lastName: Apellido
+        firstName: Firstname
+        lastName: Lastname
+        ofTheFemPlural: Ofthefemplural
+        ofTheFemSing: Ofthefemsing
+        ofTheMascSing: Ofthemascsing
         project_id: Project
-        relationship: Tipo de relación
-        relationshipTo: Con
-        relationship_aunt: Tía
-        relationship_brother: Hermano
-        relationship_cousin: Primo/a
-        relationship_father: Padre
-        relationship_friend: Amigo/a
-        relationship_grandfather: Abuelo
-        relationship_grandmother: Abuela
-        relationship_greataunt: Tía abuela
-        relationship_greatgrandfather: Bisabuelo
-        relationship_greatgrandmother: Bisabuela
-        relationship_greatuncle: Tío abuelo
-        relationship_mother: Madre
-        relationship_nephew: Sobrino
-        relationship_niece: Sobrina
-        relationship_relative: Pariente
-        relationship_sister: Hermana
-        relationship_stepbrother: Hermanastro
-        relationship_stepfather: Padrasto
-        relationship_stepmother: Madrasta
-        relationship_stepsister: Hermanastra
-        relationship_uncle: Tío
-        relationship_undefined: "---"
+        relationship: Relationship
+        relationshipTo: Relationshipto
+        relationship_aunt: Relationship aunt
+        relationship_brother: Relationship brother
+        relationship_cousin: Relationship cousin
+        relationship_friend: Relationship friend
+        relationship_grandfather: Relationship grandfather
+        relationship_grandmother: Relationship grandmother
+        relationship_greataunt: Relationship greataunt
+        relationship_greatgrandfather: Relationship greatgrandfather
+        relationship_greatgrandmother: Relationship greatgrandmother
+        relationship_greatuncle: Relationship greatuncle
+        relationship_nephew: Relationship nephew
+        relationship_niece: Relationship niece
+        relationship_relative: Relationship relative
+        relationship_sister: Relationship sister
+        relationship_stepbrother: Relationship stepbrother
+        relationship_stepfather: Relationship stepfather
+        relationship_stepmother: Relationship stepmother
+        relationship_stepsister: Relationship stepsister
+        relationship_uncle: Relationship uncle
+        relationship_undefined: Relationship undefined
         role: Role
-        role_bestman: Padrino de boda
-        role_bridesmaid: Testiga de la novia
-        role_fatherbride: Padre de la novia
-        role_fathergroom: Padre del novio
-        role_flowergirl: Niña de las flores
-        role_groomsman: Testigo del novio
-        role_maidofhonor: Dama de honor
-        role_matronofhonor: Madrina de Honor
-        role_motherbride: Madre de la novia
-        role_mothergroom: Madre del novio
-        role_ringbearer: Portador de los anillos
+        role_altarserver: Role altarserver
+        role_bestman: Role bestman
+        role_bridesmaid: Role bridesmaid
+        role_bridesman: Role bridesman
+        role_concelebrant: Role concelebrant
+        role_fatherbride: Role fatherbride
+        role_fathergroom: Role fathergroom
+        role_flowergirl: Role flowergirl
+        role_groomsman: Role groomsman
+        role_groomswoman: Role groomswoman
+        role_lector: Role lector
+        role_maidofhonor: Role maidofhonor
+        role_matronofhonor: Role matronofhonor
+        role_motherbride: Role motherbride
+        role_mothergroom: Role mothergroom
+        role_musician: Role musician
+        role_ringbearer: Role ringbearer
   application:
-    guest: Huésped
-    hello: Hola
-    welcome: Bienvenido/a
-  get-started-link: "¡Vamos a empezar!"
-  page-title: Nuestro Librete de Boda
+    description: Redacte la Libreta de Matrimonio perfecta, basada en los textos litúrgicos del Rito de la Boda Romana
+    guest: Guest
+    hello: Hello
+    keywords: matrimonio, boda, nupcial, folleto, libreta, liturgia, rito, ritual, nupcial
+    title: Libreta de Matrimonio
+    welcome: Welcome
+  get-started-link: Get-started-link
   pages:
-    home:
-      helloWorldFrom: Hola Mundo desde %{name}!
     newUser:
-      confirmPassword: Confirma contraseña
+      confirmPassword: Confirmpassword
     projectEdit:
-      title: Edita Proyecto
+      title: Title
     projectIndex:
-      actionSecureProject: Haz que el proyecto sea seguro
-      bookletProject: Proyecto de Librete
-      createNewProject: Crea Nuevo Proyecto
-      deleteThisProject: Elimina este Proyecto
-      editThisProject: Edita este Proyecto
-      generateDOCX: Produzca DOCX
-      generateLatex: Produzca LaTeX
-      generatePDF: Produzca PDF
-      myWeddingBookletProjects: Mis Proyectos de Librete de boda
-      previewThisProject: Preestreno de este Librete
-      projectIsPrivate: Proyecto es Privado
-      projectIsPubliclyAccessible: Proyecto es Públicamente Accesible
-      tooltipSecureProject: Si no desea que este proyecto sea de acceso público, cree
-        una cuenta de usuario. Entonces podrá asegurar el proyecto.
+      actionSecureProject: Actionsecureproject
+      bookletProject: Bookletproject
+      createNewProject: Createnewproject
+      deleteThisProject: Deletethisproject
+      editThisProject: Editthisproject
+      generateDOCX: Generatedocx
+      generateLatex: Generatelatex
+      generatePDF: Generatepdf
+      myWeddingBookletProjects: Myweddingbookletprojects
+      previewThisProject: Previewthisproject
+      projectIsPrivate: Projectisprivate
+      projectIsPubliclyAccessible: Projectispubliclyaccessible
+      tooltipSecureProject: Tooltipsecureproject
     projectNew:
-      addWeddingPartyMember: Agrega Testigo/a
+      addWeddingPartyMember: Addweddingpartymember
       celebrantFirstName:
-        placeholder: Francisco
+        placeholder: Placeholder
       celebrantLastName:
-        placeholder: Robles Ortega
+        placeholder: Placeholder
       celebrantPrefix:
-        bishop: Obispo
-        bishopFull: Su Excelencia Monseñor
-        cardinal: Cardenal
-        cardinalFull: Su Eminencia el Cardenal
-        deacon: Diácono
-        deaconAbbr: Diác.
-        father: Padre
-        fatherAbbr: P.
-        monsignor: Monseñor
-        monsignorAbbr: Mons.
-        reverend: Reverendo
-        reverendAbbr: Rev.
-      create_project_button: "¡Empiece a redactar el librete!"
+        bishop: Bishop
+        bishopFull: Bishopfull
+        cardinal: Cardinal
+        cardinalFull: Cardinalfull
+        deacon: Deacon
+        deaconAbbr: Deaconabbr
+        father: Father
+        fatherAbbr: Fatherabbr
+        monsignor: Monsignor
+        monsignorAbbr: Monsignorabbr
+        reverend: Reverend
+        reverendAbbr: Reverendabbr
+      create_project_button: Create project button
       email_address:
-        description: Su dirección de correo electrónico nunca se compartirá sin su
-          consentimiento. Los libretes de boda que cree se asociarán con su dirección
-          de correo electrónico.
-      marriageDatePlace: Fecha y lugar de boda
+        description: Description
+      marriageDatePlace: Marriagedateplace
       marriage_location:
-        church_placeholder: Catedral Basílica de la Asunción de María Santísima
-        city_placeholder: Guadalajara
+        church_placeholder: Church placeholder
+        city_placeholder: City placeholder
       person_category:
-        label: Yo soy
+        label: Label
       request_info:
-        optional_login: Si ya tiene una cuenta, puede iniciar sesión. En este caso
-          se recuperará la información ingresada previamente. O puede registrar una
-          cuenta inmediatamente para garantizar la privacidad del librete, que se
-          asociará con su cuenta.
-        title: Informacion del usuario
-      title: Nuevo librete de boda
-      update_project_button: Actualiza el Proyecto
-      viewYourProjects: Mis Proyectos
+        optional_login: Optional login
+        title: Title
+      title: Title
+      update_project_button: Update project button
+      viewYourProjects: Viewyourprojects
       wedding_party:
-        description: Describe la composición de la procesión nupcial
-        title: Procesión nupcial
+        description: Description
+        or: Or
+        title: Title
     projectPreview:
-      ourWeddingCeremony: Nuestra Ceremonia de Boda
-      theWeddingParty: La Procesión Nupcial
+      ourWeddingCeremony: Ourweddingceremony
+      theWeddingParty: Theweddingparty
     userEdit:
-      editUserTitle: Edita mi perfil
-      emailEditMessage: Tu perfil será verificado con tu dirección de correo electrónico,
-        con el fin de proteger tus proyectos del acceso público
-      usernameMessage: Tu nombre de usuario es un nombre corto, sin caracteres de
-        espacio, que te identifica al acceder al servicio. Puede estar formado por
-        un apodo, o una combinación de tu nombre de pila y tu apellido, o una combinación
-        de tu nombre y un interés tuyo, etc.
-    userNew:
-      newUserTitle: Crea perfil
-  placeholder-email: por ej. josé@carpintero.es
-  placeholder-password: por ej. TuVoluntadSeaHecha
-  placeholder-username: por ej. josé.carpintero
-  placeholder-username-or-email: por ej. josé@carpintero.es
-  reveal-password: Revela contraseña
-  welcome-greeting-1: Crea el librete de ceremonia para tu Boda
-  welcome-greeting-2: Elija entre los textos del ritual oficial del matrimonio, junto
-    con el sacerdote (o diácono) oficiante
+      emailEditMessage: Emaileditmessage
+      usernameMessage: Usernamemessage
+  placeholder-email: Placeholder-email
+  placeholder-password: Placeholder-password
+  placeholder-username: Placeholder-username
+  placeholder-username-or-email: Placeholder-username-or-email
+  reveal-password: Reveal-password
+  welcome-greeting-1: Welcome-greeting-1
+  welcome-greeting-2: Welcome-greeting-2

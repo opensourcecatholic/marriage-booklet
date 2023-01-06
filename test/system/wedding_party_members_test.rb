@@ -7,12 +7,12 @@ class WeddingPartyMembersTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit wedding_party_members_url
-    assert_selector "h1", text: "Wedding Party Members"
+    assert_selector "h1", text: "Wedding party members"
   end
 
-  test "creating a Wedding party member" do
+  test "should create wedding party member" do
     visit wedding_party_members_url
-    click_on "New Wedding Party Member"
+    click_on "New wedding party member"
 
     fill_in "Firstname", with: @wedding_party_member.firstName
     fill_in "Lastname", with: @wedding_party_member.lastName
@@ -26,9 +26,9 @@ class WeddingPartyMembersTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-  test "updating a Wedding party member" do
-    visit wedding_party_members_url
-    click_on "Edit", match: :first
+  test "should update Wedding party member" do
+    visit wedding_party_member_url(@wedding_party_member)
+    click_on "Edit this wedding party member", match: :first
 
     fill_in "Firstname", with: @wedding_party_member.firstName
     fill_in "Lastname", with: @wedding_party_member.lastName
@@ -42,11 +42,9 @@ class WeddingPartyMembersTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-  test "destroying a Wedding party member" do
-    visit wedding_party_members_url
-    page.accept_confirm do
-      click_on "Destroy", match: :first
-    end
+  test "should destroy Wedding party member" do
+    visit wedding_party_member_url(@wedding_party_member)
+    click_on "Destroy this wedding party member", match: :first
 
     assert_text "Wedding party member was successfully destroyed"
   end

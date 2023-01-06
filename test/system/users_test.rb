@@ -10,9 +10,9 @@ class UsersTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Users"
   end
 
-  test "creating a User" do
+  test "should create user" do
     visit users_url
-    click_on "New User"
+    click_on "New user"
 
     fill_in "Avatar", with: @user.avatar
     fill_in "Email", with: @user.email
@@ -25,9 +25,9 @@ class UsersTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-  test "updating a User" do
-    visit users_url
-    click_on "Edit", match: :first
+  test "should update User" do
+    visit user_url(@user)
+    click_on "Edit this user", match: :first
 
     fill_in "Avatar", with: @user.avatar
     fill_in "Email", with: @user.email
@@ -40,11 +40,9 @@ class UsersTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-  test "destroying a User" do
-    visit users_url
-    page.accept_confirm do
-      click_on "Destroy", match: :first
-    end
+  test "should destroy User" do
+    visit user_url(@user)
+    click_on "Destroy this user", match: :first
 
     assert_text "User was successfully destroyed"
   end

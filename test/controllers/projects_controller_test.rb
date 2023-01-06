@@ -16,7 +16,7 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create project" do
-    assert_difference('Project.count') do
+    assert_difference("Project.count") do
       post projects_url, params: { project: { brideFirstName: @project.brideFirstName, brideLastName: @project.brideLastName, celebrantFirstName: @project.celebrantFirstName, celebrantLastName: @project.celebrantLastName, celebrantNamePrefix: @project.celebrantNamePrefix, church: @project.church, city: @project.city, groomFirstName: @project.groomFirstName, groomLastName: @project.groomLastName, isSecured: @project.isSecured, liturgy: @project.liturgy, weddingdate: @project.weddingdate } }
     end
 
@@ -39,7 +39,7 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy project" do
-    assert_difference('Project.count', -1) do
+    assert_difference("Project.count", -1) do
       delete project_url(@project)
     end
 
