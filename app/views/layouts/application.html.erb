@@ -35,9 +35,9 @@
           <% when :guest %>
           <%   icon = "fas fa-user-circle text-green-400" %>
           <% end %>
-          <div><i class="<%= icon %> mr-3"></i><span><%= t('application.welcome') %></span>, <%= current_user.username %></div>
+          <div><span><%= t('application.welcome') %></span>, <i class="mr-3 ml-3 inline-block <%= icon %>"></i><%= current_user.username %><i class="ml-6 fas fa-bars text-gray-700"></i></div>
         <% else %>
-          <div><i class="fas fa-user-alt-slash text-gray-400 mr-3"></i><span><%= t('application.hello') %></span>, <%= t('application.guest') %></div>
+          <div><span><%= t('application.hello') %></span>, <i class="mr-3 ml-3 inline-block fas fa-user-alt-slash text-gray-400"></i><%= t('application.guest') %></div>
         <% end %>
       </nav>
 
