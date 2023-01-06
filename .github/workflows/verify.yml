@@ -54,6 +54,10 @@ jobs:
         run: |
           bundle exec rails db:reset
 
+      - name: Precompile assets
+        run: |
+          bundle exec rails assets:precompile
+
       - name: Run tests
         run: |
           bundle exec rails test
