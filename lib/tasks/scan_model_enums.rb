@@ -6,14 +6,14 @@ class ScanModelEnums < I18n::Tasks::Scanners::FileScanner
   def scan_file(path)
     result = []
     text = read_file(path)
-  
-    text.scan(/enum\s([a-zA-Z]*?):\s\{(.*)}, _prefix: true$/).each do |prefix, body|
-      occurrence = occurrence_from_position(path, text, 
-                                              Regexp.last_match.offset(0).first)
-  
-      body.scan(/(\w+):/).flatten.each do |attr|
-        model = File.basename(path, ".rb")
+
+    text.scan(/enum ([a-zA-Z]*?)\: \{ (.*?) \}\, _prefix: true$/).each do |prefix, body|
+      occurrence = occurrence_from_position(path, text, Regexp.last_match.offset(0).first)
+      model = File.basename(path, ".rb")
+      #puts "model = #{model}, prefix = #{prefix}, body = #{body}"
+      body.scan(/\b(\w+?)\b\:/).flatten.each do |attr|
         name = "#{prefix}_#{attr}" 
+        #puts "attr = #{attr}, name = #{name}"
         result << ["activerecord.attributes.#{model}.#{name}", occurrence]
       end
     end

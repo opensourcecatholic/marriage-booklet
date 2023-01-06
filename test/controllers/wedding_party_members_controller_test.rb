@@ -16,7 +16,7 @@ class WeddingPartyMembersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create wedding_party_member" do
-    assert_difference('WeddingPartyMember.count') do
+    assert_difference("WeddingPartyMember.count") do
       post wedding_party_members_url, params: { wedding_party_member: { firstName: @wedding_party_member.firstName, lastName: @wedding_party_member.lastName, project_id: @wedding_party_member.project_id, relationship: @wedding_party_member.relationship, relationshipTo: @wedding_party_member.relationshipTo, role: @wedding_party_member.role } }
     end
 
@@ -39,7 +39,7 @@ class WeddingPartyMembersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy wedding_party_member" do
-    assert_difference('WeddingPartyMember.count', -1) do
+    assert_difference("WeddingPartyMember.count", -1) do
       delete wedding_party_member_url(@wedding_party_member)
     end
 

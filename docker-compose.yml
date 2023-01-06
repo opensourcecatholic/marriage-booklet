@@ -1,9 +1,9 @@
-version: '3.3'
+version: '3.8'
 
 services:
 
   db:
-    image: postgres:12
+    image: postgres:15
     restart: always
     volumes:
       - /var/run/postgresql:/var/run/postgresql
@@ -12,8 +12,3 @@ services:
       POSTGRES_USER: ${MARRIAGE_BOOKLET_DATABASE_USER}
       POSTGRES_PASSWORD: ${MARRIAGE_BOOKLET_DATABASE_PASSWORD}
 
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - ${ADMINER_PORT:-8080}:8080

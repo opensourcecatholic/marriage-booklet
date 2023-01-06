@@ -1,31 +1,29 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  liturgy: :withMass
-  weddingdate: 2000-03-25 10:00:00
-  church: Solomon's Temple
-  city: Jerusalem
-  celebrantNamePrefix: High Priest
-  celebrantFirstName: Zechariah
-  celebrantLastName: ben Seth
-  brideFirstName: Mary
-  brideLastName: Nazareth
-  groomFirstName: Joseph
-  groomLastName: Bethlehem
+  liturgy: 1
+  weddingdate: 2023-01-04 20:05:55
+  church: MyString
+  city: MyString
+  celebrantNamePrefix: MyString
+  celebrantFirstName: MyString
+  celebrantLastName: MyString
+  brideFirstName: MyString
+  brideLastName: MyString
+  groomFirstName: MyString
+  groomLastName: MyString
   isSecured: false
-  users: mary, joseph, zechariah
 
 two:
-  liturgy: :withoutMass
-  weddingdate: 2000-03-25 10:00:00
-  church: Synagogue
-  city: Nazareth
-  celebrantNamePrefix: Deacon
-  celebrantFirstName: James
-  celebrantLastName: the Less
-  brideFirstName: Mary
-  brideLastName: Nazareth
-  groomFirstName: Joseph
-  groomLastName: Bethlehem
+  liturgy: 1
+  weddingdate: 2023-01-04 20:05:55
+  church: MyString
+  city: MyString
+  celebrantNamePrefix: MyString
+  celebrantFirstName: MyString
+  celebrantLastName: MyString
+  brideFirstName: MyString
+  brideLastName: MyString
+  groomFirstName: MyString
+  groomLastName: MyString
   isSecured: false
-  users: mary, joseph, zechariah

@@ -10,9 +10,9 @@ class ProjectsTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Projects"
   end
 
-  test "creating a Project" do
+  test "should create project" do
     visit projects_url
-    click_on "New Project"
+    click_on "New project"
 
     fill_in "Bridefirstname", with: @project.brideFirstName
     fill_in "Bridelastname", with: @project.brideLastName
@@ -32,9 +32,9 @@ class ProjectsTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-  test "updating a Project" do
-    visit projects_url
-    click_on "Edit", match: :first
+  test "should update Project" do
+    visit project_url(@project)
+    click_on "Edit this project", match: :first
 
     fill_in "Bridefirstname", with: @project.brideFirstName
     fill_in "Bridelastname", with: @project.brideLastName
@@ -54,11 +54,9 @@ class ProjectsTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-  test "destroying a Project" do
-    visit projects_url
-    page.accept_confirm do
-      click_on "Destroy", match: :first
-    end
+  test "should destroy Project" do
+    visit project_url(@project)
+    click_on "Destroy this project", match: :first
 
     assert_text "Project was successfully destroyed"
   end

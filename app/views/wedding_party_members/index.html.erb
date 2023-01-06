@@ -1,37 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
 
-<h1>Wedding Party Members</h1>
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl">Wedding party members</h1>
+    <%= link_to 'New wedding party member', new_wedding_party_member_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Firstname</th>
-      <th>Lastname</th>
-      <th>Role</th>
-      <th>Relationship</th>
-      <th>Relationshipto</th>
-      <th>Project</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @wedding_party_members.each do |wedding_party_member| %>
-      <tr>
-        <td><%= wedding_party_member.firstName %></td>
-        <td><%= wedding_party_member.lastName %></td>
-        <td><%= wedding_party_member.role %></td>
-        <td><%= wedding_party_member.relationship %></td>
-        <td><%= wedding_party_member.relationshipTo %></td>
-        <td><%= wedding_party_member.project_id %></td>
-        <td><%= link_to 'Show', wedding_party_member %></td>
-        <td><%= link_to 'Edit', edit_wedding_party_member_path(wedding_party_member) %></td>
-        <td><%= link_to 'Destroy', wedding_party_member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Wedding Party Member', new_wedding_party_member_path %>
+  <div id="wedding_party_members" class="min-w-full">
+    <%= render @wedding_party_members %>
+  </div>
+</div>

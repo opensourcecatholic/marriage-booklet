@@ -1,0 +1,67 @@
+<div id="<%= dom_id project %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Liturgy:</strong>
+    <%= project.liturgy %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Weddingdate:</strong>
+    <%= project.weddingdate %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Church:</strong>
+    <%= project.church %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">City:</strong>
+    <%= project.city %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Celebrantnameprefix:</strong>
+    <%= project.celebrantNamePrefix %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Celebrantfirstname:</strong>
+    <%= project.celebrantFirstName %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Celebrantlastname:</strong>
+    <%= project.celebrantLastName %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Bridefirstname:</strong>
+    <%= project.brideFirstName %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Bridelastname:</strong>
+    <%= project.brideLastName %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Groomfirstname:</strong>
+    <%= project.groomFirstName %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Groomlastname:</strong>
+    <%= project.groomLastName %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Issecured:</strong>
+    <%= project.isSecured %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this project", project, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this project', edit_project_path(project), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

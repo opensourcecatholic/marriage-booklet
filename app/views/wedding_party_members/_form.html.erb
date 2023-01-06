@@ -1,6 +1,6 @@
-<%= form_with(model: wedding_party_member) do |form| %>
+<%= form_with(model: wedding_party_member, class: "contents") do |form| %>
   <% if wedding_party_member.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(wedding_party_member.errors.count, "error") %> prohibited this wedding_party_member from being saved:</h2>
 
       <ul>
@@ -11,37 +11,37 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="my-5">
     <%= form.label :firstName %>
-    <%= form.text_field :firstName %>
+    <%= form.text_field :firstName, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="field">
+  <div class="my-5">
     <%= form.label :lastName %>
-    <%= form.text_field :lastName %>
+    <%= form.text_field :lastName, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="field">
+  <div class="my-5">
     <%= form.label :role %>
     <%= form.select :role, WeddingPartyMember.roles.keys.map{ |key, value| [ t("activerecord.attributes.wedding_party_member.role_#{key}"), key ] } %>
   </div>
 
-  <div class="field">
+  <div class="my-5">
     <%= form.label :relationship %>
     <%= form.select :relationship, WeddingPartyMember.relationships.keys.map{ |key, value| [ t("activerecord.attributes.wedding_party_member.relationship_#{key}"), key ] } %>
   </div>
 
-  <div class="field">
+  <div class="my-5">
     <%= form.label :relationshipTo %>
-    <%= form.text_field :relationshipTo %>
+    <%= form.text_field :relationshipTo, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="field">
+  <div class="my-5">
     <%= form.label :project_id %>
-    <%= form.text_field :project_id %>
+    <%= form.text_field :project_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="inline">
+    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
   </div>
 <% end %>
