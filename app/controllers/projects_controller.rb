@@ -15,6 +15,8 @@ class ProjectsController < ApplicationController
   def new
     @projects = Project.all
     @project = Project.new
+    user = @project.users.build
+    wedding_party_member = @project.wedding_party_members.build
   end
 
   # GET /projects/1/edit

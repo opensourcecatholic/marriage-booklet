@@ -163,8 +163,11 @@ es:
       ourWeddingCeremony: Ourweddingceremony
       theWeddingParty: Theweddingparty
     userEdit:
+      editUserTitle: Editusertitle
       emailEditMessage: Emaileditmessage
       usernameMessage: Usernamemessage
+    userNew:
+      newUserTitle: Newusertitle
   placeholder-email: Placeholder-email
   placeholder-password: Placeholder-password
   placeholder-username: Placeholder-username

@@ -21,7 +21,7 @@ like Active Record and routing.
 
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/opensourcecatholic/marriage-booklet/Verify)
 <a href="https://translate.johnromanodorazio.com/engage/marriage-booklet/">
-<img src="https://translate.johnromanodorazio.com/widgets/marriage-booklet/-/svg-badge.svg" alt="Stato traduzione" />
+<img src="https://translate.johnromanodorazio.com/widgets/marriage-booklet/-/svg-badge.svg" alt="Status of Translations" />
 </a>
 
 
@@ -34,11 +34,9 @@ like Active Record and routing.
     - 🧪 [Test for the correct version of ruby](#test-for-the-correct-version-of-ruby)
 - 🔡 [Install Bundler](#install-bundler)
 - 💎 [Install ruby gem dependencies](#install-ruby-gem-dependencies)
-    - 🔧 [Optionally patch webpacker/dev-server-runner.rb](#optionally-patch-webpackerdev-server-runnerrb)
 - 🌥️ [Check your environment](#check-your-environment)
 - 📈 [Load the database schema](#load-the-database-schema)
 - 📑 [Check NodeJS environment](#check-nodejs-environment)
-    - 🎱 [Install node dependencies](#install-node-dependencies)
 - 🌩️ [Compile assets](#compile-assets)
 - ⚛️ [Run the App](#run-the-app)
 
@@ -263,7 +261,7 @@ Could not find rack-proxy-0.7.0 in any of the sources
 Run `bundle install` to install missing gems.
 ```
 
-### Check your environment
+### Check your Rails environment
 
 You should now be able to see the version of rails when running `bundle exec rails --version`, with an output of `Rails 7.0.4`.
 

@@ -518,7 +518,7 @@
         "confirmPassword": "Confirm password"
       },
       "projectEdit": {
-        "title": "Title"
+        "title": "Edit Project"
       },
       "projectIndex": {
         "actionSecureProject": "Secure this project",
@@ -547,7 +547,7 @@
           "bishop": "Bishop",
           "bishopFull": "His Excellency Monsignor",
           "cardinal": "Cardinal",
-          "cardinalFull": "His Eminence Monsignor",
+          "cardinalFull": "His Eminence Cardinal",
           "deacon": "Deacon",
           "deaconAbbr": "Deac.",
           "father": "Father",
@@ -587,8 +587,12 @@
         "theWeddingParty": "The Wedding Party"
       },
       "userEdit": {
+        "editUserTitle": "Edit my account",
         "emailEditMessage": "Your email address will be used to verify your account, so that your projects will be protected from random users",
         "usernameMessage": "Your username is a short name that identifies you to this service, you'll use it to login. It can be formed by a nickname, or a combination of your given name and your family name, or a combination of your name and an interest of yours, etc."
+      },
+      "userNew": {
+        "newUserTitle": "Create new account"
       }
     },
     "placeholder-email": "e.g. joseph@carpenter.com",
@@ -1082,8 +1086,12 @@
         "theWeddingParty": "Theweddingparty"
       },
       "userEdit": {
+        "editUserTitle": "Editusertitle",
         "emailEditMessage": "Emaileditmessage",
         "usernameMessage": "Usernamemessage"
+      },
+      "userNew": {
+        "newUserTitle": "Newusertitle"
       }
     },
     "placeholder-email": "Placeholder-email",
@@ -1552,8 +1560,12 @@
         "theWeddingParty": "Theweddingparty"
       },
       "userEdit": {
+        "editUserTitle": "Editusertitle",
         "emailEditMessage": "Emaileditmessage",
         "usernameMessage": "Usernamemessage"
+      },
+      "userNew": {
+        "newUserTitle": "Newusertitle"
       }
     },
     "placeholder-email": "Placeholder-email",
