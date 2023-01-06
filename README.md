@@ -265,9 +265,9 @@ Run `bundle install` to install missing gems.
 
 ### Check your environment
 
-You should now be able to see the version of rails when running `bundle exec rails --version`, with an output of `Rails 6.1.3.2`.
+You should now be able to see the version of rails when running `bundle exec rails --version`, with an output of `Rails 7.0.4`.
 
-Since the **rails** gem is made available through **bundler**, it needs to be invoked with `bundle exec`. However you should also be able to invoke `rails --version` directly, seeing that a rails binstub has been included in the `bin` folder (it shouldn't be necessary to run `bundle binstubs rails` which will install an executable to the `bin` folder which is  simply a wrapper for the `bundle exec rails` commands).
+Since the **rails** gem is made available through **bundler**, it needs to be invoked with `bundle exec`. However you should also be able to invoke `rails --version` directly, seeing that a rails binstub has been included in the `bin` folder (it shouldn't be necessary to run `bundle binstubs rails` which will install an executable to the `bin` folder which is simply a wrapper for the `bundle exec rails` commands).
 
 You can check your rails environment with `bundle exec rails about`. You should get an output something like:
 
