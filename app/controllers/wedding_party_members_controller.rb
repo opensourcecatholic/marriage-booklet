@@ -65,6 +65,6 @@ class WeddingPartyMembersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def wedding_party_member_params
-      params.require(:wedding_party_member).permit(:firstName, :lastName, :role, :relationship, :relationshipTo, :project_id)
+      params.require(:wedding_party_member).permit(:namePrefix, :firstName, :lastName, :role, :relationship, :relationshipTo, :project_id)
     end
 end
