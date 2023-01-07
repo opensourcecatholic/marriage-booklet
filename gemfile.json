@@ -1,0 +1,37 @@
+{
+  "default": {
+    "rails": "~>7.0.4",
+    "sprockets-rails": ">=0",
+    "pg": "~>1.1",
+    "puma": "~>5.0",
+    "importmap-rails": ">=0",
+    "turbo-rails": ">=0",
+    "stimulus-rails": ">=0",
+    "tailwindcss-rails": ">=0",
+    "jbuilder": ">=0",
+    "redis": "~>4.0",
+    "bcrypt": "~>3.1",
+    "tzinfo-data": ">=0",
+    "bootsnap": ">=0",
+    "inline_svg": "~>1.8",
+    "rails-i18n": "~>7.0",
+    "i18n-js": "~>4.2",
+    "rexml": "~>3.2>=3.2.4"
+  },
+  "development": {
+    "debug": ">=0",
+    "web-console": ">=0",
+    "hotwire-livereload": ">=0",
+    "i18n-tasks": "~>1.0"
+  },
+  "test": {
+    "debug": ">=0",
+    "capybara": ">=0",
+    "selenium-webdriver": ">=0",
+    "webdrivers": ">=0",
+    "i18n-tasks": "~>1.0"
+  },
+  "engines": {
+    "ruby": "3.2.0"
+  }
+}
