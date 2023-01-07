@@ -23,6 +23,7 @@ like Active Record and routing.
 <a href="https://translate.johnromanodorazio.com/engage/marriage-booklet/">
 <img src="https://translate.johnromanodorazio.com/widgets/marriage-booklet/-/svg-badge.svg" alt="Status of Translations" />
 </a>
+[![CodeFactor](https://www.codefactor.io/repository/github/johnrdorazio/marriage-booklet/badge)](https://www.codefactor.io/repository/github/johnrdorazio/marriage-booklet)
 
 
 # Setting up the Development environment
