@@ -28,7 +28,7 @@ end
   def new
     @projects = Project.all
     @project = Project.new
-    users = @project.users.build
+    #users = @project.users.build
     unless logged_in?
       @randomUsername = SecureRandom.hex(10)
     end
