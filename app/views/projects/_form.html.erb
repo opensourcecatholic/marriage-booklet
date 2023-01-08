@@ -11,10 +11,10 @@
     </div>
   <% end %>
 <div class="carousel shadow-xl">
-  <div class="carousel-inner relative w-full" data-controller="tab-items">
+  <div class="carousel-inner relative w-full" data-controller="carousel-items">
 
   <!-- Slide 1 -->
-  <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" checked="checked" data-action="change->tab-items#setIndex" data-tab-index=1>
+  <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" checked="checked" data-action="change->carousel-items#setIndex" data-tab-index=1>
   <div class="carousel-item absolute opacity-0 bg-gray-200 p-4 invisible"><!-- Inner wrapper for title + card start -->
     <h3 class="text-lg font-medium leading-6 text-gray-900 mb-3"><%= t('pages.projectNew.request_info.title') %></h3> <!-- User info -->
     <div class="px-4 sm:px-0">
@@ -112,11 +112,11 @@
         </div><!-- Card content end -->
       </div><!-- Card inner wrapper end -->
     </div><!-- Card outer wrapper end -->
-    <div class="flex"><button type="button" data-action="click->tab-items#nextTab" class="p-3 my-3 ml-auto mr-3 text-sm text-white bg-blue-800 hover:bg-blue-700 font-bold uppercase rounded-md outline-none inline-block focus:outline-none">Next >></button></div>
+    <div class="flex"><button type="button" data-action="click->carousel-items#nextTab" class="p-3 my-3 ml-auto mr-3 text-sm text-white bg-blue-800 hover:bg-blue-700 font-bold uppercase rounded-md outline-none inline-block focus:outline-none">Next >></button></div>
   </div><!-- Inner wrapper for title + card end -->
 
   <!-- Slide 2 -->
-  <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" data-action="change->tab-items#setIndex" data-tab-index=2>
+  <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" data-action="change->carousel-items#setIndex" data-tab-index=2>
   <div class="carousel-item absolute opacity-0 bg-gray-200 p-4 invisible"><!-- Inner wrapper for title + card start -->
     <h3 class="text-lg font-medium leading-6 text-gray-900 mb-3"><%= t('pages.projectNew.marriageDatePlace') %></h3> <!-- User info -->
     <div class="mt-5 md:mt-0"><!-- Card outer wrapper start -->
@@ -178,13 +178,13 @@
       </div><!-- Card inner wrapper end -->
     </div><!-- Card outer wrapper end -->
     <div class="flex justify-between">
-      <button type="button" data-action="click->tab-items#previousTab" class="p-3 my-3 ml-3 text-sm text-white bg-blue-800 hover:bg-blue-700 font-bold uppercase rounded-md outline-none inline-block focus:outline-none"><< Previous</button>
-      <button type="button" data-action="click->tab-items#nextTab" class="p-3 my-3 mr-3 text-sm text-white bg-blue-800 hover:bg-blue-700 font-bold uppercase rounded-md outline-none inline-block focus:outline-none">Next >></button>
+      <button type="button" data-action="click->carousel-items#previousTab" class="p-3 my-3 ml-3 text-sm text-white bg-blue-800 hover:bg-blue-700 font-bold uppercase rounded-md outline-none inline-block focus:outline-none"><< Previous</button>
+      <button type="button" data-action="click->carousel-items#nextTab" class="p-3 my-3 mr-3 text-sm text-white bg-blue-800 hover:bg-blue-700 font-bold uppercase rounded-md outline-none inline-block focus:outline-none">Next >></button>
     </div>
   </div><!-- Inner wrapper for title + card end -->
 
   <!-- Slide 3 -->
-  <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" data-action="change->tab-items#setIndex" data-tab-index=3>
+  <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" data-action="change->carousel-items#setIndex" data-tab-index=3>
   <div class="carousel-item absolute opacity-0 mt-10 sm:mt-0 bg-gray-200 p-4 invisible">
     <h3 class="text-lg font-medium leading-6 text-gray-900 mb-3"><%= t('pages.projectNew.wedding_party.title') %></h3><!-- Wedding party -->
     <p class="mt-1 text-sm text-gray-600">
@@ -311,7 +311,7 @@
           </div>
         </div>
         <div class="flex justify-between px-4 py-3 bg-gray-50 sm:px-6 actions">
-          <button type="button" data-action="click->tab-items#previousTab" class="p-3 my-3 ml-3 text-sm text-white bg-blue-800 hover:bg-blue-700 font-bold uppercase rounded-md outline-none inline-block focus:outline-none"><< Previous</button>
+          <button type="button" data-action="click->carousel-items#previousTab" class="p-3 my-3 ml-3 text-sm text-white bg-blue-800 hover:bg-blue-700 font-bold uppercase rounded-md outline-none inline-block focus:outline-none"><< Previous</button>
           <%= form.button nil, class: "p-3 text-lg text-white bg-indigo-600 hover:bg-indigo-700 font-bold rounded-md outline-none focus:outline-none align-middle" do %>
             <i class="fas fa-book-bible mr-3 text-2xl align-middle"></i>
             <%= (action_name == 'new') ? t('pages.projectNew.create_project_button') : t('pages.projectNew.update_project_button') %>
