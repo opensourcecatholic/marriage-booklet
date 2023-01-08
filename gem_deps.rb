@@ -2,9 +2,9 @@ require 'bundler'
 require 'json'
 
     def add_to_dep(dep,top_level)
-      exists = top_level.key?("#{dep.name}")
+      exists = top_level.key?(dep.name)
       if !exists
-        top_level.merge!("#{dep.name}" => "#{dep.requirement.requirements.join}")
+        top_level.merge!(dep.name => dep.requirement.requirements.join)
       end  
     end
 
@@ -16,8 +16,8 @@ require 'json'
          end
     end
 
-ruby_version = File.open(".ruby-version").readlines.map(&:chomp)[0]
-deps.merge!("engines" => { :ruby => "#{ruby_version}" })
+ruby_version = File.readlines(".ruby-version").map(&:chomp)[0]
+deps.merge!("engines" => { :ruby => ruby_version })
 
 File.write("gemfile.json", JSON.pretty_generate(deps)+"\n")
 
