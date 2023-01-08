@@ -4,7 +4,7 @@ const I18n = i18n; //needed in order for i18n-tasks scanner to be able to pick u
 
 export default class extends Controller {
 
-    static targets = ["div", "button"];
+    static targets = ["div", "button", "count"];
 
     initialize() {
         this.idx = parseInt($('.weddingPartyMembersIndex').last().val()) + 1;
@@ -16,6 +16,7 @@ export default class extends Controller {
     }
 
     connect() {
+        this.countTarget.innerText = $('.weddingPartyMemberWrapper').length;
         this.buttonTarget.addEventListener("click", ev => {
             console.log('Add wedding party member button was clicked!');
             //const $parentDiv = $(ev.currentTarget).closest('div');
@@ -27,7 +28,6 @@ export default class extends Controller {
                         <i class="fas fa-trash-alt"></i>
                     </div>
                     <div class="col-span-6 sm:col-span-2">
-                        <input type="hidden" class="weddingPartyMembersIndex" value="${this.idx}" />
                         <label for="project_wedding_party_members_attributes_${this.idx}_role" class="block text-sm font-medium text-gray-700" autocomplete="off">${I18n.t('activerecord.attributes.wedding_party_member.role')}</label>
                         <select id="project_wedding_party_members_attributes_${this.idx}_role"
                                 class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight"
@@ -133,6 +133,7 @@ export default class extends Controller {
             </div>`;
             $(newPartyMemberRow).insertBefore($parentDiv);
             this.idx++;
+            this.countTarget.innerText = $('.weddingPartyMemberWrapper').length;
         });
 
     }
@@ -143,25 +144,26 @@ export default class extends Controller {
         const $parentDiv = $(ev.currentTarget).closest('.weddingPartyMemberWrapper');
         $parentDiv.remove();
 
-        let idx = parseInt($('.weddingPartyMembersIndex').last().val()) + 1;
-        console.log('resetting idx back to ' + idx);
+        this.idx = parseInt($('.weddingPartyMembersIndex').last().val()) + 1;
+        console.log('resetting idx back to ' + this.idx);
         console.log('there are still ' + $('.addedDynamically').length + ' dynamically added wedding party members');
+        this.countTarget.innerText = $('.weddingPartyMemberWrapper').length;
         $('.addedDynamically').each((i,el) => {
             $(el).find('label, select, input').each((ix,elx) => {
                 if( $(elx).is("[for]") ) {
-                    let forVal = $(elx).attr('for').replace( /_\d+_/g, `_${idx}_`);
+                    let forVal = $(elx).attr('for').replace( /_\d+_/g, `_${this.idx}_`);
                     $(elx).attr('for',forVal);
                 }
                 if( $(elx).is("[id]") ) {
-                    let idVal = $(elx).attr('id').replace( /_\d+_/g, `_${idx}_`);
+                    let idVal = $(elx).attr('id').replace( /_\d+_/g, `_${this.idx}_`);
                     $(elx).attr('id',idVal);
                 }
                 if( $(elx).is("[name]") ) {
-                    let nameVal = $(elx).attr('name').replace( /\[\d+\]/g, `[${idx}]`);
+                    let nameVal = $(elx).attr('name').replace( /\[\d+\]/g, `[${this.idx}]`);
                     $(elx).attr('name',nameVal);
                 }
             });
-            idx++;
+            this.idx++;
         });
     };
 
