@@ -25,17 +25,19 @@ en:
         church: Church
         city: City
         email: Email
+        firstName: First name
         groomFirstName: Groom name
         groomLastName: Groom surname
+        lastName: Last name
         liturgy: Liturgy
         liturgy_catholicNonCatholic: Between a Catholic and a Catechumen or a Non-Christian
         liturgy_withMass: Within Mass
         liturgy_withoutMass: Without Mass
+        namePrefix: Title
+        relationship: Relationship
+        relationshipTo: To
         role: Role
         weddingdate: Wedding date
-      session:
-        password: Password
-        username: Username
       user:
         avatar: Avatar
         email: Email
@@ -50,6 +52,7 @@ en:
       wedding_party_member:
         firstName: First name
         lastName: Last name
+        namePrefix: Title
         ofTheFemPlural: of the
         ofTheFemSing: of the
         ofTheMascSing: of the
@@ -81,6 +84,7 @@ en:
         role_bestman: Best Man
         role_bridesmaid: Bridesmaid
         role_bridesman: Bridesman
+        role_chorist: Chorist
         role_concelebrant: Concelebrant
         role_fatherbride: Father of the Bride
         role_fathergroom: Father of the Groom
@@ -94,6 +98,8 @@ en:
         role_mothergroom: Mother of the Groom
         role_musician: Musician
         role_ringbearer: Ringbearer
+        role_soloist: Soloist
+        role_undefined: "---"
   application:
     description: Compose the perfect Wedding Booklet based on the liturgical texts from the Roman Rite of Marriage
     guest: Guest
@@ -172,6 +178,28 @@ en:
   placeholder-password: e.g. ThyWillBeDone
   placeholder-username: e.g. joseph.carpenter
   placeholder-username-or-email: e.g. joseph@carpenter.com
+  projects:
+    new:
+      weddingpartymember:
+        namePrefix:
+          Madame: Madame
+          Madamesoille: Madamesoille
+          Master: Master
+          Miss: Miss
+          Missus: Missus
+          Mister: Mister
+          Mr: Mr.
+          Mrs: Mrs.
+          Ms: Ms.
+          Rev: Rev.
+          Reverend: Reverend
+        relationshipto:
+          theBride: of the Bride
+          theBrideAndTheGroom: of the Bride and the Groom
+          theFamiliesOfTheBrideAndTheGroom: of the Families of the Bride and the Groom
+          theFamilyOfTheBride: of the Family of the Bride
+          theFamilyOfTheGroom: of the Family of the Groom
+          theGroom: of the Groom
   reveal-password: Reveal password
   welcome-greeting-1: Create the booklet for your Catholic Wedding ceremony
   welcome-greeting-2: Choose the texts from the official Rite of Marriage, together with the celebrant
