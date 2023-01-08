@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all
     if logged_in?
-      @projects = (current_user.projects + Project.where(isSecured: false))
+      @projects = current_user.projects.where(isSecured: true) + Project.where(isSecured: false)
     else
       @projects = Project.where(isSecured: false)
     end
