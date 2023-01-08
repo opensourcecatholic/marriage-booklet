@@ -11,6 +11,7 @@
       <th class="px-8 py-4">Username</th>
       <th class="px-8 py-4">Email</th>
       <th class="px-8 py-4">Role</th>
+      <th class="px-8 py-4">Projects</th>
       <!--<th>Avatar</th>-->
       <!--<th>Password digest</th>-->
       <th class="px-8 py-4" colspan="3">Actions</th>
@@ -24,6 +25,12 @@
         <td class="border px-8 py-4"><%= user.username %></td>
         <td class="border px-8 py-4"><%= user.email %></td>
         <td class="border px-8 py-4"><%= user.role %></td>
+        <td class="border px-8 py-4">
+          Total: <%= user.projects.count %>
+          <% user.projects.each do |p| %>
+            <div class="border rounded"><%= p.id %></div>
+          <% end %>
+        </td>
         <!--<td><%= user.avatar %></td>-->
         <!--<td><%= user.password_digest %></td>-->
         <td class="border px-8 py-4">
@@ -44,7 +51,7 @@
       </tr>
     <% end %>
     <tr class="bg-gray-300">
-      <td class="border px-8 py-2 text-left" colspan="7">
+      <td class="border px-8 py-2 text-left" colspan="8">
         <span>Total number of user accounts:&nbsp;&nbsp;&nbsp;<b><%= @users.count %></b></span>
         <%= link_to new_user_path, class: "bg-green-900 hover:bg-green-600 text-white text-sm text-center font-bold p-2 mx-6 rounded inline-block w-60" do %>
           <i class="fas fa-user-plus mr-3"></i><%= t('action-newuser') %>

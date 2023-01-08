@@ -25,17 +25,19 @@ es:
         church: Church
         city: City
         email: Email
+        firstName: Firstname
         groomFirstName: Groomfirstname
         groomLastName: Groomlastname
+        lastName: Lastname
         liturgy: Liturgy
         liturgy_catholicNonCatholic: Liturgy catholicnoncatholic
         liturgy_withMass: Liturgy withmass
         liturgy_withoutMass: Liturgy withoutmass
+        namePrefix: Nameprefix
+        relationship: Relationship
+        relationshipTo: Relationshipto
         role: Role
         weddingdate: Weddingdate
-      session:
-        password: Password
-        username: Username
       user:
         avatar: Avatar
         email: Email
@@ -50,6 +52,7 @@ es:
       wedding_party_member:
         firstName: Firstname
         lastName: Lastname
+        namePrefix: Nameprefix
         ofTheFemPlural: Ofthefemplural
         ofTheFemSing: Ofthefemsing
         ofTheMascSing: Ofthemascsing
@@ -81,6 +84,7 @@ es:
         role_bestman: Role bestman
         role_bridesmaid: Role bridesmaid
         role_bridesman: Role bridesman
+        role_chorist: Role chorist
         role_concelebrant: Role concelebrant
         role_fatherbride: Role fatherbride
         role_fathergroom: Role fathergroom
@@ -94,6 +98,8 @@ es:
         role_mothergroom: Role mothergroom
         role_musician: Role musician
         role_ringbearer: Role ringbearer
+        role_soloist: Role soloist
+        role_undefined: Role undefined
   application:
     description: Redacte la Libreta de Matrimonio perfecta, basada en los textos litúrgicos del Rito de la Boda Romana
     guest: Guest
@@ -172,6 +178,28 @@ es:
   placeholder-password: Placeholder-password
   placeholder-username: Placeholder-username
   placeholder-username-or-email: Placeholder-username-or-email
+  projects:
+    new:
+      weddingpartymember:
+        namePrefix:
+          Madame: Madame
+          Madamesoille: Madamesoille
+          Master: Master
+          Miss: Miss
+          Missus: Missus
+          Mister: Mister
+          Mr: Mr
+          Mrs: Mrs
+          Ms: Ms
+          Rev: Rev
+          Reverend: Reverend
+        relationshipto:
+          theBride: Thebride
+          theBrideAndTheGroom: Thebrideandthegroom
+          theFamiliesOfTheBrideAndTheGroom: Thefamiliesofthebrideandthegroom
+          theFamilyOfTheBride: Thefamilyofthebride
+          theFamilyOfTheGroom: Thefamilyofthegroom
+          theGroom: Thegroom
   reveal-password: Reveal-password
   welcome-greeting-1: Welcome-greeting-1
   welcome-greeting-2: Welcome-greeting-2

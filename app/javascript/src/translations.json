@@ -25,18 +25,19 @@
           "church": "Church",
           "city": "City",
           "email": "Email",
+          "firstName": "First name",
           "groomFirstName": "Groom name",
           "groomLastName": "Groom surname",
+          "lastName": "Last name",
           "liturgy": "Liturgy",
           "liturgy_catholicNonCatholic": "Between a Catholic and a Catechumen or a Non-Christian",
           "liturgy_withMass": "Within Mass",
           "liturgy_withoutMass": "Without Mass",
+          "namePrefix": "Title",
+          "relationship": "Relationship",
+          "relationshipTo": "To",
           "role": "Role",
           "weddingdate": "Wedding date"
-        },
-        "session": {
-          "password": "Password",
-          "username": "Username"
         },
         "user": {
           "avatar": "Avatar",
@@ -53,6 +54,7 @@
         "wedding_party_member": {
           "firstName": "First name",
           "lastName": "Last name",
+          "namePrefix": "Title",
           "ofTheFemPlural": "of the",
           "ofTheFemSing": "of the",
           "ofTheMascSing": "of the",
@@ -84,6 +86,7 @@
           "role_bestman": "Best Man",
           "role_bridesmaid": "Bridesmaid",
           "role_bridesman": "Bridesman",
+          "role_chorist": "Chorist",
           "role_concelebrant": "Concelebrant",
           "role_fatherbride": "Father of the Bride",
           "role_fathergroom": "Father of the Groom",
@@ -96,7 +99,9 @@
           "role_motherbride": "Mother of the Bride",
           "role_mothergroom": "Mother of the Groom",
           "role_musician": "Musician",
-          "role_ringbearer": "Ringbearer"
+          "role_ringbearer": "Ringbearer",
+          "role_soloist": "Soloist",
+          "role_undefined": "---"
         }
       },
       "errors": {
@@ -599,6 +604,33 @@
     "placeholder-password": "e.g. ThyWillBeDone",
     "placeholder-username": "e.g. joseph.carpenter",
     "placeholder-username-or-email": "e.g. joseph@carpenter.com",
+    "projects": {
+      "new": {
+        "weddingpartymember": {
+          "namePrefix": {
+            "Madame": "Madame",
+            "Madamesoille": "Madamesoille",
+            "Master": "Master",
+            "Miss": "Miss",
+            "Missus": "Missus",
+            "Mister": "Mister",
+            "Mr": "Mr.",
+            "Mrs": "Mrs.",
+            "Ms": "Ms.",
+            "Rev": "Rev.",
+            "Reverend": "Reverend"
+          },
+          "relationshipto": {
+            "theBride": "of the Bride",
+            "theBrideAndTheGroom": "of the Bride and the Groom",
+            "theFamiliesOfTheBrideAndTheGroom": "of the Families of the Bride and the Groom",
+            "theFamilyOfTheBride": "of the Family of the Bride",
+            "theFamilyOfTheGroom": "of the Family of the Groom",
+            "theGroom": "of the Groom"
+          }
+        }
+      }
+    },
     "reveal-password": "Reveal password",
     "support": {
       "array": {
@@ -645,18 +677,19 @@
           "church": "Church",
           "city": "City",
           "email": "Email",
+          "firstName": "Firstname",
           "groomFirstName": "Groomfirstname",
           "groomLastName": "Groomlastname",
+          "lastName": "Lastname",
           "liturgy": "Liturgy",
           "liturgy_catholicNonCatholic": "Liturgy catholicnoncatholic",
           "liturgy_withMass": "Liturgy withmass",
           "liturgy_withoutMass": "Liturgy withoutmass",
+          "namePrefix": "Nameprefix",
+          "relationship": "Relationship",
+          "relationshipTo": "Relationshipto",
           "role": "Role",
           "weddingdate": "Weddingdate"
-        },
-        "session": {
-          "password": "Password",
-          "username": "Username"
         },
         "user": {
           "avatar": "Avatar",
@@ -673,6 +706,7 @@
         "wedding_party_member": {
           "firstName": "Firstname",
           "lastName": "Lastname",
+          "namePrefix": "Nameprefix",
           "ofTheFemPlural": "Ofthefemplural",
           "ofTheFemSing": "Ofthefemsing",
           "ofTheMascSing": "Ofthemascsing",
@@ -704,6 +738,7 @@
           "role_bestman": "Role bestman",
           "role_bridesmaid": "Role bridesmaid",
           "role_bridesman": "Role bridesman",
+          "role_chorist": "Role chorist",
           "role_concelebrant": "Role concelebrant",
           "role_fatherbride": "Role fatherbride",
           "role_fathergroom": "Role fathergroom",
@@ -716,7 +751,9 @@
           "role_motherbride": "Role motherbride",
           "role_mothergroom": "Role mothergroom",
           "role_musician": "Role musician",
-          "role_ringbearer": "Role ringbearer"
+          "role_ringbearer": "Role ringbearer",
+          "role_soloist": "Role soloist",
+          "role_undefined": "Role undefined"
         }
       },
       "errors": {
@@ -1098,6 +1135,33 @@
     "placeholder-password": "Placeholder-password",
     "placeholder-username": "Placeholder-username",
     "placeholder-username-or-email": "Placeholder-username-or-email",
+    "projects": {
+      "new": {
+        "weddingpartymember": {
+          "namePrefix": {
+            "Madame": "Madame",
+            "Madamesoille": "Madamesoille",
+            "Master": "Master",
+            "Miss": "Miss",
+            "Missus": "Missus",
+            "Mister": "Mister",
+            "Mr": "Mr",
+            "Mrs": "Mrs",
+            "Ms": "Ms",
+            "Rev": "Rev",
+            "Reverend": "Reverend"
+          },
+          "relationshipto": {
+            "theBride": "Thebride",
+            "theBrideAndTheGroom": "Thebrideandthegroom",
+            "theFamiliesOfTheBrideAndTheGroom": "Thefamiliesofthebrideandthegroom",
+            "theFamilyOfTheBride": "Thefamilyofthebride",
+            "theFamilyOfTheGroom": "Thefamilyofthegroom",
+            "theGroom": "Thegroom"
+          }
+        }
+      }
+    },
     "reveal-password": "Reveal-password",
     "support": {
       "array": {
@@ -1144,18 +1208,19 @@
           "church": "Church",
           "city": "City",
           "email": "Email",
+          "firstName": "Firstname",
           "groomFirstName": "Groomfirstname",
           "groomLastName": "Groomlastname",
+          "lastName": "Lastname",
           "liturgy": "Liturgy",
           "liturgy_catholicNonCatholic": "Liturgy catholicnoncatholic",
           "liturgy_withMass": "Liturgy withmass",
           "liturgy_withoutMass": "Liturgy withoutmass",
+          "namePrefix": "Nameprefix",
+          "relationship": "Relationship",
+          "relationshipTo": "Relationshipto",
           "role": "Role",
           "weddingdate": "Weddingdate"
-        },
-        "session": {
-          "password": "Password",
-          "username": "Username"
         },
         "user": {
           "avatar": "Avatar",
@@ -1172,6 +1237,7 @@
         "wedding_party_member": {
           "firstName": "Firstname",
           "lastName": "Lastname",
+          "namePrefix": "Nameprefix",
           "ofTheFemPlural": "Ofthefemplural",
           "ofTheFemSing": "Ofthefemsing",
           "ofTheMascSing": "Ofthemascsing",
@@ -1203,6 +1269,7 @@
           "role_bestman": "Role bestman",
           "role_bridesmaid": "Role bridesmaid",
           "role_bridesman": "Role bridesman",
+          "role_chorist": "Role chorist",
           "role_concelebrant": "Role concelebrant",
           "role_fatherbride": "Role fatherbride",
           "role_fathergroom": "Role fathergroom",
@@ -1215,7 +1282,9 @@
           "role_motherbride": "Role motherbride",
           "role_mothergroom": "Role mothergroom",
           "role_musician": "Role musician",
-          "role_ringbearer": "Role ringbearer"
+          "role_ringbearer": "Role ringbearer",
+          "role_soloist": "Role soloist",
+          "role_undefined": "Role undefined"
         }
       },
       "errors": {
@@ -1572,6 +1641,33 @@
     "placeholder-password": "Placeholder-password",
     "placeholder-username": "Placeholder-username",
     "placeholder-username-or-email": "Placeholder-username-or-email",
+    "projects": {
+      "new": {
+        "weddingpartymember": {
+          "namePrefix": {
+            "Madame": "Madame",
+            "Madamesoille": "Madamesoille",
+            "Master": "Master",
+            "Miss": "Miss",
+            "Missus": "Missus",
+            "Mister": "Mister",
+            "Mr": "Mr",
+            "Mrs": "Mrs",
+            "Ms": "Ms",
+            "Rev": "Rev",
+            "Reverend": "Reverend"
+          },
+          "relationshipto": {
+            "theBride": "Thebride",
+            "theBrideAndTheGroom": "Thebrideandthegroom",
+            "theFamiliesOfTheBrideAndTheGroom": "Thefamiliesofthebrideandthegroom",
+            "theFamilyOfTheBride": "Thefamilyofthebride",
+            "theFamilyOfTheGroom": "Thefamilyofthegroom",
+            "theGroom": "Thegroom"
+          }
+        }
+      }
+    },
     "reveal-password": "Reveal-password",
     "support": {
       "array": {

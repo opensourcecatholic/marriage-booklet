@@ -1,10 +1,23 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[ show edit update destroy ]
 
+  def logged_in?
+    !!session[:user_id]
+  end
+
+  def current_user
+    @current_user ||= User.find_by_id(session[:user_id]) if !!session[:user_id]
+  end
+
   # GET /projects or /projects.json
   def index
     @projects = Project.all
-  end
+    if logged_in?
+      @projects = (current_user.projects + Project.where(isSecured: false))
+    else
+      @projects = Project.where(isSecured: false)
+    end
+end
 
   # GET /projects/1 or /projects/1.json
   def show
@@ -15,20 +28,37 @@ class ProjectsController < ApplicationController
   def new
     @projects = Project.all
     @project = Project.new
-    user = @project.users.build
-    wedding_party_member = @project.wedding_party_members.build
-  end
+    users = @project.users.build
+    unless logged_in?
+      @randomUsername = SecureRandom.hex(10)
+    end
+    case I18n.locale
+    when :en
+      @project.wedding_party_members.build({ role: "maidofhonor" })
+      @project.wedding_party_members.build({ role: "bestman" })
+    when :it
+      @project.wedding_party_members.build({ role: "bridesmaid" })
+      @project.wedding_party_members.build({ role: "groomsman" })
+    when :es
+      @project.wedding_party_members.build({ role: "bridesmaid" })
+      @project.wedding_party_members.build({ role: "groomsman" })
+    else
+      @project.wedding_party_members.build({ role: "bridesmaid" })
+      @project.wedding_party_members.build({ role: "groomsman" })
+    end
+end
 
   # GET /projects/1/edit
   def edit
     @projects = Project.all
-    user = @project.users.build
-    wedding_party_member = @project.wedding_party_members.build
   end
 
   # POST /projects or /projects.json
   def create
     @project = Project.new(project_params)
+    if logged_in?
+      @project.users = [ current_user ]
+    end
 
     respond_to do |format|
       if @project.save
@@ -72,6 +102,8 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:liturgy, :weddingdate, :church, :city, :celebrantNamePrefix, :celebrantFirstName, :celebrantLastName, :brideFirstName, :brideLastName, :groomFirstName, :groomLastName, :isSecured)
+      params.require(:project).permit(:liturgy, :weddingdate, :church, :city, :celebrantNamePrefix, :celebrantFirstName, :celebrantLastName, :brideFirstName, :brideLastName, :groomFirstName, :groomLastName, :isSecured,
+        users_attributes: [:role, :email, :username, :password, :password_confirmation],
+        wedding_party_members_attributes: [:role, :relationship, :relationshipTo, :namePrefix, :firstName, :lastName])
     end
 end

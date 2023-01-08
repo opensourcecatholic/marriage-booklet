@@ -19,47 +19,28 @@
     <h3 class="text-lg font-medium leading-6 text-gray-900 mb-3"><%= t('pages.projectNew.request_info.title') %></h3> <!-- User info -->
     <div class="px-4 sm:px-0">
       <% unless logged_in? %>
-      <hr class="m-4 border-gray-400">
-      <p class="mt-1 text-sm text-gray-500 italic">
-        <%= t('pages.projectNew.request_info.optional_login') %> <!-- If you already created an account, you may login instead. In that case any previously entered information will be retrieved. Or you can go ahead and register an account right away if you would like your project to be associated with your account. -->
-      </p>
-      <div class="text-center p-4 flex-col">
-        <div class="m-2 flex justify-center items-center">
-          <%= link_to login_path, class: "items-center inline-flex justify-center w-60 mx-5 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-700 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" do %>
-            <i class="fas fa-sign-in-alt mr-3"></i><%= t('action-login') %>
-          <% end %>
-          <%= link_to new_user_path, class: "items-center inline-flex justify-center w-60 mx-5 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-700 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500" do %>
-            <i class="fas fa-user-plus mr-3"></i><%= t('action-register') %>
-          <% end %>
+        <hr class="m-4 border-gray-400">
+        <p class="mt-1 text-sm text-gray-500 italic">
+          <%= t('pages.projectNew.request_info.optional_login') %> <!-- If you already created an account, you may login instead. In that case any previously entered information will be retrieved. Or you can go ahead and register an account right away if you would like your project to be associated with your account. -->
+        </p>
+        <div class="text-center p-4 flex-col">
+          <div class="m-2 flex justify-center items-center">
+            <%= link_to login_path, class: "items-center inline-flex justify-center w-60 mx-5 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-700 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" do %>
+              <i class="fas fa-sign-in-alt mr-3"></i><%= t('action-login') %>
+            <% end %>
+            <%= link_to new_user_path, class: "items-center inline-flex justify-center w-60 mx-5 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-700 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500" do %>
+              <i class="fas fa-user-plus mr-3"></i><%= t('action-register') %>
+            <% end %>
+          </div>
         </div>
-      </div>
-      <hr class="m-4 border-gray-400">
+        <hr class="m-4 border-gray-400">
       <% end %>
     </div>
     <div class="mt-5 md:mt-0"><!-- Card outer wrapper start -->
       <div class="shadow sm:rounded-md sm:overflow-hidden"><!-- Card inner wrapper start -->
         <div class="px-4 py-5 bg-white space-y-6 sm:p-6"><!-- Card content start -->
 
-          <% unless logged_in? %>
-          <%= form.fields_for :users do |f| %>
-          <fieldset><!-- Category person block start -->
-            <legend class="text-base font-medium text-gray-900 required"><%= t('pages.projectNew.person_category.label') %> <!-- You are: --></legend>
-            <div class="grid grid-cols-4 gap-6"><!-- Email address block start -->
-              <div class="col-span-2 sm:col-span-1">
-                <%= f.label :role, class: "block text-sm font-medium text-gray-700 required" %>
-                <%= f.select :role, User.roles.keys.map{ |key, value| [ t("activerecord.attributes.user.role_#{key}"), key ] }, {}, { class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight" } %>
-              </div>
-              <div class="col-span-2 sm:col-span-3">
-                <%= f.label :email, class: "block text-sm font-medium text-gray-700" %>
-                <%= f.text_field :email, class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight", placeholder: "me@example.com" %>
-                <p class="mt-2 text-sm text-gray-500 italic">
-                  <%= t('pages.projectNew.email_address.description') %> <!-- Your email address will never be shared without your permission. Wedding booklet projects you create will be associated with your email address.  -->
-                </p>
-              </div>
-            </div><!-- Email address block end -->
-          </fieldset><!-- Person category block end -->
-          <% end %>
-          <% else %>
+          <% if logged_in? %>
             <% if action_name == 'new' %>
               <p class="mt-2 text-sm text-gray-500 italic">Since you are logged in, the project will be associated with your account, and will not be publicly accessible.</p>
               <p class="mt-2 text-sm text-gray-500 italic">Username and email that this project will be associated with:</p>
@@ -67,6 +48,64 @@
               <p class="mt-2 text-sm text-gray-500 italic">Role in Project:</p>
               <p><%= t("activerecord.attributes.user.role_#{current_user.role}") %></p>
             <% elsif action_name == 'edit' %>
+              <% if project.isSecured %>
+                <h5 class="text-sm md:text-base text-green-800">
+                  <i class="fas fa-lock mr-3"></i><%= t('pages.projectIndex.projectIsPrivate') %>
+                </h5>
+                <p class="mt-2 text-sm text-gray-500 italic">This project is associated with <%= pluralize(@project.users.count, "user") %>:</p>
+                <% @project.users.each do |n| %>
+                  <p>
+                    <%= n.username %>
+                    (<%= n.role %>)
+                    &lt;<%= n.email %>&gt;
+                  </p>
+                <% end %>
+              <% else %>
+                <h5 class="text-sm md:text-base text-red-800">
+                  <i class="fas fa-lock-open mr-3"></i><%= t('pages.projectIndex.projectIsPubliclyAccessible') %>
+                  <button class="text-xs md:text-sm bg-gray-300 p-3 rounded text-gray-600 hover:bg-gray-200 hover:text-gray-700 ml-6"><i class="fa fa-key mr-3"></i><%= t('pages.projectIndex.actionSecureProject') %></button>
+                </h5>
+                <p class="mt-2 text-sm text-gray-500 italic">This project is associated with <%= pluralize(@project.users.count, "user") %>:</p>
+                <% @project.users.each do |n| %>
+                  <p>
+                    <%= n.username %>
+                    (<%= n.role %>)
+                  </p>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% else %>
+            <% if action_name == 'new' %>
+              <p>Else if you do not wish to login or register at this time, please indicate at least some minimum info to help you identify your project:</p>
+              <%= form.fields_for :users do |f| %>
+                <fieldset><!-- Category person block start -->
+                  <legend class="text-base font-medium text-gray-900 required"><%= t('pages.projectNew.person_category.label') %> <!-- You are: --></legend>
+                  <div class="grid grid-cols-4 gap-6"><!-- Email address block start -->
+                    <div class="col-span-2 sm:col-span-1">
+                      <%= f.label :role, class: "block text-sm font-medium text-gray-700 required" %>
+                      <%= f.select :role, User.roles.keys.map{ |key, value| [ t("activerecord.attributes.user.role_#{key}"), key ] }, {}, { class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight" } %>
+                    </div>
+                    <div class="col-span-2 sm:col-span-3">
+                      <%= f.label :email, class: "block text-sm font-medium text-gray-700" %>
+                      <%= f.text_field :email, class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight", placeholder: "me@example.com" %>
+                      <p class="mt-2 text-sm text-gray-500 italic">
+                        <%= t('pages.projectNew.email_address.description') %> <!-- Your email address will never be shared without your permission. Wedding booklet projects you create will be associated with your email address, which will not however be publicly visible.  -->
+                      </p>
+                    </div>
+                    <%= f.hidden_field :username, value: ('anonymous-' + @randomUsername) %>
+                    <%= f.hidden_field :password, value: 'anonymous' %>
+                    <%= f.hidden_field :password_confirmation, value: 'anonymous' %>
+                  </div><!-- Email address block end -->
+                </fieldset><!-- Person category block end -->
+              <% end %>
+            <% elsif action_name == 'edit' %>
+              <p class="mt-2 text-sm text-gray-500 italic">This project is associated with <%= pluralize(@project.users.count, "user") %>:</p>
+              <% @project.users.each do |n| %>
+                <p>
+                  <%= n.username %>
+                  (<%= n.role %>)
+                </p>
+              <% end %>
             <% end %>
           <% end %>
 
@@ -110,15 +149,27 @@
           <div class="grid grid-cols-6 gap-6">
             <div class="col-span-6 sm:col-span-2 field">
               <%= form.label :celebrantNamePrefix, class: "block text-sm font-medium text-gray-700 required" %>
-              <%= form.select :celebrantNamePrefix, [[t("pages.projectNew.celebrantPrefix.deacon"),t("pages.projectNew.celebrantPrefix.deaconAbbr")],[t("pages.projectNew.celebrantPrefix.father"), t("pages.projectNew.celebrantPrefix.fatherAbbr")],[t("pages.projectNew.celebrantPrefix.reverend"), t("pages.projectNew.celebrantPrefix.reverendAbbr")],[t("pages.projectNew.celebrantPrefix.monsignor"), t("pages.projectNew.celebrantPrefix.monsignorAbbr")],[t("pages.projectNew.celebrantPrefix.bishop"),t("pages.projectNew.celebrantPrefix.bishopFull")],[t("pages.projectNew.celebrantPrefix.cardinal"),t("pages.projectNew.celebrantPrefix.cardinalFull")]], { selected: t("pages.projectNew.celebrantPrefix.cardinalFull") }, { class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" } %>
+              <%= form.select :celebrantNamePrefix, options_for_select([
+                    [t("pages.projectNew.celebrantPrefix.deacon"),t("pages.projectNew.celebrantPrefix.deaconAbbr")],
+                    [t("pages.projectNew.celebrantPrefix.father"), t("pages.projectNew.celebrantPrefix.fatherAbbr")],
+                    [t("pages.projectNew.celebrantPrefix.reverend"), t("pages.projectNew.celebrantPrefix.reverendAbbr")],
+                    [t("pages.projectNew.celebrantPrefix.monsignor"), t("pages.projectNew.celebrantPrefix.monsignorAbbr")],
+                    [t("pages.projectNew.celebrantPrefix.bishop"),t("pages.projectNew.celebrantPrefix.bishopFull")],
+                    [t("pages.projectNew.celebrantPrefix.cardinal"),t("pages.projectNew.celebrantPrefix.cardinalFull")]
+                  ],
+                  (@project.celebrantNamePrefix  || t("pages.projectNew.celebrantPrefix.cardinalFull"))
+                ),
+                {},
+                { class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" }
+                %>
             </div>
             <div class="col-span-6 sm:col-span-2 field">
-              <%= form.label :celebrantFirstName, class: "block text-sm font-medium text-gray-700 required", autocomplete: 'off' %>
-              <%= form.text_field :celebrantFirstName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md", placeholder: t('pages.projectNew.celebrantFirstName.placeholder') %>
+              <%= form.label :celebrantFirstName, class: "block text-sm font-medium text-gray-700 required" %>
+              <%= form.text_field :celebrantFirstName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md", placeholder: t('pages.projectNew.celebrantFirstName.placeholder'), autocomplete: 'off' %>
             </div>
             <div class="col-span-6 sm:col-span-2 field">
-              <%= form.label :celebrantLastName, class: "block text-sm font-medium text-gray-700 required", autocomplete: 'off' %>
-              <%= form.text_field :celebrantLastName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md", placeholder: t('pages.projectNew.celebrantLastName.placeholder') %>
+              <%= form.label :celebrantLastName, class: "block text-sm font-medium text-gray-700 required" %>
+              <%= form.text_field :celebrantLastName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md", placeholder: t('pages.projectNew.celebrantLastName.placeholder'), autocomplete: 'off' %>
             </div>
           </div>
 
@@ -137,30 +188,119 @@
     <div class="mt-5 md:mt-0">
       <div class="shadow overflow-hidden sm:rounded-md">
         <div class="px-4 py-5 bg-white sm:p-6">
-          <div class="grid grid-cols-6 gap-6">
+          <div class="grid grid-cols-6 gap-6" data-controller="wedding-party-member">
             <div class="col-span-1 sm:col-span-1 text-3xl">
               <i class="fas fa-chess-queen text-red-300"></i>
             </div>
             <div class="col-span-5 sm:col-span-2 field">
-              <%= form.label :brideFirstName, class: "block text-sm font-medium text-gray-700 required", autocomplete: 'off' %>
-              <%= form.text_field :brideFirstName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
+              <%= form.label :brideFirstName, class: "block text-sm font-medium text-gray-700 required" %>
+              <%= form.text_field :brideFirstName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md", autocomplete: 'off' %>
             </div>
             <div class="col-span-6 sm:col-span-3 field">
-              <%= form.label :brideLastName, class: "block text-sm font-medium text-gray-700 required", autocomplete: 'off' %>
-              <%= form.text_field :brideLastName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
+              <%= form.label :brideLastName, class: "block text-sm font-medium text-gray-700 required" %>
+              <%= form.text_field :brideLastName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md", autocomplete: 'off' %>
             </div>
             <div class="col-span-1 sm:col-span-1 text-3xl">
               <i class="fas fa-chess-king"></i>
             </div>
             <div class="col-span-5 sm:col-span-2">
-              <%= form.label :groomFirstName, class: "block text-sm font-medium text-gray-700 required", autocomplete: 'off' %>
-              <%= form.text_field :groomFirstName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
+              <%= form.label :groomFirstName, class: "block text-sm font-medium text-gray-700 required" %>
+              <%= form.text_field :groomFirstName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md", autocomplete: 'off' %>
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <%= form.label :groomLastName, class: "block text-sm font-medium text-gray-700 required", autocomplete: 'off' %>
-              <%= form.text_field :groomLastName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
+              <%= form.label :groomLastName, class: "block text-sm font-medium text-gray-700 required" %>
+              <%= form.text_field :groomLastName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md", autocomplete: 'off' %>
             </div>
-            <div data-controller="wedding-party-member" data-wedding-party-member-target="div" class="text-center col-span-6 sm:col-span-6 border-t-2 border-dotted">
+            <div class="col-span-6 sm:col-span-6 text-center bold">
+                This wedding booklet project currently has <%= pluralize(@project.wedding_party_members.count, "saved wedding party member") %>:
+            </div>
+            <% @project.wedding_party_members.each do |wedding_party_member| %>
+            <%= form.fields_for :wedding_party_members, wedding_party_member do |f| %>
+              <div  class="col-span-6 border-l-8 border-solid border-blue-700 rounded-lg weddingPartyMemberWrapper">
+                <div class="w-full grid grid-cols-6 gap-6 border-t border-b border-r border-dashed border-gray-300 rounded-lg p-10 relative -left-2.5">
+                  <% if ["maidofhonor", "bestman"].include?(wedding_party_member.role) === false %>
+                  <div data-action="click->wedding-party-member#remove" class="bg-red-700 hover:bg-red-500 absolute top-2 right-2 inline-block p-2 rounded text-xs text-white cursor-pointer">
+                      <i class="fas fa-trash-alt"></i>
+                  </div>
+                  <% end %>
+                  <div class="col-span-6 sm:col-span-2">
+                    <input type="hidden" class="weddingPartyMembersIndex" value="<%= f.index  %>" />
+                    <%= f.label :role, class: "block text-sm font-medium text-gray-700 required" %>
+                    <%= f.select :role,
+                      WeddingPartyMember.roles.keys.map{ |key, value| [ t("activerecord.attributes.wedding_party_member.role_#{key}"), key ] },
+                      {},
+                      {
+                        class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight",
+                        data: { action: 'change->wedding-party-member#updateRelationshipStatus' }
+                      }
+                    %>
+                  </div>
+                  <div class="col-span-1 sm:col-span-1"><%= I18n.t('pages.projectNew.wedding_party.or') %></div>
+                  <div class="col-span-6 sm:col-span-1">
+                    <%= f.label :relationship, class: "block text-sm font-medium text-gray-700" %>
+                    <%= f.select :relationship,
+                      WeddingPartyMember.relationships.keys.map{ |key, value| [ t("activerecord.attributes.wedding_party_member.relationship_#{key}")+(key != 'undefined' ? " of" : ""), key ] },
+                      {},
+                      {
+                        class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight weddingPartyMemberRelationship",
+                        disabled: (wedding_party_member.role != "undefined")
+                      }
+                    %>
+                  </div>
+                  <div class="col-span-6 sm:col-span-2">
+                    <%= f.label :relationshipTo, class: "block text-sm font-medium text-gray-700" %>
+                    <%= f.select :relationshipTo,
+                      options_for_select([
+                          ["---",""],
+                          [t("projects.new.weddingpartymember.relationshipto.theBride"),"theBride"],
+                          [t("projects.new.weddingpartymember.relationshipto.theGroom"),"theGroom"],
+                          [t("projects.new.weddingpartymember.relationshipto.theFamilyOfTheBride"),"theFamilyOfTheBride"],
+                          [t("projects.new.weddingpartymember.relationshipto.theFamilyOfTheGroom"),"theFamilyOfTheGroom"],
+                          [t("projects.new.weddingpartymember.relationshipto.theBrideAndTheGroom"),"theBrideAndTheGroom"],
+                          [t("projects.new.weddingpartymember.relationshipto.theFamiliesOfTheBrideAndTheGroom"),"theFamiliesOfTheBrideAndTheGroom"]
+                        ], (f.object.relationshipTo || "")),
+                      {},
+                      {
+                        class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight weddingPartyMemberRelationshipTo",
+                        disabled: (wedding_party_member.role != "undefined")
+                      }
+                    %>
+                  </div>
+                  <div class="col-span-1 sm:col-span-1">
+                    <%= f.label :namePrefix, class: "block text-sm font-medium text-gray-700" %>
+                    <%= f.select :namePrefix,
+                      options_for_select([
+                          ["---",""],
+                          [t("projects.new.weddingpartymember.namePrefix.Mr"),"Mr."],
+                          [t("projects.new.weddingpartymember.namePrefix.Mrs"),"Mrs."],
+                          [t("projects.new.weddingpartymember.namePrefix.Ms"),"Ms."],
+                          [t("projects.new.weddingpartymember.namePrefix.Mister"),"Mister"],
+                          [t("projects.new.weddingpartymember.namePrefix.Missus"),"Missus"],
+                          [t("projects.new.weddingpartymember.namePrefix.Miss"),"Miss"],
+                          [t("projects.new.weddingpartymember.namePrefix.Madame"),"Madame"],
+                          [t("projects.new.weddingpartymember.namePrefix.Madamesoille"),"Madamesoille"],
+                          [t("projects.new.weddingpartymember.namePrefix.Master"),"Master"],
+                          [t("projects.new.weddingpartymember.namePrefix.Rev"),"Rev."],
+                          [t("projects.new.weddingpartymember.namePrefix.Reverend"),"Reverend"],
+                        ], (f.object.namePrefix || "")),
+                      {},
+                      { class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight" }
+                    %>
+                  </div>
+                  <div class="col-span-5 sm:col-span-2">
+                    <%= f.label :firstName, class: "block text-sm font-medium text-gray-700 required" %>
+                    <%= f.text_field :firstName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md", autocomplete: 'off' %>
+                  </div>
+                  <div class="col-span-6 sm:col-span-3">
+                    <%= f.label :lastName, class: "block text-sm font-medium text-gray-700 required" %>
+                    <%= f.text_field :lastName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md", autocomplete: 'off' %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+            <% end %>
+
+            <div data-wedding-party-member-target="div" class="text-center col-span-6 sm:col-span-6 border-t-2 border-dotted">
               <button type="button" data-wedding-party-member-target="button" id="addWeddingPartyMember" class="p-3 m-3 text-sm text-blue-500 bg-blue-100 hover:bg-blue-200 hover:text-blue-800 font-bold uppercase rounded-md outline-none inline-block focus:outline-none">+ <%= t('pages.projectNew.addWeddingPartyMember') %></button>
             </div>
           </div>
