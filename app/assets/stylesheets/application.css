@@ -84,12 +84,13 @@ display: block;
 }
 
 .carousel-indicators li {
-    text-shadow: 0 3px 9px black;
+    text-shadow: 0 3px 9px rgb(255, 255, 0);
 }
 
 #carousel-1:checked~.carousel-indicators li:nth-child(1) .carousel-bullet,
 #carousel-2:checked~.carousel-indicators li:nth-child(2) .carousel-bullet,
 #carousel-3:checked~.carousel-indicators li:nth-child(3) .carousel-bullet {
     color: #2b6cb0;
+    text-shadow: 0 3px 9px rgb(0, 170, 255);
     /*Set to match the Tailwind colour you want the active one to be */
 }

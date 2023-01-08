@@ -538,6 +538,11 @@
         "previewThisProject": "Preview this Project",
         "projectIsPrivate": "Project is Private",
         "projectIsPubliclyAccessible": "Project is Publicly Accessible",
+        "projectUsersCount": {
+          "one": "This project is associated with one user",
+          "other": "This project is associated with %{count} users",
+          "zero": "This project is not associated with any user"
+        },
         "tooltipSecureProject": "If you do not want this project to be publicly accessible, create a user account. You will then be able to secure the project."
       },
       "projectNew": {
@@ -563,9 +568,11 @@
           "reverendAbbr": "Rev."
         },
         "create_project_button": "Start composing the booklet!",
+        "currentUsernameAndEmail": "Username and email that this project will be associated with",
         "email_address": {
-          "description": "Your email address will never be shared without your permission. Wedding booklet projects you create will be associated with your email address."
+          "description": "Your email address will never be shared without your permission. Wedding booklet projects you create will be associated with your email address, so that you have a way of accessing the project again (a direct link will be sent to your email)."
         },
+        "loggedInState": "Since you are logged in, the project will be associated with your account, and will not be publicly accessible.",
         "marriageDatePlace": "Marriage Date and Place",
         "marriage_location": {
           "church_placeholder": "Saint Patrick's Cathedral",
@@ -575,7 +582,8 @@
           "label": "I am"
         },
         "request_info": {
-          "optional_login": "If you already have an account, you may login now, and any previous projects you have created will be retrieved. Otherwise you can register your account now if you would like your project to be associated with your account and not be publicly accessible.",
+          "minimum": "If you do not wish to login or register at this time, please submit the following info to help identify your project",
+          "optional_login": "If you already have an account, you may login now, and any previous projects you have created will be retrieved. Or if you don't have an account, you can create one: this will allow any projects you create to be associated with your account and not be publicly accessible.",
           "title": "User info"
         },
         "title": "New wedding booklet project",
@@ -1069,6 +1077,7 @@
         "previewThisProject": "Previewthisproject",
         "projectIsPrivate": "Projectisprivate",
         "projectIsPubliclyAccessible": "Projectispubliclyaccessible",
+        "projectUsersCount": "Projectuserscount",
         "tooltipSecureProject": "Tooltipsecureproject"
       },
       "projectNew": {
@@ -1094,9 +1103,11 @@
           "reverendAbbr": "Reverendabbr"
         },
         "create_project_button": "Create project button",
+        "currentUsernameAndEmail": "Currentusernameandemail",
         "email_address": {
           "description": "Description"
         },
+        "loggedInState": "Loggedinstate",
         "marriageDatePlace": "Marriagedateplace",
         "marriage_location": {
           "church_placeholder": "Church placeholder",
@@ -1106,6 +1117,7 @@
           "label": "Label"
         },
         "request_info": {
+          "minimum": "Minimum",
           "optional_login": "Optional login",
           "title": "Title"
         },
@@ -1575,6 +1587,7 @@
         "previewThisProject": "Previewthisproject",
         "projectIsPrivate": "Projectisprivate",
         "projectIsPubliclyAccessible": "Projectispubliclyaccessible",
+        "projectUsersCount": "Projectuserscount",
         "tooltipSecureProject": "Tooltipsecureproject"
       },
       "projectNew": {
@@ -1600,9 +1613,11 @@
           "reverendAbbr": "Reverendabbr"
         },
         "create_project_button": "Create project button",
+        "currentUsernameAndEmail": "Currentusernameandemail",
         "email_address": {
           "description": "Description"
         },
+        "loggedInState": "Loggedinstate",
         "marriageDatePlace": "Marriagedateplace",
         "marriage_location": {
           "church_placeholder": "Church placeholder",
@@ -1612,6 +1627,7 @@
           "label": "Label"
         },
         "request_info": {
+          "minimum": "Minimum",
           "optional_login": "Optional login",
           "title": "Title"
         },
