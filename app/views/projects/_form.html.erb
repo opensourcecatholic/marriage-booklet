@@ -11,17 +11,17 @@
     </div>
   <% end %>
 <div class="carousel shadow-xl">
-  <div class="carousel-inner relative w-full">
+  <div class="carousel-inner relative w-full" data-controller="tab-items">
 
   <!-- Slide 1 -->
-  <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+  <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" checked="checked" data-action="change->tab-items#setIndex" data-tab-index=1>
   <div class="carousel-item absolute opacity-0 bg-gray-200 p-4 invisible"><!-- Inner wrapper for title + card start -->
     <h3 class="text-lg font-medium leading-6 text-gray-900 mb-3"><%= t('pages.projectNew.request_info.title') %></h3> <!-- User info -->
     <div class="px-4 sm:px-0">
       <% unless logged_in? %>
         <hr class="m-4 border-gray-400">
         <p class="mt-1 text-sm text-gray-500 italic">
-          <%= t('pages.projectNew.request_info.optional_login') %> <!-- If you already created an account, you may login instead. In that case any previously entered information will be retrieved. Or you can go ahead and register an account right away if you would like your project to be associated with your account. -->
+          <%= t('pages.projectNew.request_info.optional_login') %>
         </p>
         <div class="text-center p-4 flex-col">
           <div class="m-2 flex justify-center items-center">
@@ -42,17 +42,17 @@
 
           <% if logged_in? %>
             <% if action_name == 'new' %>
-              <p class="mt-2 text-sm text-gray-500 italic">Since you are logged in, the project will be associated with your account, and will not be publicly accessible.</p>
-              <p class="mt-2 text-sm text-gray-500 italic">Username and email that this project will be associated with:</p>
+              <p class="mt-2 text-sm text-gray-500 italic"><%= t('pages.projectNew.loggedInState') %></p>
+              <p class="mt-2 text-sm text-gray-500 italic"><%= t('pages.projectNew.currentUsernameAndEmail') %>:</p>
               <p><%= current_user.username %>&nbsp;&lt;<%= current_user.email %>&gt;</p>
-              <p class="mt-2 text-sm text-gray-500 italic">Role in Project:</p>
+              <p class="mt-2 text-sm text-gray-500 italic"><%= t('activerecord.attributes.user.role') %>:</p>
               <p><%= t("activerecord.attributes.user.role_#{current_user.role}") %></p>
             <% elsif action_name == 'edit' %>
               <% if project.isSecured %>
                 <h5 class="text-sm md:text-base text-green-800">
                   <i class="fas fa-lock mr-3"></i><%= t('pages.projectIndex.projectIsPrivate') %>
                 </h5>
-                <p class="mt-2 text-sm text-gray-500 italic">This project is associated with <%= pluralize(@project.users.count, "user") %>:</p>
+                <p class="mt-2 text-sm text-gray-500 italic"><%= t('pages.projectIndex.projectUsersCount', count: @project.users.count) %>:</p>
                 <% @project.users.each do |n| %>
                   <p>
                     <%= n.username %>
@@ -63,9 +63,9 @@
               <% else %>
                 <h5 class="text-sm md:text-base text-red-800">
                   <i class="fas fa-lock-open mr-3"></i><%= t('pages.projectIndex.projectIsPubliclyAccessible') %>
-                  <button class="text-xs md:text-sm bg-gray-300 p-3 rounded text-gray-600 hover:bg-gray-200 hover:text-gray-700 ml-6"><i class="fa fa-key mr-3"></i><%= t('pages.projectIndex.actionSecureProject') %></button>
+                  <button class="text-xs md:text-sm bg-gray-300 p-3 rounded text-gray-600 hover:bg-gray-200 hover:text-gray-700 ml-6"><i class="fas fa-key mr-3"></i><%= t('pages.projectIndex.actionSecureProject') %></button>
                 </h5>
-                <p class="mt-2 text-sm text-gray-500 italic">This project is associated with <%= pluralize(@project.users.count, "user") %>:</p>
+                <p class="mt-2 text-sm text-gray-500 italic"><%= t('pages.projectIndex.projectUsersCount', count: @project.users.count) %>:</p>
                 <% @project.users.each do |n| %>
                   <p>
                     <%= n.username %>
@@ -76,10 +76,10 @@
             <% end %>
           <% else %>
             <% if action_name == 'new' %>
-              <p>Else if you do not wish to login or register at this time, please indicate at least some minimum info to help you identify your project:</p>
+              <p class="mt-1 text-sm text-gray-500 italic"><%= t('pages.projectNew.request_info.minimum') %>:</p>
               <%= form.fields_for :users do |f| %>
                 <fieldset><!-- Category person block start -->
-                  <legend class="text-base font-medium text-gray-900 required"><%= t('pages.projectNew.person_category.label') %> <!-- You are: --></legend>
+                  <legend class="text-base font-medium text-gray-900 required"><%= t('pages.projectNew.person_category.label') %></legend>
                   <div class="grid grid-cols-4 gap-6"><!-- Email address block start -->
                     <div class="col-span-2 sm:col-span-1">
                       <%= f.label :role, class: "block text-sm font-medium text-gray-700 required" %>
@@ -88,8 +88,8 @@
                     <div class="col-span-2 sm:col-span-3">
                       <%= f.label :email, class: "block text-sm font-medium text-gray-700" %>
                       <%= f.text_field :email, class: "focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full border-gray-300 rounded py-2 px-3 sm:text-sm leading-tight", placeholder: "me@example.com" %>
-                      <p class="mt-2 text-sm text-gray-500 italic">
-                        <%= t('pages.projectNew.email_address.description') %> <!-- Your email address will never be shared without your permission. Wedding booklet projects you create will be associated with your email address, which will not however be publicly visible.  -->
+                      <p class="mt-2 text-xs text-gray-500 italic">
+                        <%= t('pages.projectNew.email_address.description') %>
                       </p>
                     </div>
                     <%= f.hidden_field :username, value: ('anonymous-' + @randomUsername) %>
@@ -99,7 +99,7 @@
                 </fieldset><!-- Person category block end -->
               <% end %>
             <% elsif action_name == 'edit' %>
-              <p class="mt-2 text-sm text-gray-500 italic">This project is associated with <%= pluralize(@project.users.count, "user") %>:</p>
+              <p class="mt-2 text-sm text-gray-500 italic"><%= t('pages.projectIndex.projectUsersCount', count: @project.users.count) %>:</p>
               <% @project.users.each do |n| %>
                 <p>
                   <%= n.username %>
@@ -112,10 +112,11 @@
         </div><!-- Card content end -->
       </div><!-- Card inner wrapper end -->
     </div><!-- Card outer wrapper end -->
+    <div class="flex"><button type="button" data-action="click->tab-items#nextTab" class="p-3 my-3 ml-auto mr-3 text-sm text-white bg-blue-800 hover:bg-blue-700 font-bold uppercase rounded-md outline-none inline-block focus:outline-none">Next >></button></div>
   </div><!-- Inner wrapper for title + card end -->
 
   <!-- Slide 2 -->
-  <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+  <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" data-action="change->tab-items#setIndex" data-tab-index=2>
   <div class="carousel-item absolute opacity-0 bg-gray-200 p-4 invisible"><!-- Inner wrapper for title + card start -->
     <h3 class="text-lg font-medium leading-6 text-gray-900 mb-3"><%= t('pages.projectNew.marriageDatePlace') %></h3> <!-- User info -->
     <div class="mt-5 md:mt-0"><!-- Card outer wrapper start -->
@@ -176,10 +177,14 @@
         </div><!-- Card content end -->
       </div><!-- Card inner wrapper end -->
     </div><!-- Card outer wrapper end -->
+    <div class="flex justify-between">
+      <button type="button" data-action="click->tab-items#previousTab" class="p-3 my-3 ml-3 text-sm text-white bg-blue-800 hover:bg-blue-700 font-bold uppercase rounded-md outline-none inline-block focus:outline-none"><< Previous</button>
+      <button type="button" data-action="click->tab-items#nextTab" class="p-3 my-3 mr-3 text-sm text-white bg-blue-800 hover:bg-blue-700 font-bold uppercase rounded-md outline-none inline-block focus:outline-none">Next >></button>
+    </div>
   </div><!-- Inner wrapper for title + card end -->
 
   <!-- Slide 3 -->
-  <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+  <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" data-action="change->tab-items#setIndex" data-tab-index=3>
   <div class="carousel-item absolute opacity-0 mt-10 sm:mt-0 bg-gray-200 p-4 invisible">
     <h3 class="text-lg font-medium leading-6 text-gray-900 mb-3"><%= t('pages.projectNew.wedding_party.title') %></h3><!-- Wedding party -->
     <p class="mt-1 text-sm text-gray-600">
@@ -211,7 +216,7 @@
               <%= form.label :groomLastName, class: "block text-sm font-medium text-gray-700 required" %>
               <%= form.text_field :groomLastName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md", autocomplete: 'off' %>
             </div>
-            <div class="col-span-6 sm:col-span-6 text-center bold">
+            <div class="col-span-6 sm:col-span-6 text-center bold text-sm text-gray-500 italic">
                 This wedding booklet project currently has <span data-wedding-party-member-target="count">0</span> wedding party members:
             </div>
             <% @project.wedding_party_members.each do |wedding_party_member| %>
@@ -305,9 +310,12 @@
             </div>
           </div>
         </div>
-        <div class="px-4 py-3 bg-gray-50 text-right sm:px-6 actions">
-          <% submit_text = (action_name == 'new') ? t('pages.projectNew.create_project_button') : t('pages.projectNew.update_project_button') %>
-          <%= form.submit submit_text, class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+        <div class="flex justify-between px-4 py-3 bg-gray-50 sm:px-6 actions">
+          <button type="button" data-action="click->tab-items#previousTab" class="p-3 my-3 ml-3 text-sm text-white bg-blue-800 hover:bg-blue-700 font-bold uppercase rounded-md outline-none inline-block focus:outline-none"><< Previous</button>
+          <%= form.button nil, class: "p-3 text-lg text-white bg-indigo-600 hover:bg-indigo-700 font-bold rounded-md outline-none focus:outline-none align-middle" do %>
+            <i class="fas fa-book-bible mr-3 text-2xl align-middle"></i>
+            <%= (action_name == 'new') ? t('pages.projectNew.create_project_button') : t('pages.projectNew.update_project_button') %>
+          <% end %>
         </div>
       </div>
     </div>

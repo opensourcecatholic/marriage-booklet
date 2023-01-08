@@ -126,6 +126,7 @@ it:
       previewThisProject: Previewthisproject
       projectIsPrivate: Projectisprivate
       projectIsPubliclyAccessible: Projectispubliclyaccessible
+      projectUsersCount: Projectuserscount
       tooltipSecureProject: Tooltipsecureproject
     projectNew:
       addWeddingPartyMember: Addweddingpartymember
@@ -147,8 +148,10 @@ it:
         reverend: Reverend
         reverendAbbr: Reverendabbr
       create_project_button: Create project button
+      currentUsernameAndEmail: Currentusernameandemail
       email_address:
         description: Description
+      loggedInState: Loggedinstate
       marriageDatePlace: Marriagedateplace
       marriage_location:
         church_placeholder: Church placeholder
@@ -156,6 +159,7 @@ it:
       person_category:
         label: Label
       request_info:
+        minimum: Minimum
         optional_login: Optional login
         title: Title
       title: Title
