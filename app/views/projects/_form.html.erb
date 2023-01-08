@@ -212,7 +212,7 @@
               <%= form.text_field :groomLastName, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md", autocomplete: 'off' %>
             </div>
             <div class="col-span-6 sm:col-span-6 text-center bold">
-                This wedding booklet project currently has <%= pluralize(@project.wedding_party_members.count, "saved wedding party member") %>:
+                This wedding booklet project currently has <span data-wedding-party-member-target="count">0</span> wedding party members:
             </div>
             <% @project.wedding_party_members.each do |wedding_party_member| %>
             <%= form.fields_for :wedding_party_members, wedding_party_member do |f| %>
