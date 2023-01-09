@@ -2,7 +2,13 @@ require "test_helper"
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @user = users(:one)
+    @user = User.new
+    @user.avatar = 'MyString'
+    @user.email = 'donkey@stable.ps'
+    @user.password = 'PasswordForDonkey'
+    @user.password_confirmation = 'PasswordForDonkey'
+    @user.role = User.roles[:guest]
+    @user.username = 'donkey_kong'
   end
 
   test "should get index" do
@@ -17,7 +23,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create user" do
     assert_difference("User.count") do
-      post users_url, params: { user: { avatar: 'MyString', email: 'jerusalem@my.city', password: 'MyString', password_confirmation: 'MyString', role: :guest, username: 'jesus.saviour' } }
+      post users_url, params: { user: { avatar: @user.avatar, email: @user.email, password: @user.password, password_confirmation: @user.password_confirmation, role: @user.role, username: @user.username } }
     end
 
     assert_redirected_to projects_url

@@ -5,11 +5,11 @@ one:
   email: bethlehem@my.city
   role: 1
   avatar: MyString
-  password_digest: MyString
+  password_digest: <%= BCrypt::Password.create('PasswordForJoseph') %>
 
 two:
   username: mary.mediatrix
   email: nazareth@my.city
   role: 0
   avatar: MyString
-  password_digest: MyString
+  password_digest: <%= BCrypt::Password.create('PasswordForMary') %>
