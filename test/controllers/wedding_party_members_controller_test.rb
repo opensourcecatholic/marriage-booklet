@@ -20,7 +20,7 @@ class WeddingPartyMembersControllerTest < ActionDispatch::IntegrationTest
       post wedding_party_members_url, params: { wedding_party_member: { namePrefix: @wedding_party_member.namePrefix, firstName: @wedding_party_member.firstName, lastName: @wedding_party_member.lastName, project_id: @wedding_party_member.project_id, role: @wedding_party_member.role, relationship: @wedding_party_member.relationship, relationshipTo: @wedding_party_member.relationshipTo } }
     end
 
-    assert_redirected_to wedding_party_member_url(WeddingPartyMember.last)
+    assert_redirected_to wedding_party_member_url(WeddingPartyMember.order(:created_at).last)
   end
 
   test "should show wedding_party_member" do
