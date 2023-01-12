@@ -25,9 +25,9 @@ like Active Record and routing.
 
 # Setting up the Development environment
 
-- 🧮 [Set up the Database](#set-up-the-database)
 - 🍴 [Clone a fork of the project repository](#clone-a-fork-of-the-project-repository)
-    - 🧰 [PostgreSQL in a docker container](#postgresql-in-a-docker-container)
+- 🐋 [docker-compose](#docker-compose)
+- 🧮 [Set up the Database](#set-up-the-database)
 - ♦️ [Install Ruby](#install-ruby)
     - 🧪 [Test for the correct version of ruby](#test-for-the-correct-version-of-ruby)
 - 🔡 [Install Bundler](#install-bundler)
@@ -38,8 +38,54 @@ like Active Record and routing.
 - 🌩️ [Compile assets](#compile-assets)
 - ⚛️ [Run the App](#run-the-app)
 
-### Set up the Database
-Since the application uses a PostgreSQL database, you will need to have **PostgreSQL** >= v9.3 installed (`sudo apt install postgresql libpq-dev`) and running (`sudo service postgresql start`). If you prefer to spin up a docker container for PostgreSQL, skip ahead to [Clone a fork of the project repository](#clone-a-fork-of-the-project-repository), then make sure to include the steps from [PostgreSQL in a docker container](#postgresql-in-a-docker-container).
+## Clone a fork of the project repository
+
+As an example, we will clone the **marriage-booklet** project to our **home** directory under a **development** subdirectory.
+Please adjust any of the following instructions based on the folder you choose to develop under.
+We will actually clone a fork of the project, seeing that any patches we would like to contribute
+will be developed as branches on a fork and then submitted as PR's against the main repo.
+
+So as a first step, from the Github repo https://github.com/opensourcecatholic/marriage-booklet,
+click on "fork" at the top right hand side of the screen. Then clone the fork:
+
+```bash
+cd ~
+mkdir development
+cd development
+git clone git@github.com:YourGithubUsername/marriage-booklet.git
+cd marriage-booklet
+```
+
+(Substitute _YourGithubUsername_ with your Github username or with whatever url your fork refers to, such as an organization perhaps).
+The project will now be cloned in a **marriage-booklet** subfolder of the **development** folder.
+
+## docker-compose
+
+We provide a docker-compose file that will start database and adminer services in Docker. The database will be created with a default username and password that match the development defaults in our app configuration so you don't need to edit anything. To use this, you need [Docker](https://www.docker.com/) installed. Follow the installation instructions on their website. Once Docker's installed, just run
+
+    docker-compose up
+
+to start the database and other services in Docker.
+
+An instance of [Adminer](https://www.adminer.org/) has been included in the **docker compose** file, so as to offer a tool that can help inspect the database and the tables.
+You may change the port in the `.env` file to your liking. If you do not supply the `ADMINER_PORT` environment variable,
+the adminer instance will default to port **8080**. You can visit the **Adminer** interface at `http://localhost:[ADMINER_PORT]` (for example, <http://localhost:8080>).
+You can log into the adminer interface with:
+
+|          |          |
+|:---------|:---------|
+|System    |PostgreSQL|
+|Server    |db        |
+|Username  |[MARRIAGE_BOOKLET_DATABASE_USER] (default: marriage_booklet)    |
+|Password  |[MARRIAGE_BOOKLET_DATABASE_PASSWORD] (default: password)|
+|Database  |marriage_booklet_development        |
+
+If you prefer not to use Docker, you can also set up your database manually.
+
+## Set up the Database
+(Skip this if you're using docker-compose.)
+
+Since the application uses a PostgreSQL database, you will need to have **PostgreSQL** >= v9.3 installed (`sudo apt install postgresql libpq-dev`) and running (`sudo service postgresql start`).
 
 > _If you are installing **PostgreSQL** for the first time, a default user `postgres` will be created, and will be locked._
 > _You will need to set a password for this user: first run `sudo -u postgres psql template1`, then at the Postgres CLI type `\password`._
@@ -88,57 +134,9 @@ echo $MARRIAGE_BOOKLET_DATABASE_USER
 echo $MARRIAGE_BOOKLET_DATABASE_PASSWORD
 ```
 
-### Clone a fork of the project repository
+## Install Ruby
 
-As an example, we will clone the **marriage-booklet** project to our **home** directory under a **development** subdirectory.
-Please adjust any of the following instructions based on the folder you choose to develop under.
-We will actually clone a fork of the project, seeing that any patches we would like to contribute
-will be developed as branches on a fork and then submitted as PR's against the main repo.
-
-So as a first step, from the Github repo https://github.com/opensourcecatholic/marriage-booklet,
-click on "fork" at the top right hand side of the screen. Then clone the fork:
-
-```bash
-cd ~
-mkdir development
-cd development
-git clone git@github.com:YourGithubUsername/marriage-booklet.git
-cd marriage-booklet
-```
-
-(Substitute _YourGithubUsername_ with your Github username or with whatever url your fork refers to, such as an organization perhaps).
-The project will now be cloned in a **marriage-booklet** subfolder of the **development** folder.
-
-##### PostgreSQL in a docker container
-A `docker-compose.yml` file has been included in the repo, if you prefer to use a docker container as your **PostgreSQL** instance. First, create (in the project's main directory, alongside docker-compose.yml) an `.env` file with the following environment variables:
-```diff
-MARRIAGE_BOOKLET_DATABASE_USER="marriage_booklet"
-MARRIAGE_BOOKLET_DATABASE_PASSWORD="[password-here]"
-ADMINER_PORT=8080
-```
-
-An instance of [Adminer](https://www.adminer.org/) has been included in the **docker compose** file, so as to offer a tool that can help inspect the database and the tables.
-You may change the port in the `.env` file to your liking. If you do not supply the `ADMINER_PORT` environment variable,
-the adminer instance will default to port **8080**.
-
-Now running `docker-compose up` should spin up the **PostgreSQL** instance, which will become available on the unix socket.
-
-And you should get the **Adminer** interface at `http://localhost:[ADMINER_PORT]` (for example, `http://localhost:8080`).
-You can log into the adminer interface with:
-
-|          |          |
-|:---------|:---------|
-|System    |PostgreSQL|
-|Server    |db        |
-|Username  |[MARRIAGE_BOOKLET_DATABASE_USER]    |
-|Password  |[MARRIAGE_BOOKLET_DATABASE_PASSWORD]|
-|Database  |marriage_booklet_development        |
-
-(Switch out Username and Password with whatever you put in the `.env` file.)
-
-### Install Ruby
-
-The first thing you'll need is the correct version of Ruby. We track this in the
+You'll need the correct version of Ruby. We track this in the
 `.ruby-version` file, and tools like [rbenv](https://github.com/rbenv/rbenv) can
 use that file to switch to the correct version.
 
@@ -226,21 +224,20 @@ _You should see output along these lines:_
 Installing ruby-3.2.0...
 Installed ruby-3.2.0 to ~/.rbenv/versions/3.2.0
 ```
-***
 
-##### Test for the correct version of ruby
+### Test for the correct version of ruby
 
 Now, running `ruby --version` from within the application directory should give you something like `ruby 3.2.0 (2022-12-25 revision a528908271) [x86_64-linux]`.
 You probably won't be able to run the `rails` command yet, until you have installed the rails gem. However we use **bundler** to manage our ruby gems, so you will have to continue through the next two steps before being able to check your `rails --version`.
 
-### Install Bundler
+## Install Bundler
 
 We use [Bundler](https://bundler.io/) to manage our ruby gems. You'll probably
 need to install this gem. If you used rbenv to install Ruby, you should be able
 to run `gem install bundler` without sudo and bundler should be installed to the
 correct location.
 
-### Install ruby gem dependencies
+## Install ruby gem dependencies
 
 After Bundler is installed, you can use it to install our dependencies with
 `bundle install`. Our dependencies are tracked in `Gemfile` and `Gemfile.lock`.
@@ -259,7 +256,7 @@ Could not find rack-proxy-0.7.0 in any of the sources
 Run `bundle install` to install missing gems.
 ```
 
-### Check your Rails environment
+## Check your Rails environment
 
 You should now be able to see the version of rails when running `bundle exec rails --version`, with an output of `Rails 7.0.4`.
 
@@ -281,10 +278,10 @@ Database adapter          postgresql
 Database schema version   20230104190635
 ```
 
-### Load the database schema
+## Load the database schema
 Run `bundle exec rails db:setup`. This will create the `development` and `test` databases and load the current `schema`.
 
-### Check NodeJS environment
+## Check NodeJS environment
 
 With Rails 7, node isn't strictly required. It may be needed to issue commands for the `i18n-js` CLI
 such as `i18n export`, or `i18n lint:scripts` or `i18n lint:translations`. For this reason we have kept
@@ -292,13 +289,13 @@ the `.nvmrc` and `.node-version` files in the repository, so that if you need to
 you can install and automatically use a recent version of node (we suggest to use `nvm` and `avm` to install
 and automatically switch to the version of node indicated in these files).
 
-### Compile assets
+## Compile assets
 Assets for the application (`JS`, `CSS`, and images) may need to be precompiled in order for the test environment to work correctly:
 ```bash
 bundle exec rails assets:precompile
 ```
 
-### Run the App
+## Run the App
 
 After all dependencies are installed with Bundler, 
 you can run the app in development mode with `bundle exec rails server`.
