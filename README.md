@@ -61,7 +61,7 @@ The project will now be cloned in a **marriage-booklet** subfolder of the **deve
 
 ## docker-compose
 
-We provide a docker-compose file that will start database and adminer services in Docker. The database will be created with a default username and password that match the development defaults in our app configuration so you don't need to edit anything. To use this, you need [Docker](https://www.docker.com/) installed. Follow the installation instructions on their website. Once Docker's installed, just run
+We provide a docker-compose file that will start database, redis, and adminer services in Docker. The database will be created with a default username and password that match the development defaults in our app configuration so you don't need to edit anything. To use this, you need [Docker](https://www.docker.com/) installed. Follow the installation instructions on their website. Once Docker's installed, just run
 
     docker-compose up
 
