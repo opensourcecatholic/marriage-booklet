@@ -11,8 +11,14 @@ services:
       POSTGRES_DB: marriage_booklet_development
       POSTGRES_USER: ${MARRIAGE_BOOKLET_DATABASE_USER:-marriage_booklet}
       POSTGRES_PASSWORD: ${MARRIAGE_BOOKLET_DATABASE_PASSWORD:-password}
+
   adminer:
     image: adminer
     restart: always
     ports:
       - ${ADMINER_PORT:-8080}:8080
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"

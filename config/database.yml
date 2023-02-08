@@ -23,9 +23,9 @@ default: &default
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # Defaults to marriage_booklet.
-  username: <%= ENV['MARRIAGE_BOOKLET_DATABASE_USER'] || marriage_booklet %>
+  username: <%= ENV['MARRIAGE_BOOKLET_DATABASE_USER'] || 'marriage_booklet' %>
   # The password associated with the postgres role (username).
-  password: <%= ENV['MARRIAGE_BOOKLET_DATABASE_PASSWORD'] || password %>
+  password: <%= ENV['MARRIAGE_BOOKLET_DATABASE_PASSWORD'] || 'password' %>
 
 development:
   <<: *default
