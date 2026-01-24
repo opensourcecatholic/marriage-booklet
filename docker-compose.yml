@@ -1,9 +1,7 @@
-version: '3.8'
-
 services:
 
   db:
-    image: postgres:15
+    image: postgres:18
     restart: always
     volumes:
       - /var/run/postgresql:/var/run/postgresql
