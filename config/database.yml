@@ -79,5 +79,6 @@ test:
 production:
   <<: *default
   database: marriage_booklet_production
+  host: localhost
   username: <%= ENV['MARRIAGE_BOOKLET_DATABASE_USER'] %>
   password: <%= ENV["MARRIAGE_BOOKLET_DATABASE_PASSWORD"] %>
