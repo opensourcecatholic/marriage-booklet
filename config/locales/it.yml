@@ -1,4 +1,3 @@
----
 it:
   action-cancel: Action-cancel
   action-create-account: Action-create-account
@@ -29,7 +28,7 @@ it:
         groomFirstName: Groomfirstname
         groomLastName: Groomlastname
         lastName: Lastname
-        liturgy: Liturgy
+        liturgy: Liturgia
         liturgy_catholicNonCatholic: Liturgy catholicnoncatholic
         liturgy_withMass: Liturgy withmass
         liturgy_withoutMass: Liturgy withoutmass
@@ -101,7 +100,8 @@ it:
         role_soloist: Role soloist
         role_undefined: Role undefined
   application:
-    description: Componi il Libretto di Matrimonio perfetto, basato sui testi liturgici del Rito Romano delle Nozze
+    description: Componi il Libretto di Matrimonio perfetto, basato sui testi liturgici
+      del Rito Romano delle Nozze
     guest: Guest
     hello: Hello
     keywords: matrimonio, nozze, sposalizio, libretto, liturgia, rito, rituale, nuziale
