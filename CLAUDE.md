@@ -33,8 +33,8 @@ bundle exec rails test test/models/user_test.rb:10
 # Run system tests (Capybara + Selenium)
 bundle exec rails test:system
 
-# Run RSpec i18n validation tests
-bundle exec rspec spec/
+# Validate i18n keys (missing, unused, normalization, interpolations)
+bundle exec i18n-tasks health
 
 # i18n management
 bundle exec i18n-tasks missing
@@ -98,4 +98,8 @@ Projects accept nested attributes for users and wedding_party_members with `allo
 
 ## CI
 
-GitHub Actions (`verify.yml`): Sets up Ruby 3.2.9, Node.js 18, PostgreSQL 15 service, resets test DB, precompiles assets, runs `rails test`.
+GitHub Actions (`verify.yml`): Sets up Ruby 3.2.9, Node.js 18, PostgreSQL 18 service, resets test DB, precompiles assets, runs `rails test`.
+
+## Wiki
+
+The project wiki is at https://github.com/opensourcecatholic/marriage-booklet/wiki and can be cloned as a separate git repo. Wiki pages cover development setup, contributing patches, i18n handling, and historical notes on the webpack-to-importmap migration.
